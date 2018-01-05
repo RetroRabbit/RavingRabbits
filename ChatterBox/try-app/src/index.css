@@ -8,6 +8,23 @@ body {
 .login{
   height:644px;width:533px;border-radius:12px;background-color:#FDFDFD;margin-right: 454px; margin-left: 454px; margin-top: 174px; margin-bottom: 174px;
 }
+.btnReg{
+  height: 50px !important;
+  width: 150px !important;
+  background-color: #01B9BD !important;
+  color: #01B9BD !important;
+  box-shadow: 0 2px 6px !important;
+  
+  
+  
+}
+.Register{
+  height:644px;
+  width:533px;
+  border-radius:12px;
+  background-color:#01B9BD;
+  margin-right: 454px; margin-left: 454px; margin-top: 174px; margin-bottom: 174px;
+}
 
 .welcome-to-the {	height: 67px;	
   width: 424px;	
