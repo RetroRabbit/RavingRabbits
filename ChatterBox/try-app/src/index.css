@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color:  #004853;
+}
+
+.login{
+  height:644px;width:533px;border-radius:12px;background-color:#FDFDFD;margin-right: 454px; margin-left: 454px; margin-top: 174px; margin-bottom: 174px;
+}
+
+.welcome-to-the {	height: 67px;	
+  width: 424px;	
+  color: #004853;	
+  font-family: "helvetica";	
+  font-size: 30px;	
+  font-weight: 500;	
+  line-height: 41px;	
+  text-align: center;
+}
+
+.welcome{
+  padding-top: 60px;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.txtbox{
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
