@@ -5,9 +5,8 @@ import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
-import logo from './logo.svg';
 import pfp from './pfp.png';
-import './App.css';
+
 import './index.css'
 
 

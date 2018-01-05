@@ -88,6 +88,6 @@ div#leftBar{
     to { transform: rotate(360deg); }
   }
   
-  .fa fa-search{
+  .fa .fa-search{
   color:#00B4CC;
   }
