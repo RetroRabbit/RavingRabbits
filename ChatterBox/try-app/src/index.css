@@ -6,7 +6,14 @@ body {
 }
 
 .login{
-  height:644px;width:533px;border-radius:12px;background-color:#FDFDFD;margin-right: 454px; margin-left: 454px; margin-top: 174px; margin-bottom: 174px;
+  height:644px;
+  width:533px;
+  border-radius:12px;
+  background-color:#FDFDFD;
+  margin-right: 454px; 
+  margin-left: 454px; 
+  margin-top: 174px; 
+  margin-bottom: 174px;
 }
 
 .welcome-to-the {	height: 67px;	
@@ -30,3 +37,30 @@ body {
   padding-right: 72px;
 }
 
+.rectangle-2 {	
+  height: 103px;	
+  width: 533px;	
+  border-radius: 0 0 12px 12px;	
+  background-color: #01B9BD;
+  margin-top: 143px;
+  padding-top: 25px;
+  padding-right: 107px;
+  padding-left: 107px;
+  }
+
+.no-account-yet-get {	
+    height: 27px;	
+    width: 286px;	
+    color: #FFFFFF;	
+    font-family: "helvetica";	
+    font-size: 20px;	
+    line-height: 27px;	
+    text-align:"center";}
+
+.btnLogin{	
+    height: 57px !important;	
+    width: 197px !important;		
+    background-color: #FB6902 !important;	
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+    color: #FFFFFF !important;
+}
