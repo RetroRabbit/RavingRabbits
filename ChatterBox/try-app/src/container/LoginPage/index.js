@@ -1,6 +1,7 @@
 import React from 'react'
-import FlatButton  from 'material-ui/FlatButton';
-import { TextField, RaisedButton } from 'material-ui';
+import { TextField, RaisedButton } from 'material-ui'
+
+
 
 const LoginPage = props => (
     <div class="login">
@@ -22,10 +23,14 @@ const LoginPage = props => (
         fullWidth="true"
         />
        
-         <RaisedButton label="Login" className="button"/>
-         
+         <RaisedButton label="Login" class="btnLogin" labelColor="#FFFFFF" />
+        
         </div>
+        <div class="rectangle-2">
+            <h1 class="no-account-yet-get">No account yet? Get setup now</h1>
+         </div>
     </div>
 )
+
 
 export default LoginPage;
