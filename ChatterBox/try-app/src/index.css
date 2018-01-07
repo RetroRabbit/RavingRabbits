@@ -163,8 +163,9 @@ body {
   line-height: 27px !important;	
   text-align:"center" !important;
   margin-left: 100px !important;
+}
 
-.rectangle-2 {	
+.rectangle-2{	
   height: 103px;	
   width: 533px;	
   border-radius: 0 0 12px 12px;	

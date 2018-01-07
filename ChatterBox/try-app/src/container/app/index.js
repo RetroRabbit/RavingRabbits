@@ -9,7 +9,7 @@ const App = () => (
   <MuiThemeProvider>
   <div>
     <main>
-      <Route exact path="/" component={LoginPage} />
+      <Route exact path="/login" component={LoginPage} />
     </main>
   </div>
   </MuiThemeProvider>
