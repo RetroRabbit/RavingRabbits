@@ -4,6 +4,7 @@ import { TextField, RaisedButton } from 'material-ui'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { TextField, RaisedButton } from 'material-ui'
 
 const LoginPage = props => (
 
@@ -35,7 +36,25 @@ const LoginPage = props => (
 
         <div class="login-2">
         <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
+        <TextField
+         hintText="Email"
+        floatingLabelText="Email"
+        type="text"
+        fullWidth="true"
+        />
+        <TextField
+         hintText="Password"
+        floatingLabelText="Password"
+        type="password"
+        fullWidth="true"
+        />
+       
+         <RaisedButton label="Login" class="btnLogin" labelColor="#FFFFFF" />
+        
         </div>
+        <div class="rectangle-2">
+            <h1 class="no-account-yet-get">No account yet? Get setup now</h1>
+         </div>
     </div>
 )
 
@@ -52,3 +71,4 @@ export default connect(
   mapDispatchToProps
 )(LoginPage)
 
+export default LoginPage;
