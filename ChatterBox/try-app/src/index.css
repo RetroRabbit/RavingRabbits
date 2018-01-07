@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color:  #004853;
+}
+
+.login{
+  height:644px;
+  width:533px;
+  border-radius:12px;
+  background-color:#FDFDFD;
+  margin-right: 454px; 
+  margin-left: 454px; 
+  margin-top: 174px; 
+  margin-bottom: 174px;
+}
+
+.register{
+  height:644px;
+  width:533px;
+  border-radius:12px;
+  background-color:#01B9BD;
+  margin-right: 454px; 
+  margin-left: 454px; 
+  margin-top: 174px; 
+  margin-bottom: 174px;
+}
+
+.welcome-to-the {		
+  color: #004853;	
+  font-family: "helvetica";	
+  font-size: 30px;	
+  font-weight: 500;	
+  text-align: center;
+}
+
+.welcome{
+  padding-top: 60px;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.txtbox{
+  padding-left: 72px;
+  padding-right: 72px;
+  margin-top: 20px;
+}
+
+.login-2 {	
+  height: 103px;	
+  width: 533px;	
+  border-radius: 0 0 12px 12px;	
+  background-color: #01B9BD;
+  margin-top: 163px;
+  padding-top: 25px;
+  padding-right: 107px;
+  padding-left: 107px;
+  }
+
+.no-account-yet-get {	
+    height: 27px;	
+    width: 100%;	
+    color: #FFFFFF;	
+    font-family: "helvetica";	
+    font-size: 20px;	
+    line-height: 27px;	
+    text-align:"center";}
+
+.btnLogin{	
+    position: absolute !important;
+    width: 200px !important;
+    height: 50px !important;
+    margin-top: 40px !important;
+    margin-left: 90px !important;
+    background-color: #FB6902 !important;	
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+    border-radius:6px !important;
+}
+
+.logo{
+  width: 350px;
+  margin-left: 42px;
+}
+
+.txtwhite{
+  color:#FFFFFF !important;
+}
+
+.btnReg{
+  position: absolute !important;
+  height: 57px !important;	
+  width: 197px !important;		
+  background-color: #0DABAF !important;	
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+  color: #FFFFFF !important;
+  align-content: center;
+  margin-top: 40px !important;
+  margin-left: 170px !important;
+}
+
+.btnCircle{
+  position: absolute !important;
+  height: 270px !important;	
+  width: 270px !important;		
+  background-color: #D8D8D8 !important;	
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+  align-content: center;
+  border-radius: 200px !important;
+  border: solid !important;
+  border-color: #FFFFFF !important;
+  border-width: 100px !important;
+  margin-left: 55px !important;
+  color: #979797 !important;
+}
+
+.btnStepTwo{
+  position: absolute !important;
+  height: 57px !important;	
+  width: 197px !important;		
+  background-color: #0DABAF !important;	
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+  color: #FFFFFF !important;
+  margin-top: 290px !important;
+  margin-left: 160px !important;
+}
+
+.circleDiv{
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.skip{	
+  height: 27px !important;	
+  width: 100% !important;
+  margin-top: 350px !important;	
+  color: #FFFFFF !important;	
+  font-family: "helvetica" !important;	
+  font-size: 20px !important;	
+  line-height: 27px !important;	
+  text-align:"center" !important;
+  margin-left: 100px !important;
+}
+
+.laststepbtn{
+  position: absolute !important;
+  height: 57px !important;	
+  width: 197px !important;		
+  background-color: #0DABAF !important;	
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
+  color: #FFFFFF !important;
+  margin-top: 220px !important;
+  margin-left: 160px !important;
+}
+
+.skiplast{	
+  height: 27px !important;	
+  width: 100% !important;
+  margin-top: 280px !important;	
+  color: #FFFFFF !important;	
+  font-family: "helvetica" !important;	
+  font-size: 20px !important;	
+  line-height: 27px !important;	
+  text-align:"center" !important;
+  margin-left: 100px !important;
+}
