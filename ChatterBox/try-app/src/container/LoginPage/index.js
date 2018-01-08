@@ -10,7 +10,6 @@ const LoginPage = props => (
         <div class="welcome">
             <img src={require('../../img/logo.png')} class="logo" />
         </div>
-
         <div class="txtbox">
             <TextField
                 hintText="Email"
@@ -33,7 +32,6 @@ const LoginPage = props => (
                 labelColor="#FFFFFF"
             />
         </div>
-
         <div class="login-2">
             <Link class="no-account-yet-get" to="/register">
                 No account yet? Get setup now

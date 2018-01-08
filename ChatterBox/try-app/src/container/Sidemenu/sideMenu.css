@@ -7,9 +7,8 @@
     background-color:white;
     border: 1px solid gray 
   }
-
   div#searchDiv{
-    padding-top:10%; 
+    padding:10px; 
     text-align: center;
     height: 100px;
     background-color:#FFFFFF; 
@@ -21,32 +20,15 @@
     border-radius: 110%;
     border: 1px solid gray;
   }
-
-  .dmDivActive{
-    padding-left:2.5%;
-    padding-right:2.29%;
-    padding-bottom:7.42%;
-    padding-top:1.95%;
-    padding-top:15px;
-    border-bottom: 2px solid gray;
-    background-color: #F5F5F5;
-  }
-
-  .dmDiv{
-    padding-left:2.5%;
-    padding-right:2.29%;
-    padding-bottom:7.42%;
-    padding-top:1.95%;
-    padding-top:15px;
-    border-bottom: 2px solid gray;
-    background-color: #ffffff;
-  }
+  ::-webkit-scrollbar {
+    display: none;
+    }
 
   #list{
     text-align: center;
   }
 
-  .inner{ 
+  .innerDiv{ 
     padding-left: 34px; 
   }
 
