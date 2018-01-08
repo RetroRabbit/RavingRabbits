@@ -9,14 +9,13 @@ import Register from '../Registration/register.js'
 
 const App = () => (
   <MuiThemeProvider>
-  <div>
-    <main>
-
-      <Route exact path="/" component={Sidemenu} />
-      <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/register" component={Register} />
-    </main>
-  </div>
+    <div>
+      <main>
+        <Route exact path="/" component={Sidemenu} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={Register} />
+      </main>
+    </div>
   </MuiThemeProvider>
 )
 

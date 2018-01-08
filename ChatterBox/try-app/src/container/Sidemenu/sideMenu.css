@@ -1,5 +1,4 @@
-div#leftBar{
-  
+  div#leftBar{
     position: absolute;
     width: 30%; 
     height: 100%;
@@ -8,6 +7,7 @@ div#leftBar{
     background-color:white;
     border: 1px solid gray 
   }
+
   div#searchDiv{
     padding-top:10%; 
     text-align: center;
@@ -15,11 +15,13 @@ div#leftBar{
     background-color:#FFFFFF; 
     border-bottom: 1px solid gray;
   }
+
   .materialSearch{
     margin: '0 auto';
     border-radius: 110%;
     border: 1px solid gray;
   }
+
   .dmDivActive{
     padding-left:2.5%;
     padding-right:2.29%;
@@ -29,6 +31,7 @@ div#leftBar{
     border-bottom: 2px solid gray;
     background-color: #F5F5F5;
   }
+
   .dmDiv{
     padding-left:2.5%;
     padding-right:2.29%;
@@ -38,12 +41,15 @@ div#leftBar{
     border-bottom: 2px solid gray;
     background-color: #ffffff;
   }
+
   #list{
     text-align: center;
   }
+
   .inner{ 
     padding-left: 34px; 
   }
+
   .myChip{
     border-radius: 50px !important;
     padding-left:10px !important;
@@ -61,7 +67,7 @@ div#leftBar{
     font-family: 'Open Sans', sans-serif;
   }
   
-  .search {
+  .search{
     width: 100%;
   }
   
@@ -109,7 +115,7 @@ div#leftBar{
   }
   
   
-  @keyframes App-logo-spin {
+  @keyframes App-logo-spin{
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
@@ -118,32 +124,37 @@ div#leftBar{
   color:#00B4CC;
   }
 
-  input {
+  input{
     background: transparent;
     border-radius: 20px;
   }
+
   input:focus{
     outline: 0;
   }
+
   .input-placeholder{
     background-color: #eee;
     display: inline-block;
     padding: 10px;
     border-radius: 20px;
-    
-    
-    
   }
+
   .list{
     height: 100%;
   }
 
   @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
-.search { position: relative; }
-.search input { text-indent: 30px;}
-.search .fa-search { 
-  position: absolute;
-  top: 24px;
-  left: 7px;
-  font-size: 15px;
-}
+  
+  .search { 
+    position: relative;
+  }
+  .search input{ 
+    text-indent: 30px;
+  }
+  .search .fa-search{ 
+    position: absolute;
+    top: 24px;
+    left: 7px;
+    font-size: 15px;
+  }
