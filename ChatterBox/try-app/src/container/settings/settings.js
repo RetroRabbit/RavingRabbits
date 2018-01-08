@@ -12,7 +12,7 @@ const settings = props => (
       <div className="Settings">
           <div className="oval"></div>
           <div>
-          <h1>Addie Hogan <i className="fa fa-pencil" id= "username" aria-hidden="true"></i></h1>
+            <h1>Addie Hogan <i className="fa fa-pencil" id= "username" aria-hidden="true"></i></h1>
           </div>
           <h3>addiehogan@gmail&#46;com <i className="fa fa-pencil" id= "email" aria-hidden="true"></i></h3>
           <form >
