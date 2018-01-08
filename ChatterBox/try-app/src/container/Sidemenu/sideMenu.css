@@ -21,6 +21,9 @@
     border-radius: 110%;
     border: 1px solid gray;
   }
+  ::-webkit-scrollbar {
+    display: none;
+    }
 
   #list{
     text-align: center;
