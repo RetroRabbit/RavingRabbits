@@ -11,8 +11,6 @@ const App = () => (
     <main>
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/step-two" component={Profile_setup_secondstep} />
-      <Route exact path="/last-step" component={Profile_setup_laststep} />
       <Route exact path="/sidemenu" component={Sidemenu} />
     </main>
   </div>
