@@ -16,14 +16,15 @@ box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
     background-color:#FFFFFF; 
   }
 
+  ::-webkit-scrollbar { 
+    display: none; 
+  }
+
   .materialSearch{
     margin: '0 auto';
     border-radius: 110%;
     border: 1px solid gray;
   }
-  ::-webkit-scrollbar {
-    display: none;
-    }
 
   #list{
     text-align: center;
