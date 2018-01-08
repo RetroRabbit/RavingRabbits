@@ -1,31 +1,54 @@
 import React from 'react'
-import FlatButton  from 'material-ui/FlatButton';
-import { TextField, RaisedButton } from 'material-ui';
+import { Route, Link } from 'react-router-dom'
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { TextField, RaisedButton } from 'material-ui'
 
 const LoginPage = props => (
+
     <div class="login">
         <div class="welcome">
-            <h2 class="welcome-to-the">Welcome to the</h2>
-            <img src={require('./Full_Logo.png')}/>
+           <img src={require('../../img/logo.png')} class="logo"/>
         </div>
+
         <div class="txtbox">
-        <TextField
-         hintText="Email"
-        floatingLabelText="Email"
-        type="text"
-        fullWidth="true"
-        />
-        <TextField
-         hintText="Password"
-        floatingLabelText="Password"
-        type="password"
-        fullWidth="true"
-        />
-       
-         <RaisedButton label="Login" className="button"/>
-         
+            <TextField
+            hintText="Email"
+            floatingLabelText="Email"
+            type="text"
+            fullWidth="true"
+            class="txtbox"
+            />
+            <TextField
+            hintText="Password"
+            floatingLabelText="Password"
+            type="password"
+            fullWidth="true"
+            class="txtbox"
+            />
+            <RaisedButton onClick={() => props.changePage()} 
+            class="btnLogin" 
+            label="Login" 
+            labelColor="#FFFFFF"/>
+        </div>
+
+        <div class="login-2">
+        <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
         </div>
     </div>
 )
 
-export default LoginPage;
+const mapStateToProps = state => ({
+
+})
+  
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changePage: () => push('/step-two')
+}, dispatch)
+  
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginPage)
+
