@@ -1,50 +1,51 @@
-div#leftBar{
-  
+div#leftBar {
   position: absolute;
-  width: 40%; 
-  background-color:white;
-  border: 1px solid gray 
+  width: 40%;
+  background-color: white;
+  border: 1px solid gray
 }
-div#searchDiv{
-  padding-top:10%; 
+
+div#searchDiv {
+  padding-top: 10%;
   text-align: center;
   height: 100px;
-  background-color:#FFFFFF; 
+  background-color: #FFFFFF;
   border: 1px solid gray;
 }
-.dmDivActive{
-  padding-left:2.5%;
-  padding-right:2.29%;
-  padding-bottom:7.42%;
-  padding-top:1.95%;
-  padding-top:15px;
+
+.dmDivActive {
+  padding-left: 2.5%;
+  padding-right: 2.29%;
+  padding-bottom: 7.42%;
+  padding-top: 1.95%;
+  padding-top: 15px;
   border-bottom: 2px solid gray;
   background-color: #F5F5F5;
 }
-.dmDiv{
-  padding-left:2.5%;
-  padding-right:2.29%;
-  padding-bottom:7.42%;
-  padding-top:1.95%;
-  padding-top:15px;
+
+.dmDiv {
+  padding-left: 2.5%;
+  padding-right: 2.29%;
+  padding-bottom: 7.42%;
+  padding-top: 1.95%;
+  padding-top: 15px;
   border-bottom: 2px solid gray;
   background-color: #ffffff;
 }
-.inner{ 
-  background-color:  #EAEAEA;
+
+.inner {
+  background-color: #EAEAEA;
   border-bottom: 2px solid gray;
-  border-radius: 10px; 
+  border-radius: 10px;
   width: 80%;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-
 .search {
   width: 100%;
 }
 
-#searchbtn{
+#searchbtn {
   width: 30%;
   border: 3px solid #979797;
   border-left: 0px;
@@ -54,9 +55,11 @@ div#searchDiv{
   outline: none;
   color: #9DBFAF;
 }
-#searchbtn:hover{
+
+#searchbtn:hover {
   font-size: 15px;
 }
+
 .searchTerm {
   width: 30%;
   border: 3px solid #979797;
@@ -66,13 +69,15 @@ div#searchDiv{
   outline: none;
   color: #ffffff;
 }
-.message{
-padding-top:7.62%;
-padding-bottom:1.76% ;
-padding-left:2.29% ;
-padding-right:2.29%;
+
+.message {
+  padding-top: 7.62%;
+  padding-bottom: 1.76%;
+  padding-left: 2.29%;
+  padding-right: 2.29%;
 }
-.messagePhoto{
+
+.messagePhoto {
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
@@ -83,18 +88,21 @@ padding-right:2.29%;
   border: 1px solid #979797;
 }
 
-.searchTerm:focus{
+.searchTerm:focus {
   color: black;
 }
 
-
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.fa .fa-search{
-color:#00B4CC;
+.fa .fa-search {
+  color: #00B4CC;
 }
 
 body {
@@ -132,7 +140,7 @@ body {
   padding-right: 55px;
 }
 
-.txtbox{
+.txtbox {
   padding-left: 72px;
   padding-right: 72px;
   margin-top: 20px;
