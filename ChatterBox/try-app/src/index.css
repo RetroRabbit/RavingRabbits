@@ -20,7 +20,7 @@ body {
   height: 67px;
   width: 424px;
   color: #004853;
-  font-family: "helvetica";
+  font-family: Helvetica;
   font-size: 30px;
   font-weight: 500;
   line-height: 41px;
@@ -47,7 +47,7 @@ body {
   line-height: 103px;
 }
 
-.left-buttons {
+.left-header-buttons {
   margin-left: 40px;
 }
 
@@ -55,7 +55,7 @@ body {
   height: 30px;
   width: 201px;
   color: #F3F3F3;
-  font-family: helvetica;
+  font-family: Helvetica;
   font-size: 20px;
   line-height: 27px;
   margin-right: 23px;
@@ -78,18 +78,18 @@ body {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
 }
 
-.button-label {
+.header-button-label {
   height: 25px;
   width: 126px;
   color: #FFFFFF;
-  font-family: helvetica;
+  font-family: Helvetica;
   font-size: 18px;
   font-weight: 500;
   line-height: 25px;
   text-align: center;
 }
 
-.dropbtn {
+.dropdown-button {
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -117,11 +117,11 @@ body {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropdown-button {
   background-color: #FB6902;
 }
 
-.account-dropbtn {
+.account-dropdown-button {
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -170,7 +170,7 @@ body {
   margin-bottom: 174px;
 }
 
-.login-2 {
+.login-bottom-bar {
   height: 103px;
   width: 533px;
   border-radius: 0 0 12px 12px;
@@ -185,13 +185,13 @@ body {
   height: 27px;
   width: 100%;
   color: #FFFFFF;
-  font-family: "helvetica";
+  font-family: Helvetica;
   font-size: 20px;
   line-height: 27px;
   text-align: "center";
 }
 
-.btnLogin {
+.login-button {
   position: absolute !important;
   width: 200px !important;
   height: 50px !important;
@@ -211,7 +211,7 @@ body {
   color: #FFFFFF !important;
 }
 
-.btnReg {
+.register-button {
   position: absolute !important;
   height: 57px !important;
   width: 197px !important;
@@ -223,7 +223,7 @@ body {
   margin-left: 170px !important;
 }
 
-.btnCircle {
+.circle-button {
   position: absolute !important;
   height: 270px !important;
   width: 270px !important;
@@ -238,7 +238,7 @@ body {
   color: #979797 !important;
 }
 
-.btnStepTwo {
+.register-step-two {
   position: absolute !important;
   height: 57px !important;
   width: 197px !important;
@@ -249,7 +249,7 @@ body {
   margin-left: 160px !important;
 }
 
-.circleDiv {
+.circle-div {
   padding-left: 72px;
   padding-right: 72px;
 }
@@ -259,14 +259,14 @@ body {
   width: 100% !important;
   margin-top: 350px !important;
   color: #FFFFFF !important;
-  font-family: "helvetica" !important;
+  font-family: Helvetica !important;
   font-size: 20px !important;
   line-height: 27px !important;
   text-align: "center" !important;
   margin-left: 100px !important;
 }
 
-.laststepbtn {
+.register-last-step {
   position: absolute !important;
   height: 57px !important;
   width: 197px !important;
@@ -277,40 +277,29 @@ body {
   margin-left: 160px !important;
 }
 
-.skiplast {
+.skip-last-step {
   height: 27px !important;
   width: 100% !important;
   margin-top: 280px !important;
   color: #FFFFFF !important;
-  font-family: "helvetica" !important;
+  font-family: Helvetica !important;
   font-size: 20px !important;
   line-height: 27px !important;
   text-align: "center" !important;
   margin-left: 100px !important;
 }
 
-.rectangle-2 {
-  height: 103px;
-  width: 533px;
-  border-radius: 0 0 12px 12px;
-  background-color: #01B9BD;
-  margin-top: 143px;
-  padding-top: 25px;
-  padding-right: 107px;
-  padding-left: 107px;
-}
-
 .no-account-yet-get {
   height: 27px;
   width: 286px;
   color: #FFFFFF;
-  font-family: "helvetica";
+  font-family: Helvetica;
   font-size: 20px;
   line-height: 27px;
   text-align: "center";
 }
 
-.btnLogin {
+.login-button {
   height: 57px !important;
   width: 197px !important;
   background-color: #FB6902 !important;

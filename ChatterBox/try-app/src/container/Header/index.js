@@ -5,9 +5,9 @@ import AppBar from 'material-ui/AppBar'
 
 const Header = props => (
   <div class="header">
-    <div class="left-buttons">
+    <div class="left-header-buttons">
       <div class="dropdown">
-        <button class="dropbtn btn header-button"><span class="button-label">NEW CHAT</span></button>
+        <button class="dropdown-button btn header-button"><span class="header-button-label">NEW CHAT</span></button>
         <div class="dropdown-content">
           <TextField
             hintText="Friend's Email"
@@ -15,7 +15,7 @@ const Header = props => (
         </div>
       </div>
       <div class="dropdown">
-        <button class="dropbtn btn header-button"><span class="button-label">NEW GROUP</span></button>
+        <button class="dropdown-button btn header-button"><span class="header-button-label">NEW GROUP</span></button>
         <div class="dropdown-content">
           <TextField
             hintText="Group Name"
@@ -24,7 +24,7 @@ const Header = props => (
       </div>
       <div class="pull-right">
         <div class="account-dropdown">
-          <span class="account-dropbtn user-name">Raving Rabbits</span>
+          <span class="account-dropdown-button user-name">Raving Rabbits</span>
           <div class="account-dropdown-content">
             <a href="/settings">Settings</a>
             <a href="/login">Log Out</a>
