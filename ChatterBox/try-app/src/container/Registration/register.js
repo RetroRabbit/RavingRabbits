@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { TextField, RaisedButton } from 'material-ui'
-import { colors } from 'material-ui/styles';
-import { white } from 'material-ui/styles/colors';
+import { colors } from 'material-ui/styles'
+import { white } from 'material-ui/styles/colors'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import RegLogo from '../../img/step-one.png'
 
 
 const RegisterPage = props => (
-
     <div class="register">
     <div class="welcome">
-    <img src={require('../../img/step-one.png')} class="logo"/>
+    <img src={RegLogo} class="logo"/>
     </div>
     <div class="txtbox">
     <TextField
@@ -38,8 +38,6 @@ const RegisterPage = props => (
     label="NEXT STEP" 
     labelColor="#FFFFFF"
     onClick={() => props.changePage()}
-    //onClick={this.userRegister}
-    
     />
 </div>
 )
