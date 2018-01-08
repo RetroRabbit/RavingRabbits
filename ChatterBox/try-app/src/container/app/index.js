@@ -4,9 +4,6 @@ import LoginPage from '../LoginPage'
 import Sidemenu from '../Sidemenu/sidemenu.js'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Register from '../Registration/register.js'
-import Profile_setup_secondstep from '../setProfile/profile-setup-two.js'
-import Profile_setup_laststep from '../setProfile/profile-setup-last.js'
-
 
 const App = () => (
   <MuiThemeProvider>
@@ -17,7 +14,6 @@ const App = () => (
       <Route exact path="/step-two" component={Profile_setup_secondstep} />
       <Route exact path="/last-step" component={Profile_setup_laststep} />
       <Route exact path="/sidemenu" component={Sidemenu} />
-
     </main>
   </div>
   </MuiThemeProvider>
