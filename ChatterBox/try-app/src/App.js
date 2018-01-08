@@ -9,10 +9,11 @@ class App extends Component {
   render() {
     return (
       <div>
-      <main>
-      <Route exact path="/" component={Sidemenu} />
-      </main>
-  </div>    );
+        <main>
+          <Route exact path="/" component={Sidemenu} />
+        </main>
+      </div>    
+      );
   }
 }
 
