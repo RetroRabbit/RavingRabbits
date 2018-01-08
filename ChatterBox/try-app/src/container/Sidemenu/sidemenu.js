@@ -16,7 +16,7 @@ import SearchBar from 'material-ui-search-bar-enhanced';
 
 import './sideMenu.css'
 const chip = (
-  <div class="inner"> 
+  <div class="innerDiv"> 
     <Chip class="myChip">
       <Avatar src={pfp} />
          Username and surname
