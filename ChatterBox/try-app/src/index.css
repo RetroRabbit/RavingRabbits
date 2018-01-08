@@ -192,18 +192,7 @@ div#leftBar{
   outline: none;
   color: #9DBFAF;
 }
-#searchbtn:hover{
-  font-size: 15px;
-}
-.searchTerm {
-  width: 30%;
-  border: 3px solid #979797;
-  padding: 5px;
-  height: 30px;
-  border-radius: 5px;
-  outline: none;
-  color: #ffffff;
-}
+
 .message{
 padding-top:7.62%;
 padding-bottom:1.76% ;
