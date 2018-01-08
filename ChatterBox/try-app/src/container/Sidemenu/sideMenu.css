@@ -1,0 +1,160 @@
+  div#leftBar{
+    position: absolute;
+    width: 30%; 
+    height: 100%;
+    position: absolute;
+    overflow: auto;
+    background-color:white;
+    border: 1px solid gray 
+  }
+
+  div#searchDiv{
+    padding-top:10%; 
+    text-align: center;
+    height: 100px;
+    background-color:#FFFFFF; 
+    border-bottom: 1px solid gray;
+  }
+
+  .materialSearch{
+    margin: '0 auto';
+    border-radius: 110%;
+    border: 1px solid gray;
+  }
+
+  .dmDivActive{
+    padding-left:2.5%;
+    padding-right:2.29%;
+    padding-bottom:7.42%;
+    padding-top:1.95%;
+    padding-top:15px;
+    border-bottom: 2px solid gray;
+    background-color: #F5F5F5;
+  }
+
+  .dmDiv{
+    padding-left:2.5%;
+    padding-right:2.29%;
+    padding-bottom:7.42%;
+    padding-top:1.95%;
+    padding-top:15px;
+    border-bottom: 2px solid gray;
+    background-color: #ffffff;
+  }
+
+  #list{
+    text-align: center;
+  }
+
+  .inner{ 
+    padding-left: 34px; 
+  }
+
+  .myChip{
+    border-radius: 50px !important;
+    padding-left:10px !important;
+    padding-top:7px !important;
+    margin: 5 !important;
+    width: 80% !important;
+    height: 45px !important;
+    margin-bottom:10px !important;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+  
+  body{
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .search{
+    width: 100%;
+  }
+  
+  #searchbtn{
+    width: 30%;
+    border: 3px solid #979797;
+    border-left: 0px;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  #searchbtn:hover{
+    font-size: 15px;
+  }
+  .searchTerm {
+    width: 30%;
+    border: 3px solid #979797;
+    padding: 5px;
+    height: 30px;
+     border-radius: 5px;
+    outline: none;
+    color: #ffffff;
+  }
+  .message{
+    padding-top:7.62%;
+    padding-bottom:1.76% ;
+    padding-left:2.29% ;
+    padding-right:2.29%;
+  }
+  .messagePhoto{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 1px solid #979797;
+  }
+  
+  .searchTerm:focus{
+    color: black;
+  }
+  
+  
+  @keyframes App-logo-spin{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .fa .fa-search{
+  color:#00B4CC;
+  }
+
+  input{
+    background: transparent;
+    border-radius: 20px;
+  }
+
+  input:focus{
+    outline: 0;
+  }
+
+  .input-placeholder{
+    background-color: #eee;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .list{
+    height: 100%;
+  }
+
+  @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+  
+  .search { 
+    position: relative;
+  }
+  .search input{ 
+    text-indent: 30px;
+  }
+  .search .fa-search{ 
+    position: absolute;
+    top: 24px;
+    left: 7px;
+    font-size: 15px;
+  }
