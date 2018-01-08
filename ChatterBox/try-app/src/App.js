@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import LoginPage from './container/LoginPage'
 import { Route, Link } from 'react-router-dom'
 

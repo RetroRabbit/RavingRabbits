@@ -1,35 +1,38 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { TextField, RaisedButton, FloatingActionButton } from 'material-ui'
-import { colors } from 'material-ui/styles';
-import { white } from 'material-ui/styles/colors';
+import { colors } from 'material-ui/styles'
+import { white } from 'material-ui/styles/colors'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import SetProfileLogo from '../../img/step-last.png'
 
 
-const step_two = props => (
-
+const profile_setup_last = props => (
     <div class="register">
         <div class="welcome">
-            <img src={require('../../img/step-two.png')} class="logo"/>
+            <img src={SetProfileLogo} class="logo"/>
         </div>
         <div class="circleDiv">
-            <button
-            class="btnCircle"
-            >+</button>
+            <TextField
+            hintText="Friends Email"
+            floatingLabelText="Friends Email"
+            type="text"
+            fullWidth="true"
+            class="txtwhite"
+            />
         </div>
         <div>
             <RaisedButton
-            class="btnStepTwo" 
-            label="NEXT STEP" 
+            class="laststepbtn" 
+            label="START CHAT!" 
             labelColor="#FFFFFF"
             onClick={() => props.changePage()}
-            //onClick={this.userRegister}
             />
         </div>
-        <div class="skip">
-            <Link class="skip" to="/last-step">Skip for now</Link>
+        <div class="skiplast">
+            <Link class="skiplast" to="/chat-form">Skip for now</Link>
         </div>
     </div>
 )
@@ -45,4 +48,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(step_two)
+)(profile_setup_last)
