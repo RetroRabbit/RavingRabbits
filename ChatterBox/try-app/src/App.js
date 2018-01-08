@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div>
       <main>
-     
-      <Route exact path="/" component={Registration} />
+      <Route exact path="/" component={LoginPage} />
+      
       </main>
   </div>    );
   }
