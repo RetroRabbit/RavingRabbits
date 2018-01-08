@@ -1,11 +1,7 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 import FlatButton from 'material-ui/FlatButton';
-import { TextField, RaisedButton } from 'material-ui';
-import AppBar from 'material-ui/AppBar';
+import { TextField, RaisedButton } from 'material-ui'
+import AppBar from 'material-ui/AppBar'
 
 const Header = props => (
   <div class="header">
@@ -14,8 +10,7 @@ const Header = props => (
         <button class="dropbtn btn header-button"><span class="button-label">NEW CHAT</span></button>
         <div class="dropdown-content">
           <TextField
-            hintText="Friends Email"
-            onChange={() => props.onChangeText(this)}
+            hintText="Friend's Email"
           />
         </div>
       </div>
