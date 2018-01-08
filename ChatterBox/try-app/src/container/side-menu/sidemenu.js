@@ -31,7 +31,10 @@ class Sidemenu extends Component {
       <div className="App">
           <div id="leftBar">
                <div id="searchDiv">
-                      <SearchBar class="materialSearch"
+                      <SearchBar class="materialSearch" 
+                          style={{
+                            borderRadius: '200px'
+                          }}
                         onChange={() => console.log('onChange')}
                         onRequestSearch={() => console.log('onRequestSearch')}
                       />
