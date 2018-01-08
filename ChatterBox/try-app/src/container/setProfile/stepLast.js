@@ -29,7 +29,6 @@ const step_last = props => (
             label="START CHAT!" 
             labelColor="#FFFFFF"
             onClick={() => props.changePage()}
-            //onClick={this.userRegister}
             />
         </div>
         <div class="skiplast">
@@ -43,7 +42,7 @@ const mapStateToProps = state => ({
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/last-step')
+  changePage: () => push('/chatFrom')
 }, dispatch)
   
 export default connect(
