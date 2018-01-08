@@ -173,37 +173,7 @@ div#leftBar{
   background-color:white;
   border: 1px solid gray 
 }
-div#searchDiv{
-  padding-top:10%; 
-  text-align: center;
-  height: 100px;
-  background-color:#FFFFFF; 
-  border: 1px solid gray;
-}
-.dmDivActive{
-  padding-left:2.5%;
-  padding-right:2.29%;
-  padding-bottom:7.42%;
-  padding-top:1.95%;
-  padding-top:15px;
-  border-bottom: 2px solid gray;
-  background-color: #F5F5F5;
-}
-.dmDiv{
-  padding-left:2.5%;
-  padding-right:2.29%;
-  padding-bottom:7.42%;
-  padding-top:1.95%;
-  padding-top:15px;
-  border-bottom: 2px solid gray;
-  background-color: #ffffff;
-}
-.inner{ 
-  background-color:  #EAEAEA;
-  border-bottom: 2px solid gray;
-  border-radius: 10px; 
-  width: 80%;
-}
+
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
