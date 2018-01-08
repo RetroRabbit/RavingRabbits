@@ -33,12 +33,15 @@ class Sidemenu extends Component {
                <div id="searchDiv">
                       <SearchBar class="materialSearch" 
                           style={{
-                            borderRadius: '200px'
+                            borderRadius: '200px',
+                            color: '#4A4A4A'
+
                           }}
                         onChange={() => console.log('onChange')}
                         onRequestSearch={() => console.log('onRequestSearch')}
                       />
-              </div>         
+              </div>   
+    <Divider inset={false} />      
       <List class="list">
         <Subheader>Today</Subheader>
           <ListItem
