@@ -4,14 +4,13 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { TextField, RaisedButton } from 'material-ui'
+import Logo from '../../img/logo.png'
 
 const LoginPage = props => (
-
     <div class="login">
         <div class="welcome">
-           <img src={require('../../img/logo.png')} class="logo"/>
+           <img src={Logo} class="logo"/>
         </div>
-
         <div class="txtbox">
             <TextField
             hintText="Email"
@@ -32,7 +31,6 @@ const LoginPage = props => (
             label="Login" 
             labelColor="#FFFFFF"/>
         </div>
-
         <div class="login-2">
         <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
         </div>
