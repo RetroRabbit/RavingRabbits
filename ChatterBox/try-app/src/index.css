@@ -165,30 +165,152 @@ body {
   margin-left: 100px !important;
 }
 
-.rectangle-2{	
-  height: 103px;	
-  width: 533px;	
-  border-radius: 0 0 12px 12px;	
-  background-color: #01B9BD;
-  margin-top: 143px;
-  padding-top: 25px;
-  padding-right: 107px;
-  padding-left: 107px;
+div#leftBar{
+  
+  position: absolute;
+  width: 40%; 
+  background-color:white;
+  border: 1px solid gray 
+}
+div#searchDiv{
+  padding-top:10%; 
+  text-align: center;
+  height: 100px;
+  background-color:#FFFFFF; 
+  border: 1px solid gray;
+}
+.dmDivActive{
+  padding-left:2.5%;
+  padding-right:2.29%;
+  padding-bottom:7.42%;
+  padding-top:1.95%;
+  padding-top:15px;
+  border-bottom: 2px solid gray;
+  background-color: #F5F5F5;
+}
+.dmDiv{
+  padding-left:2.5%;
+  padding-right:2.29%;
+  padding-bottom:7.42%;
+  padding-top:1.95%;
+  padding-top:15px;
+  border-bottom: 2px solid gray;
+  background-color: #ffffff;
+}
+.inner{ 
+  background-color:  #EAEAEA;
+  border-bottom: 2px solid gray;
+  border-radius: 10px; 
+  width: 80%;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+.search {
+  width: 100%;
+}
+
+#searchbtn{
+  width: 30%;
+  border: 3px solid #979797;
+  border-left: 0px;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+#searchbtn:hover{
+  font-size: 15px;
+}
+.searchTerm {
+  width: 30%;
+  border: 3px solid #979797;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  color: #ffffff;
+}
+.message{
+padding-top:7.62%;
+padding-bottom:1.76% ;
+padding-left:2.29% ;
+padding-right:2.29%;
+}
+.messagePhoto{
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border: 1px solid #979797;
+}
+
+.searchTerm:focus{
+  color: black;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fa .fa-search{
+color:#00B4CC;
+}
+
+.header{   
+  height: 103px;    
+  width: 100%;    
+  background-color: #01B9BD ; 
+  vertical-align: middle; 
+  line-height: 103px;
+
+}
+
+.left-buttons{
+    margin-left: 40px;
   }
 
-.no-account-yet-get {	
-    height: 27px;	
-    width: 286px;	
-    color: #FFFFFF;	
-    font-family: "helvetica";	
+  .user-name{
+    height: 30px;	
+    width: 201px;	
+    color: #F3F3F3;	
+    font-family: helvetica;	
     font-size: 20px;	
-    line-height: 27px;	
-    text-align:"center";}
+    line-height: 27px;
+    margin-right:23px;
+  }
 
-.btnLogin{	
-    height: 57px !important;	
-    width: 197px !important;		
-    background-color: #FB6902 !important;	
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25) !important;
-    color: #FFFFFF !important;
+  .profile-img{
+    margin-right:23px;
+    height: 54px;	
+    width: 54px; 
+    border-radius: 50%;
+  }
+
+.header-button{
+  background-color: #0DABAF; 
+  margin-right:24px;
+  height: 54px;
+  width: 143px;
+  border-radius: 5px;
+  background-color: #0DABAF;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
 }
+
+ .button-label{
+      height: 25px;
+      width: 126px;
+      color: #FFFFFF;
+      font-family: helvetica;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25px;
+      text-align: center;
+    }
