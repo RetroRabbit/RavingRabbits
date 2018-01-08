@@ -1,26 +1,22 @@
-import React from 'react'
-import { Route, Link } from 'react-router-dom'
-import LoginPage from '../LoginPage'
-import Sidemenu from '../Sidemenu/sidemenu.js'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Register from '../Registration/register.js'
-import Profile_setup_secondstep from '../setProfile/profile-setup-two.js'
-import Profile_setup_laststep from '../setProfile/profile-setup-last.js'
-
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import LoginPage from '../LoginPage';
+import Sidemenu from '../Sidemenu/sidemenu.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Register from '../Registration/register.js';
+import settings from '../settings/settings.js'
 
 const App = () => (
-  <MuiThemeProvider>
-  <div>
-    <main>
-      <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/register" component={Register} />
-      <Route exact path="/step-two" component={Profile_setup_secondstep} />
-      <Route exact path="/last-step" component={Profile_setup_laststep} />
-      <Route exact path="/sidemenu" component={Sidemenu} />
+    <MuiThemeProvider>
+        <div>
+            <main>
+                <Route exact path="/" component={Sidemenu} />
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/settings" component={settings} />
+            </main>
+        </div>
+    </MuiThemeProvider>
+);
 
-    </main>
-  </div>
-  </MuiThemeProvider>
-)
-
-export default App
+export default App;
