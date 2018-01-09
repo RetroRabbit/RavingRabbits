@@ -1,6 +1,6 @@
 import SideMenu from '../side-menu/sidemenu.js'
 import Header from '../Header'
-import Settings from '../settings/settings.js'
+import Settings from '../profile-settings/profile-settings'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -15,10 +15,10 @@ const ChatForm = props => (
         <Header/>
     </header>
     <div class="row">
-        <div class="pull-left">
+        <div>>
             <SideMenu/>
         </div>
-        <div >
+        <div>
             <chatAreaMessages/>
         </div>
     </div>

@@ -14,8 +14,10 @@ import SideMenu from '../side-menu/sidemenu.js'
 class chatArea extends Component{
   render(){
     return(
-      
+        
       <div>
+        <header><Header/></header>
+        <div><SideMenu/></div>
         <MuiThemeProvider>
      
      
