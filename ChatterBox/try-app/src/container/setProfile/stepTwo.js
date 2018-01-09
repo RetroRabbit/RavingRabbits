@@ -17,7 +17,7 @@ const step_two = props => (
         <div class="circleDiv">
             <button
             class="btnCircle"
-            >+</button>
+            ><h2>+</h2></button>
         </div>
         <div>
             <RaisedButton
