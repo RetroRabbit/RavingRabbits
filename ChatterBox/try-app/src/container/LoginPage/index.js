@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import { TextField, RaisedButton } from 'material-ui'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { login } from '../../helpers/reducerLogin'
 
-const LoginPage = props => (
 
-    <div class="login">
+class LoginPage extends Component {
+
+    constructor(props) {
+      super(props);
+      this.state = {};
+      this.onSubmit = this.onSubmit.bind(this);
+    }
+  
+    render() {
+      let {email, password} = this.state;
+      let {isLoginPending, isLoginSuccess, loginError} = this.props;
+      return (
+        <form name="loginForm" onSubmit={this.onSubmit}>
+          
+          <div class="login">
         <div class="welcome">
            <img src={require('../../img/logo.png')} class="logo"/>
         </div>
@@ -19,6 +33,9 @@ const LoginPage = props => (
             type="text"
             fullWidth="true"
             class="txtbox"
+            type="email" 
+            onChange={e => this.setState({email: e.target.value})} 
+            value={email}
             />
             <TextField
             hintText="Password"
@@ -26,29 +43,57 @@ const LoginPage = props => (
             type="password"
             fullWidth="true"
             class="txtbox"
+            name="password" 
+            onChange={e => this.setState({password: e.target.value})} 
+            value={password}
             />
-            <RaisedButton onClick={() => props.changePage()} 
+            <RaisedButton 
             class="btnLogin" 
             label="Login" 
-            labelColor="#FFFFFF"/>
+            labelColor="#FFFFFF"
+            type="submit" 
+            value="Login" />
         </div>
 
         <div class="login-2">
         <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
+        <div className="message">
+            { isLoginPending && <div>Please wait...</div> }
+            { isLoginSuccess && <div>Success.</div> }
+            { loginError && <div>{loginError.message}</div> }
+          </div>
         </div>
-    </div>
-)
-
-const mapStateToProps = state => ({
-
-})
+    </div>     
+    </form>
+      )
+    }
   
-const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/step-two')
-}, dispatch)
+    onSubmit(e) {
+      e.preventDefault();
+      let { email, password } = this.state;
+      this.props.login(email, password);
+      this.setState({
+        email: '',
+        password: ''
+      });
+    }
+  }
   
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginPage)
+  const mapStateToProps = (state) => {
+    return {
+      isLoginPending: state.isLoginPending,
+      isLoginSuccess: state.isLoginSuccess,
+      loginError: state.loginError
+    };
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      login: (email, password) => dispatch(login(email, password))
+    };
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+
+
 
