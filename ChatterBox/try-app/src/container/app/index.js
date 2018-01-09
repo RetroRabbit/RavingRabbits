@@ -11,7 +11,6 @@ import Header from '../Header'
 import Settings from '../profile-settings/profile-settings.js'
 import ChatForm from '../ChatForm/chatFrom.js'
 
-window.$ = window.jQuery = require('jquery')
 const App = () => (
   <MuiThemeProvider>
   <div>
