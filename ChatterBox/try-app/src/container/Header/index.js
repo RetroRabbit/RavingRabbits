@@ -27,7 +27,7 @@ const Header = props => (
         <div class="account-dropdown">
           <span class="account-dropdown-button user-name">Raving Rabbits</span>
           <div class="account-dropdown-content">
-            <a href="/settings">Settings</a>
+            <a href="/profile-settings">Settings</a>
             <a href="/login">Log Out</a>
           </div>
         </div>

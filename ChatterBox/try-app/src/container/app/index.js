@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/chat-form" component={chatForm} />
       <Route exact path="/sidemenu" component={SideMenu} />
       <Route exact path="/" component={Header} />
-      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
     </main>
   </div>
