@@ -21,7 +21,6 @@ class chatArea extends Component{
      
       <div class="bg ">
       <div class="chatDiv">
-      {/* PERSON1 */}
       <div class= "p1">
                   <div className= "rectangle-6">
                       <p className= "text"> Hello </p>
@@ -36,7 +35,6 @@ class chatArea extends Component{
                       <p className= "time"> 17:00</p>
                  </div>
       </div>
-      {/* PERSON2 */}
       <div className= "person2">
                   <div className= "rectangle-6-copy-2">
                       <p className= "text"> Hello </p>
@@ -45,14 +43,12 @@ class chatArea extends Component{
                       <p className= "time-copy"> 17:00</p>
                  </div>
       </div>
-      {/* CHATBUTTON */}
       <div className="addMessage">
     
     <FloatingActionButton  disabled={true} className="add">
               <ContentAdd />
             </FloatingActionButton>
       </div>
-      {/* CHATBOX */}
       <div className= "chatbox">
                   
                    <TextField
