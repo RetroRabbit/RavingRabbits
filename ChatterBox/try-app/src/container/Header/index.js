@@ -1,58 +1,63 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import FlatButton from 'material-ui/FlatButton';
 import { TextField, RaisedButton } from 'material-ui';
 import AppBar from 'material-ui/AppBar';
 import './header.css';
+import { bindActionCreators } from 'redux';
+import {setMobileResolution, setDesktopResolution} from '../../helpers/reducerScreen';
 
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      width: window.innerWidth,
-    };
+
+  constructor(props) {
+    super(props);
+    this.updateRes = this.updateRes.bind(this);
   }
 
   componentWillMount() {
-    window.addEventListener('resize', this.handleWindowSizeChange);
+    window.addEventListener('resize', this.updateRes);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowSizeChange);
+    window.removeEventListener('resize', this.updateRes);
   }
 
-  handleWindowSizeChange = () => {
-    this.setState({ width: window.innerWidth });
-  };
+  updateRes() {
+    if (window.innerWidth< 780) {
+      return this.props.setMobileResolution();
+    }
+    else {
+      return this.props.setDesktopResolution();
+    }
+  }
 
   render() {
-    const { width } = this.state;
-    const isMobile = width <= 764;
-
-    if (isMobile) {
+    console.log('f');
+    if (this.props.mobile) {
       return (
         <div class="header">
-          <div class="left-header-buttons">
-            <div class="dropdown">
-              <button class="dropdown-button btn header-button"><span class="header-button-label">NEW CHAT</span></button>
-              <div class="dropdown-content">
-                <TextField
-                  hintText="Friend's Email"
-                />
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-button btn header-button"><span class="header-button-label">NEW GROUP</span></button>
-              <div class="dropdown-content">
-                <TextField
-                  hintText="Group Name"
-                />
-              </div>
-            </div>
-            <div class="pull-right">
-              <span class="account-dropdown-button user-name"><span class="glyphicon glyphicon-chevron-right"></span></span>
-            </div>
+           <div class="left-header-buttons">
+             <div class="dropdown">
+               <button class="dropdown-button btn header-button"><span class="header-button-label">NEW CHAT</span></button>
+               <div class="dropdown-content">
+                 <TextField
+                   hintText="Friend's Email"
+                 />
+               </div>
+             </div>
+             <div class="dropdown">
+               <button class="dropdown-button btn header-button"><span class="header-button-label">NEW GROUP</span></button>
+               <div class="dropdown-content">
+                 <TextField
+                   hintText="Group Name"
+                 />
+               </div>
+             </div>
+             <div class="pull-right">
+               <span class="account-dropdown-button user-name"><span class="glyphicon glyphicon-chevron-right"></span></span>
+             </div>
+           </div>
           </div>
-        </div>
       );
     } else {
       return (
@@ -91,4 +96,18 @@ class Header extends React.Component {
     }
   }
 }
-export default Header;
+
+const mapStateToProps = ({screenRes}) => {
+  return {
+    mobile: screenRes.mobile
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setMobileResolution,
+    setDesktopResolution
+  }, dispatch);
+
+
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
