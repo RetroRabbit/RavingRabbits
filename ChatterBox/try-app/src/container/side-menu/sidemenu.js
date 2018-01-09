@@ -17,15 +17,161 @@ import SearchBar from 'material-ui-search-bar-enhanced';
 import './sideMenu.css'
 const chip = (
   <div class="innerDiv"> 
-    <Chip class="myChip">
+    <Chip class="myChip" style={{
+                            borderRadius: '200px',
+                            padding: '5px 5px'
+                          }}>
       <Avatar src={pfp} />
-         Username and surname
+         Username and Surname
+    </Chip>
+  </div> 
+);
+const smallchip = (
+  <div class="innerDivSmall"> 
+    <Chip class="mySmallChip"  style={{
+                            borderRadius: '200px',
+                            padding: '5px 5px'
+                          }}
+    >
+      <Avatar src={pfp} />
+         Username And Surname
     </Chip>
   </div> 
 );
 
 class Sidemenu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      width: window.innerWidth,
+    };
+  }
+  
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+  
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+  
   render() {
+    const { width } = this.state;
+    const isMobile = width <= 500;
+    if(isMobile){
+      return(
+        <div>
+           <MuiThemeProvider>
+      <div className="App">
+          <div id="mleftBar">
+               <div id="searchDiv">
+                      <SearchBar class="materialSearch" 
+                          style={{
+                            borderRadius: '200px',
+                            color: '#4A4A4A',
+                          }}
+                        onChange={() => console.log('onChange')}
+                        onRequestSearch={() => console.log('onRequestSearch')}
+                      />
+              </div>   
+    <Divider inset={false} />      
+      <List class="list">
+        {/* <Subheader>Today</Subheader> */}
+          <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              I&apos;ll be in your neighborhood doing errands this weekend.
+            </p>
+          }
+          secondaryTextLines={2}
+          />
+          <Divider inset={false} />
+          <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              Wish I could come, but I&apos;m out of town this weekend.
+            </p>
+            }
+          secondaryTextLines={2}
+        />
+        <Divider inset={false} />
+        <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              Do you have any Paris recs? Have you ever been?
+            </p>
+            }
+          secondaryTextLines={2}
+        />
+        <Divider inset={false} />
+        <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              Do you have any ideas what we can get Heidi?
+            </p>
+          }
+          secondaryTextLines={2}
+        />
+        <Divider inset={false} />
+        <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              We should eat this: grated squash. Corn and tomatillo tacos.
+            </p>
+          }
+          secondaryTextLines={2}
+        />
+        <Divider inset={false} /> 
+        <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              We should eat this: grated squash. Corn and tomatillo tacos.
+            </p>
+          }
+          secondaryTextLines={2}
+        />
+         <Divider inset={false} /> 
+        <ListItem
+            children={smallchip}
+            secondaryText={
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
+              We should eat this: grated squash. Corn and tomatillo tacosssss. hello mr pickles
+            </p>
+          }
+          secondaryTextLines={2}
+        />
+      </List>
+    </div>
+  </div>
+  </MuiThemeProvider>
+</div>
+      );
+    }
+    else{
     return (
       <MuiThemeProvider>
       <div className="App">
@@ -34,8 +180,7 @@ class Sidemenu extends Component {
                       <SearchBar class="materialSearch" 
                           style={{
                             borderRadius: '200px',
-                            color: '#4A4A4A'
-
+                            color: '#4A4A4A',
                           }}
                         onChange={() => console.log('onChange')}
                         onRequestSearch={() => console.log('onRequestSearch')}
@@ -43,11 +188,12 @@ class Sidemenu extends Component {
               </div>   
     <Divider inset={false} />      
       <List class="list">
-        <Subheader>Today</Subheader>
           <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?
             </p>
           }
@@ -57,7 +203,9 @@ class Sidemenu extends Component {
           <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               Wish I could come, but I&apos;m out of town this weekend.
             </p>
             }
@@ -67,7 +215,9 @@ class Sidemenu extends Component {
         <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               Do you have any Paris recs? Have you ever been?
             </p>
             }
@@ -77,7 +227,9 @@ class Sidemenu extends Component {
         <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               Do you have any ideas what we can get Heidi for her birthday? How about a pony?
             </p>
           }
@@ -87,7 +239,9 @@ class Sidemenu extends Component {
         <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               We should eat this: grated squash. Corn and tomatillo tacos.
             </p>
           }
@@ -96,7 +250,9 @@ class Sidemenu extends Component {
         <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               We should eat this: grated squash. Corn and tomatillo tacos.
             </p>
           }
@@ -105,7 +261,9 @@ class Sidemenu extends Component {
         <ListItem
             children={chip}
             secondaryText={
-            <p>
+            <p style={{padding:'20px 20px',
+            textAlign:'left',
+            height:'auto'}}>
               We should eat this: grated squash. Corn and tomatillo tacos.
             </p>
           }
@@ -117,6 +275,7 @@ class Sidemenu extends Component {
   </MuiThemeProvider>
     );
   }
+}
 }
 
 export default Sidemenu;
