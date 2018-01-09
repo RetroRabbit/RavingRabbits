@@ -5,13 +5,13 @@ import { white } from 'material-ui/styles/colors'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import RegLogo from '../../img/step-one.png'
 
 
 const RegisterPage = props => (
+
     <div class="register">
     <div class="welcome">
-    <img src={RegLogo} class="logo"/>
+    <img src={require('../../img/step-one.png')} class="logo"/>
     </div>
     <div class="txtbox">
     <TextField
@@ -37,7 +37,7 @@ const RegisterPage = props => (
     class="btnReg" 
     label="NEXT STEP" 
     labelColor="#FFFFFF"
-    onClick={() => props.changePage()}
+    onClick={() => props.changePage()}    
     />
 </div>
 )
@@ -54,5 +54,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(RegisterPage)
-
-

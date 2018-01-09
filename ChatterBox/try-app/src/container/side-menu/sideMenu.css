@@ -5,15 +5,19 @@
     position: absolute;
     overflow: auto;
     background-color:white;
-    border: 1px solid gray 
+    border: 1px solid gray ;
+    -webkit-box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+-moz-box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+  }
+  div#searchDiv{
+    padding:25px 12px; 
+    text-align: center;
+    background-color:#FFFFFF; 
   }
 
-  div#searchDiv{
-    padding-top:10%; 
-    text-align: center;
-    height: 100px;
-    background-color:#FFFFFF; 
-    border-bottom: 1px solid gray;
+  ::-webkit-scrollbar { 
+    display: none; 
   }
 
   .materialSearch{
@@ -21,9 +25,6 @@
     border-radius: 110%;
     border: 1px solid gray;
   }
-  ::-webkit-scrollbar {
-    display: none;
-    }
 
   #list{
     text-align: center;

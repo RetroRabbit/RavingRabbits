@@ -1,23 +1,30 @@
-import React from 'react'
-import { Route, Link } from 'react-router-dom'
-import LoginPage from '../LoginPage'
-import Sidemenu from '../Sidemenu/sidemenu.js'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import LoginPage from '../LoginPage';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Register from '../Registration/register.js'
-import Profile_setup_secondstep from '../setProfile/profile-setup-two.js'
-import Profile_setup_laststep from '../setProfile/profile-setup-last.js'
-
+import StepTwo from '../setProfile/stepTwo.js'
+import StepLast from '../setProfile/stepLast.js'
+import chatForm from '../chat-form/chat-form.js'
+import SideMenu from '../side-menu/sidemenu.js'
+import Header from '../Header'
+import Settings from '../settings/settings.js'
+import ChatForm from '../ChatForm/chatFrom.js'
 
 const App = () => (
   <MuiThemeProvider>
   <div>
+
     <main>
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/step-two" component={Profile_setup_secondstep} />
-      <Route exact path="/last-step" component={Profile_setup_laststep} />
-      <Route exact path="/sidemenu" component={Sidemenu} />
-
+      <Route exact path="/step-two" component={StepTwo} />
+      <Route exact path="/last-step" component={StepLast} />
+      <Route exact path="/chat-form" component={chatForm} />
+      <Route exact path="/sidemenu" component={SideMenu} />
+      <Route exact path="/" component={Header} />
+      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/chatFrom" component={ChatForm} />
     </main>
   </div>
   </MuiThemeProvider>
