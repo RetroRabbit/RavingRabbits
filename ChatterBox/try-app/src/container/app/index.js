@@ -15,7 +15,6 @@ import chatAreaMessages from '../chatArea/chatAreaMessages.js';
 const App = () => (
   <MuiThemeProvider>
   <div>
-
     <main>
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={Register} />
@@ -24,7 +23,7 @@ const App = () => (
       <Route exact path="/chat-form" component={chatForm} />
       <Route exact path="/sidemenu" component={SideMenu} />
       <Route exact path="/" component={Header} />
-      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
       <Route exact path="/chatAreaMessages" component={chatAreaMessages} />
     </main>

@@ -14,7 +14,6 @@ const ChatForm = props => (
     <header>
         <Header/>
     </header>
-
     <div class="row">
         <div class="pull-left">
             <SideMenu/>
@@ -27,7 +26,6 @@ const ChatForm = props => (
 )
 
 const mapStateToProps = state => ({
-
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({
