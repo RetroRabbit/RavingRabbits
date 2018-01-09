@@ -11,7 +11,8 @@
 box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
   }
   div#searchDiv{
-    padding:25px 12px; 
+    margin: 20px 20px;
+    padding: 25px 30px; 
     text-align: center;
     background-color:#FFFFFF; 
   }
