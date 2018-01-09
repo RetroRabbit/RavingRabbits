@@ -13,7 +13,8 @@
 	background-color: #01B9BD;
 }
 .chatbox{
-    display:flex bottom 0px;
+	padding-right:20px;
+	
     
 }
 .chatfield {
@@ -31,7 +32,7 @@
 }
 
 .chatDiv{
-    padding-top:270px;
+    padding-top:300px;
     right: 0px;
     bottom: 0px;
     position: relative;
