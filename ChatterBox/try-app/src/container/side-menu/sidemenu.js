@@ -34,8 +34,7 @@ class Sidemenu extends Component {
                       <SearchBar class="materialSearch" 
                           style={{
                             borderRadius: '200px',
-                            color: '#4A4A4A'
-
+                            color: '#4A4A4A',
                           }}
                         onChange={() => console.log('onChange')}
                         onRequestSearch={() => console.log('onRequestSearch')}
