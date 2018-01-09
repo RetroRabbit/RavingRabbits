@@ -1,13 +1,16 @@
-.header {
-    height: 103px;
+ .header {
     width: 100%;
     background-color: #01B9BD;
     vertical-align: middle;
-    line-height: 103px;
+    line-height: 7;
   }
   
   .left-header-buttons {
-    margin-left: 40px;
+    margin-left: 3%;
+  }
+
+  .header-button-space{
+    margin-right: 24px;
   }
   
   .user-name {
@@ -18,6 +21,7 @@
     font-size: 20px;
     line-height: 27px;
     margin-right: 23px;
+    vertical-align: middle;
   }
   
   .profile-img {
@@ -46,6 +50,7 @@
     font-weight: 500;
     line-height: 25px;
     text-align: center;
+    word-wrap: break-word;
   }
   
   .dropdown-button {
@@ -106,6 +111,9 @@
   .account-dropdown:hover .account-dropdown-content {
     display: block;
   }
+  .dropdown-toggle:hover .dropdown-menu {
+    display: block;
+  }
   
   .account-dropdown-content a {
     color: black;
@@ -116,5 +124,4 @@
   
   .account-dropdown-content a:hover {
     background-color: #f1f1f1
-  }
-  
+  } 
