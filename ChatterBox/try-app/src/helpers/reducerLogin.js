@@ -43,9 +43,8 @@ function setLoginError(loginError) {
 }
 
 function callLoginApi(email, password, callback) {
-
-  setTimeout(() => {    
-    if (email === 'ab@gmail.co.za' && password === '12345') {
+  setTimeout(() => {
+    if (email === 'aahmed@retrorabbit.co.za' && password === '12345') {
       return callback(null);
     } else {
       return callback(new Error('Invalid email and password'));
@@ -53,7 +52,7 @@ function callLoginApi(email, password, callback) {
   }, 1000);
 }
 
-export function loginReducer(state = {
+export default function reducer(state = {
   isLoginSuccess: false,
   isLoginPending: false,
   loginError: null

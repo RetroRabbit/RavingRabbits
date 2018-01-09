@@ -9,7 +9,6 @@ import '../node_modules/material-ui';
 import '../node_modules/css/index';
 
 import './index.css'
-
 const target = document.querySelector('#root')
 
 render(

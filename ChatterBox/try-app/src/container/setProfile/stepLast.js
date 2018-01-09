@@ -7,14 +7,6 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const styles = {
-    floatingLabelFocusStyle: {
-        color: "#FFFFFF"
-    
-    }
-    
-  }
-  
 
 const step_last = props => (
 
@@ -24,11 +16,11 @@ const step_last = props => (
         </div>
         <div class="circleDiv">
             <TextField
-            Placeholder="Friends Email"
+            hintText="Friends Email"
+            floatingLabelText="Friends Email"
             type="text"
             fullWidth="true"
             class="txtwhite"
-            floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
             />
         </div>
         <div>
@@ -50,7 +42,7 @@ const mapStateToProps = state => ({
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/chatAreaMeassages')
+  changePage: () => push('/chatFrom')
 }, dispatch)
   
 export default connect(

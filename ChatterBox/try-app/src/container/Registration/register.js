@@ -7,13 +7,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
-// const styles = {
-//   floatingLabelFocusStyle: {
-//       color: "#FFFFFF"
- 
-//   }
-// }
-
 const RegisterPage = props => (
     <div class="register">
     <div class="welcome">
@@ -21,28 +14,22 @@ const RegisterPage = props => (
     </div>
     <div class="txtbox">
     <TextField
-    //floatingLabelText="Name"
-    Placeholder="Your Name"
+    floatingLabelText="Your Name"
     type="text"
     fullWidth="true"
     class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
     />
     <TextField
-    //floatingLabelText="Email"
-    Placeholder="Email"
+    floatingLabelText="Email"
     type="text"
     fullWidth="true"
     class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
     />
     <TextField
-    //floatingLabelText="Password"
-    Placeholder="Password"
+    floatingLabelText="Password"
     type="password"
     fullWidth="true"
     class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
     />
     </div>
     <RaisedButton

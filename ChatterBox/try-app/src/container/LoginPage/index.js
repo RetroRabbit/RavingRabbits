@@ -5,7 +5,7 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { login } from '../../helpers/reducerLogin';
-import history from '../../helpers/store.js';
+
 
 class LoginPage extends Component {
 
@@ -13,13 +13,6 @@ class LoginPage extends Component {
       super(props);
       this.state = {};
       this.onSubmit = this.onSubmit.bind(this);
-  
-    }
-
-    componentWillReceiveProps(newProps) {      
-      if(newProps.isLoginSuccess){
-        newProps.redirect();
-      }
     }
   
     render() {
@@ -63,12 +56,7 @@ class LoginPage extends Component {
         <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
         <div className="message">
             { isLoginPending && <div>Please wait...</div> }
-            { 
-              isLoginSuccess ? 
-              <div>Success.</div> 
-              :
-              <p></p> 
-            }
+            { isLoginSuccess && <div>Success.</div> }
             { loginError && <div>{loginError.message}</div> }
           </div>
         </div>
@@ -84,22 +72,21 @@ class LoginPage extends Component {
       this.setState({
         email: '',
         password: ''
-      });  
+      });
     }
   }
   
   const mapStateToProps = (state) => {
     return {
-      isLoginPending: state.loginReducer.isLoginPending,
-      isLoginSuccess: state.loginReducer.isLoginSuccess,
-      loginError: state.loginReducer.loginError
+      isLoginPending: state.isLoginPending,
+      isLoginSuccess: state.isLoginSuccess,
+      loginError: state.loginError
     };
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-      login: (email, password) => dispatch(login(email, password)),
-      redirect: () => dispatch(push("/step-two"))
+      login: (email, password) => dispatch(login(email, password))
     };
   }
   
