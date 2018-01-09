@@ -47,7 +47,7 @@ class chatArea extends Component{
       </div>
       <div className="addMessage">
     
-    <FloatingActionButton  disabled={true} className="add">
+    <FloatingActionButton  disabled={false} className="add">
               <ContentAdd />
             </FloatingActionButton>
       </div>
@@ -56,10 +56,13 @@ class chatArea extends Component{
                    <TextField
                       className = "chatfield"
                        hintText="Enter your text here!"
+                       multiLine={true}
                        style = {{
+                         paddingLeft:'20px',
+                         paddingRight:'20px',
                             borderRadius: '200px',
                             backgroundColor: '#EAEAEA',
-                            width:'100%',
+                            width:'80%',
                          }}/>
                  
          </div>
