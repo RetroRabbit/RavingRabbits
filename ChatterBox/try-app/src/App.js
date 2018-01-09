@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './container/LoginPage'
+import Register from './container/Registration/register.js'
 import { Route, Link } from 'react-router-dom'
 
 
@@ -10,8 +11,10 @@ class App extends Component {
       <div>
       <main>
       <Route exact path="/" component={LoginPage} />
+      <Route exact path="/" component={Register} />
       </main>
-  </div>    );
+  </div>    
+  );
   }
 }
 
