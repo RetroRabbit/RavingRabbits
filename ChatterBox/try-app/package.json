@@ -6,6 +6,7 @@
     "bootstrap": "^3.3.7",
     "css": "^2.2.1",
     "history": "^4.7.2",
+    "jquery": "^3.2.1",
     "material-ui": "^0.20.0",
     "material-ui-search-bar-enhanced": "^0.4.3",
     "prettier": "^1.9.2",
