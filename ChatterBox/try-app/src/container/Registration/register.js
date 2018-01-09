@@ -37,6 +37,9 @@ const RegisterPage = props => (
     class="btnReg" 
     label="NEXT STEP" 
     labelColor="#FFFFFF"
+    onClick={() => props.changePage()}
+    //onClick={this.userRegister}
+    
     onClick={() => props.changePage()}    
     />
 </div>
