@@ -7,17 +7,15 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
-
 import './profile-settings.css';
+
 const settings = props => (
     <div className="background">
         <header className="Rectangle-3">
             <Header />
         </header>
-
         <div className="Settingss">
             <div className="ovall" />
-
             <h1>
                 Addie Hogan <i className="fa fa-pencil" aria-hidden="true" />
             </h1>

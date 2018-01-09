@@ -1,8 +1,8 @@
-import React from 'react'
-import FlatButton from 'material-ui/FlatButton'
-import { TextField, RaisedButton } from 'material-ui'
-import AppBar from 'material-ui/AppBar'
-import './header.css'
+import React from 'react';
+import FlatButton from 'material-ui/FlatButton';
+import { TextField, RaisedButton } from 'material-ui';
+import AppBar from 'material-ui/AppBar';
+import './header.css';
 
 class Header extends React.Component {
   constructor() {

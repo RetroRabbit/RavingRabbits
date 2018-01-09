@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import { TextField, RaisedButton } from 'material-ui'
+import React, { Component } from 'react';
+import { TextField, RaisedButton } from 'material-ui';
 import { colors } from 'material-ui/styles';
-import { white } from 'material-ui/styles/colors'
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { white } from 'material-ui/styles/colors';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 
 const RegisterPage = props => (
-
     <div class="register">
     <div class="welcome">
     <img src={require('../../img/step-one.png')} class="logo"/>
@@ -43,7 +42,6 @@ const RegisterPage = props => (
 )
 
 const mapStateToProps = state => ({
-
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({
