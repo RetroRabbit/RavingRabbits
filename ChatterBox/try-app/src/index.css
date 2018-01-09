@@ -227,7 +227,9 @@ color:#00B4CC;
     line-height: 27px;
     margin-right:23px;
   }
-
+  .materialSearch{
+    border-radius: 20% !important;
+  }
   .profile-img{
     margin-right:23px;
     height: 54px;	
