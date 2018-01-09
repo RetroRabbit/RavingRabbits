@@ -32,7 +32,7 @@ class Sidemenu extends Component {
           <div id="leftBar">
                <div id="searchDiv">
                       <SearchBar class="materialSearch"
-                        onChange={() => console.log('onChange')}
+                        onChsange={() => console.log('onChange')}
                         onRequestSearch={() => console.log('onRequestSearch')}
                       />
               </div>         

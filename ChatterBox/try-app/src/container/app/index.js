@@ -10,6 +10,7 @@ import SideMenu from '../side-menu/sidemenu.js'
 import Header from '../Header'
 import Settings from '../settings/settings.js'
 import ChatForm from '../ChatForm/chatFrom.js'
+import chatAreaMessages from '../chatArea/chatAreaMessages.js';
 
 const App = () => (
   <MuiThemeProvider>
@@ -25,6 +26,7 @@ const App = () => (
       <Route exact path="/" component={Header} />
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
+      <Route exact path="/chatAreaMessages" component={chatAreaMessages} />
     </main>
   </div>
   </MuiThemeProvider>

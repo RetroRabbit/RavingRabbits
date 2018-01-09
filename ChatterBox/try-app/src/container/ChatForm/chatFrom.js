@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import sidemenu from '../side-menu/sidemenu.js';
+import sidemenu from '../side-menu/sidemenu.js'
+import chatAreaMessages from '../chatArea/chatAreaMessages';
 
 const ChatForm = props => (
     <div>
@@ -18,8 +19,8 @@ const ChatForm = props => (
         <div class="pull-left">
             <SideMenu/>
         </div>
-        <div class="pull-right">
-        
+        <div >
+            <chatAreaMessages/>
         </div>
     </div>
     </div>
