@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
 
-import './settings.css';
+import './profile-settings.css';
 const settings = props => (
     <div className="background">
         <header className="Rectangle-3">
