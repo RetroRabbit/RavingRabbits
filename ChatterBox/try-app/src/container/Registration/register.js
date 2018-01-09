@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { TextField, RaisedButton } from 'material-ui'
+import { colors } from 'material-ui/styles';
+import { white } from 'material-ui/styles/colors';
 import { colors } from 'material-ui/styles'
 import { white } from 'material-ui/styles/colors'
 import { push } from 'react-router-redux'
