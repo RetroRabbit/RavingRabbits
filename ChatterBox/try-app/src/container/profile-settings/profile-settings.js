@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { TextField, RaisedButton } from 'material-ui';
 import { colors } from 'material-ui/styles';
@@ -59,5 +58,4 @@ const mapDispatchToProps = dispatch =>
         dispatch
     );
 
-   
 export default connect(mapStateToProps, mapDispatchToProps)(settings);
