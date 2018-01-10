@@ -24,7 +24,7 @@ class Header extends React.Component {
 
   updateRes() {
     if (window.innerWidth < 780) {
-      return this.props.setMobileResolution('../../pfp.png');
+      return this.props.setMobileResolution();
     }
     else {
       return this.props.setDesktopResolution();
@@ -82,7 +82,7 @@ class Header extends React.Component {
               <div class="account-dropdown">
                 <span class="account-dropdown-button user-name">{this.props.userName}</span>
                 <div class="account-dropdown-content">
-                <Link to="/profile-settings">Settings</Link>
+                  <Link to="/profile-settings">Settings</Link>
                   <a href="/login">Log Out</a>
                 </div>
               </div>
@@ -107,7 +107,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setMobileResolution,
   setDesktopResolution
 }, dispatch);
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
