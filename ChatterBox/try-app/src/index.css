@@ -218,23 +218,8 @@ color:#00B4CC;
     margin-left: 40px;
   }
 
-  .user-name{
-    height: 30px;	
-    width: 201px;	
-    color: #F3F3F3;	
-    font-family: helvetica;	
-    font-size: 20px;	
-    line-height: 27px;
-    margin-right:23px;
-  }
   .materialSearch{
     border-radius: 20% !important;
-  }
-  .profile-img{
-    margin-right:23px;
-    height: 54px;	
-    width: 54px; 
-    border-radius: 50%;
   }
 
 .header-button{

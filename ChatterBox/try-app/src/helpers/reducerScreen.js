@@ -6,9 +6,10 @@ const initialState = {
     desktop: true
 }
 
-export function setMobileResolution() {
+export function setMobileResolution(uri) {
     return {
-      type: SET_SCREEN_RES_MOBILE
+      type: SET_SCREEN_RES_MOBILE,
+      uri: uri
     };
   }
 
@@ -19,10 +20,9 @@ export function setMobileResolution() {
   }
 
   export function screenRes(state = initialState, action){
-      console.log(action);
     switch (action.type) {
         case SET_SCREEN_RES_MOBILE:
-          return {...state,mobile: true, desktop: false}
+          return {...state,mobile: true, desktop: false, uri:action.uri}
 
         case SET_SCREEN_RES:
           return {...state,desktop: true, mobile: false}
@@ -30,15 +30,3 @@ export function setMobileResolution() {
         default: return state
         }
   }
-
-  export function handleWindowSizeChangeMobile() {
-      return function(dispatch) {
-        dispatch(setMobileResolution);
-    }
-  }
-
-  export function handleWindowSizeChangeDesktop() {
-    return function(dispatch) {
-      dispatch(setDesktopResolution);
-  }
-}

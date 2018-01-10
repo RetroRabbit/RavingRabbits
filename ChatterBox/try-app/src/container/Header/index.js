@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Route, Link } from 'react-router-dom';
 import FlatButton from 'material-ui/FlatButton';
 import { TextField, RaisedButton } from 'material-ui';
 import AppBar from 'material-ui/AppBar';
 import './header.css';
 import { bindActionCreators } from 'redux';
-import {setMobileResolution, setDesktopResolution} from '../../helpers/reducerScreen';
+import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
 
 class Header extends React.Component {
-
   constructor(props) {
     super(props);
     this.updateRes = this.updateRes.bind(this);
@@ -23,8 +23,8 @@ class Header extends React.Component {
   }
 
   updateRes() {
-    if (window.innerWidth< 780) {
-      return this.props.setMobileResolution();
+    if (window.innerWidth < 780) {
+      return this.props.setMobileResolution('../../pfp.png');
     }
     else {
       return this.props.setDesktopResolution();
@@ -32,32 +32,31 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log('f');
     if (this.props.mobile) {
       return (
         <div class="header">
-           <div class="left-header-buttons">
-             <div class="dropdown">
-               <button class="dropdown-button btn header-button"><span class="header-button-label">NEW CHAT</span></button>
-               <div class="dropdown-content">
-                 <TextField
-                   hintText="Friend's Email"
-                 />
-               </div>
-             </div>
-             <div class="dropdown">
-               <button class="dropdown-button btn header-button"><span class="header-button-label">NEW GROUP</span></button>
-               <div class="dropdown-content">
-                 <TextField
-                   hintText="Group Name"
-                 />
-               </div>
-             </div>
-             <div class="pull-right">
-               <span class="account-dropdown-button user-name"><span class="glyphicon glyphicon-chevron-right"></span></span>
-             </div>
-           </div>
+          <div class="left-header-buttons">
+            <div class="dropdown">
+              <button class="dropdown-button btn header-button"><span class="header-button-label">NEW CHAT</span></button>
+              <div class="dropdown-content">
+                <TextField
+                  hintText="Friend's Email"
+                />
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-button btn header-button"><span class="header-button-label">NEW GROUP</span></button>
+              <div class="dropdown-content">
+                <TextField
+                  hintText="Group Name"
+                />
+              </div>
+            </div>
+            <div class="pull-right">
+              <span class="account-dropdown-button user-name"><span class="glyphicon glyphicon-chevron-right"></span></span>
+            </div>
           </div>
+        </div>
       );
     } else {
       return (
@@ -81,14 +80,14 @@ class Header extends React.Component {
             </div>
             <div class="pull-right">
               <div class="account-dropdown">
-                <span class="account-dropdown-button user-name">Raving Rabbits</span>
+                <span class="account-dropdown-button user-name">{this.props.userName}</span>
                 <div class="account-dropdown-content">
-                  <a href="/profile-settings">Settings</a>
+                <Link to="/profile-settings">Settings</Link>
                   <a href="/login">Log Out</a>
                 </div>
               </div>
-              <img id="profile-img" class="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-              <img id="profile-img" class="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+              <img class="profile-img" src={require('../../img/pfp.png')} />
+              <img src={require('../../img/Icon.png')} />
             </div>
           </div>
         </div>
@@ -97,17 +96,18 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = ({screenRes}) => {
+const mapStateToProps = ({ screenRes, loginReducer }) => {
   return {
-    mobile: screenRes.mobile
+    mobile: screenRes.mobile,
+    userName: loginReducer.userName
   };
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setMobileResolution,
-    setDesktopResolution
-  }, dispatch);
+  setDesktopResolution
+}, dispatch);
 
 
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
