@@ -7,6 +7,8 @@ import AppBar from 'material-ui/AppBar';
 import './header.css';
 import { bindActionCreators } from 'redux';
 import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
+import { setProfilePic } from '../../helpers/reducerPfp';
+import img from '../../img/Icon.png'
 
 
 class Header extends React.Component {
@@ -14,7 +16,7 @@ class Header extends React.Component {
     super(props);
     this.updateRes = this.updateRes.bind(this);
   }
-
+  
   componentWillMount() {
     window.addEventListener('resize', this.updateRes);
   }
@@ -31,6 +33,10 @@ class Header extends React.Component {
       return this.props.setDesktopResolution();
     }
   }
+  
+ imageUpload(e){
+  return this.props.setProfilePic(e.target.files[0]);
+}
 
   render() {
     if (this.props.mobile) {
@@ -85,6 +91,7 @@ class Header extends React.Component {
                 <div class="account-dropdown-content">
                   <Link to="/profile-settings">Settings</Link>
                   <a href="/login">Log Out</a>
+                  <input type="file" id="imgFile" name="imgFile" onChange={this.imageUpload}/>
                 </div>
               </div>
               <img class="profile-img" src={this.props.profilePicture} />
@@ -107,7 +114,9 @@ const mapStateToProps = ({ screenRes, loginReducer, profilePicReducer }) => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setMobileResolution,
-  setDesktopResolution
+  setDesktopResolution,
+  setProfilePic
 }, dispatch);
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
