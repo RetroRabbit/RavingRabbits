@@ -4,6 +4,7 @@ import {loginReducer} from '../helpers/reducerLogin'
 import {screenRes} from '../helpers/reducerScreen'
 import {profilePicReducer} from '../helpers/reducerPfp'
 
+
 const rootReducer = combineReducers({
   loginReducer,
   screenRes,

@@ -8,19 +8,29 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
 
+
 import './profile-settings.css';
 const settings = props => (
-    <div className="background">
+    <div className="whiteBackground">
         <header className="Rectangle-3">
             <Header />
         </header>
 
         <div class="row">
-            <img src={require('./Oval.png')} class="img-circle center-block"/>
-            <img src={require('./ext.jpg')} class="profile img-circle"/>
-
-            <a class="mylink" href="#"><h1>Addie Hogan <i className="fa fa-pencil" aria-hidden="true" /></h1></a>
-            <a class="mylink" href="#"><h3>addiehogan@gmail&#46;com{' '}<i className="fa fa-pencil" id="email" aria-hidden="true" /></h3></a>
+            <div class="topSection">
+                <img src={require('./Oval.png')} class="img-circle center-block"/>
+                <img src={require('./ext.jpg')} class="profile img-circle"/>
+                <div id="example-one" contenteditable="true" class="mylink">
+                    
+                        <h1>Arsalan Ahmed   
+                        </h1>
+                        
+                        <h3>ash@gmail&#46;com{' '}
+                        </h3>
+                </div>
+                <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
+                <h3><i className="fa fa-pencil" id="email" aria-hidden="true" /></h3>
+            </div>
             <form>
                 <div>
                     <br />
@@ -33,6 +43,7 @@ const settings = props => (
                     />
                 </div>
             </form>
+          
         </div>
     </div>
 );
@@ -43,8 +54,10 @@ const mapDispatchToProps = dispatch =>
     bindActionCreators(
         {
             changePage: () => push('/chatareamessages')
+            
         },
         dispatch
     );
 
+   
 export default connect(mapStateToProps, mapDispatchToProps)(settings);

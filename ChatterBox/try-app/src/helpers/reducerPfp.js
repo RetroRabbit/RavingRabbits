@@ -1,8 +1,9 @@
 //types
+import pfp from '../img/pfp.png'
 const SET_PROFILEPIC_URL = 'SET_PROFILEPIC_URL';
 //initial state
 const initialState = {
-    initialImage: '../../img/pfp.png'
+    initialImage: pfp
 }
 //functions 
  export function setProfilePic (imgUrl){
