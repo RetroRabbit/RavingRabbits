@@ -37,14 +37,15 @@ class Header extends React.Component {
   
  imageUpload(e){
   var preview = document.querySelector('img');
-  var file    = document.querySelector('input[type=file]').files[0];
+  var file    = e.target.files[0];
   var reader  = new FileReader();
 
   reader.addEventListener("load", function () {
-    preview.src = reader.result;
+   preview.src = reader.result;
   }, false);
- //return this.props.setProfilePic(reader.readAsDataURL(file));
-  reader.readAsDataURL(file)
+ reader.readAsDataURL(file)
+  return this.props.setProfilePic();
+ 
 }
 
 
