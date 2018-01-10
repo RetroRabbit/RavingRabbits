@@ -12,10 +12,11 @@ import {blue300, indigo900} from 'material-ui/styles/colors';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import SearchBar from 'material-ui-search-bar-enhanced';
+import './sideMenu.css';
 
 
-import './sideMenu.css'
 const chip = (
+  
   <div class="innerDiv"> 
     <Chip class="myChip" style={{
                             borderRadius: '200px',
@@ -69,7 +70,7 @@ class Sidemenu extends Component {
       <div className="App">
           <div id="mleftBar">
                <div id="searchDiv">
-                      <SearchBar class="materialSearch" 
+                      <input class="materialSearch" 
                           style={{
                             borderRadius: '200px',
                             color: '#4A4A4A',
