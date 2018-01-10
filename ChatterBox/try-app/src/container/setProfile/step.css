@@ -27,11 +27,10 @@
 }
 .nextBox {
     height: 38px;
-    width: 390px;
+    width: 100%;
     align-content: center;
-    margin: auto;
-    padding-left: 100px;
-    padding-top: 100px;
+    margin-left: 12%;
+    margin-top: 0;
     color: #F3F3F3 !important;
 }
 
@@ -189,9 +188,13 @@
     width: 270px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.14);
-    margin: 0 auto;
+    margin-left: 25%;
     border-radius: 50%;
     align-content: center;
+}
+
+.addplus{
+    color:#979797;
 }
 
 .upload-circle {
@@ -199,11 +202,10 @@
     width: 60px;
     background-color: #D8D8D8;
     border-radius: 50%;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
     top: 70px;
-    /* position: relative; */
     align-content: center;
-    padding-top: 90px;
 }
 
 .plus-horizontal {

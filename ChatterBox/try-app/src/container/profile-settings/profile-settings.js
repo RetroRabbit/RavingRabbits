@@ -19,7 +19,7 @@ const settings = props => (
         <div class="row">
             <div class="topSection">
                 <img src={require('./Oval.png')} class="img-circle center-block"/>
-                <img src={require('./ext.jpg')} class="profile img-circle"/>
+                <img src={require('./mypic.JPG')} class="profile img-circle"/>
                 <div id="example-one" contenteditable="true" class="mylink">
                     
                         <h1>Arsalan Ahmed   
