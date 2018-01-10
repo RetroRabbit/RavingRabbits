@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/chatAreaMeassages')
+  changePage: () => push('/chatareamessages')
 }, dispatch)
   
 export default connect(

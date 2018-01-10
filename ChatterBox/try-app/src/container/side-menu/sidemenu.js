@@ -13,11 +13,12 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import SearchBar from 'material-ui-search-bar-enhanced';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import './sideMenu.css';
 
 // redux
 
-import './sideMenu.css'
 const chip = (
+  
   <div class="innerDiv"> 
     <Chip class="myChip" id="personCard" style={{
                             borderRadius: '200px',

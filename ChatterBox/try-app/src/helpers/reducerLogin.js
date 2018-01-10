@@ -45,7 +45,7 @@ function setLoginError(loginError) {
 function callLoginApi(email, password, callback) {
 
   setTimeout(() => {    
-    if (email === 'ab@gmail.co.za' && password === '12345') {
+    if (email === 'ash@gmail.com' && password === '12345') {
       return callback(null);
     } else {
       return callback(new Error('Invalid email and password'));
