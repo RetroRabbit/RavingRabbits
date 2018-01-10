@@ -44,14 +44,15 @@ class StepTwo extends React.Component {
                                 <div className="plus-logo">
                                     <div className="plus-horizontal" />
                                     <div className="plus-vertical" />
-                                </div>
-                                <input
+                                    <input
                                     type="file"
                                     onChange={e => {
                                         this.changeImg(e);
                                     }}
                                     style={inputimg}
                                 />
+                                </div>
+                                
                             </div>
                             :
                             <img
