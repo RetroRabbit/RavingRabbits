@@ -56,7 +56,8 @@ function callLoginApi(email, password, callback) {
 export function loginReducer(state = {
   isLoginSuccess: false,
   isLoginPending: false,
-  loginError: null
+  loginError: null,
+  userName: 'Raving Rabbits'
 }, action) {
   switch (action.type) {
     case SET_LOGIN_PENDING:
@@ -66,7 +67,8 @@ export function loginReducer(state = {
 
     case SET_LOGIN_SUCCESS:
       return Object.assign({}, state, {
-        isLoginSuccess: action.isLoginSuccess
+        isLoginSuccess: action.isLoginSuccess,
+        userName: 'ash@gmail.com'
       });
 
     case SET_LOGIN_ERROR:

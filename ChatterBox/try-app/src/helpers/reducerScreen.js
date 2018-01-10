@@ -19,7 +19,6 @@ export function setMobileResolution() {
   }
 
   export function screenRes(state = initialState, action){
-      console.log(action);
     switch (action.type) {
         case SET_SCREEN_RES_MOBILE:
           return {...state,mobile: true, desktop: false}
@@ -30,15 +29,3 @@ export function setMobileResolution() {
         default: return state
         }
   }
-
-  export function handleWindowSizeChangeMobile() {
-      return function(dispatch) {
-        dispatch(setMobileResolution);
-    }
-  }
-
-  export function handleWindowSizeChangeDesktop() {
-    return function(dispatch) {
-      dispatch(setDesktopResolution);
-  }
-}
