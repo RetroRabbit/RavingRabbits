@@ -8,6 +8,7 @@ import './header.css';
 import { bindActionCreators } from 'redux';
 import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
 
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -86,7 +87,7 @@ class Header extends React.Component {
                   <a href="/login">Log Out</a>
                 </div>
               </div>
-              <img class="profile-img" src={require('../../img/pfp.png')} />
+              <img class="profile-img" src={this.props.profilePicture} />
               <img src={require('../../img/Icon.png')} />
             </div>
           </div>
@@ -96,10 +97,11 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = ({ screenRes, loginReducer }) => {
+const mapStateToProps = ({ screenRes, loginReducer, profilePicReducer }) => {
   return {
     mobile: screenRes.mobile,
-    userName: loginReducer.userName
+    userName: loginReducer.userName,
+    profilePicture: profilePicReducer.initialImage
   };
 }
 
