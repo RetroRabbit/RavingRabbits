@@ -8,13 +8,13 @@ import StepLast from '../setProfile/stepLast.js'
 import chatForm from '../chat-form/chat-form.js'
 import SideMenu from '../side-menu/sidemenu.js'
 import Header from '../Header'
-import Settings from '../settings/settings.js'
+import Settings from '../profile-settings/profile-settings'
 import ChatForm from '../ChatForm/chatFrom.js'
+import chatAreaMessages from '../chatArea/chatAreaMessages.js';
 
 const App = () => (
   <MuiThemeProvider>
   <div>
-
     <main>
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={Register} />
@@ -23,8 +23,9 @@ const App = () => (
       <Route exact path="/chat-form" component={chatForm} />
       <Route exact path="/sidemenu" component={SideMenu} />
       <Route exact path="/" component={Header} />
-      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
+      <Route exact path="/chatareamessages" component={chatAreaMessages} />
     </main>
   </div>
   </MuiThemeProvider>
