@@ -15,6 +15,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.updateRes = this.updateRes.bind(this);
+    this.imageUpload = this.imageUpload.bind(this);
   }
   
   componentWillMount() {
@@ -35,8 +36,17 @@ class Header extends React.Component {
   }
   
  imageUpload(e){
-  return this.props.setProfilePic(e.target.files[0]);
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+ //return this.props.setProfilePic(reader.readAsDataURL(file));
+  reader.readAsDataURL(file)
 }
+
 
   render() {
     if (this.props.mobile) {

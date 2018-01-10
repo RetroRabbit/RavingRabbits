@@ -4,8 +4,8 @@ const SET_PROFILEPIC_URL = 'SET_PROFILEPIC_URL';
 //initial state
 const initialState = {
     initialImage: pfp
-}
-//functions 
+    }
+//fundctions 
  export function setProfilePic (imgUrl){
      return {
         type: SET_PROFILEPIC_URL, 
