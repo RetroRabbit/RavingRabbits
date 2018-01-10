@@ -6,10 +6,9 @@ const initialState = {
     desktop: true
 }
 
-export function setMobileResolution(uri) {
+export function setMobileResolution() {
     return {
-      type: SET_SCREEN_RES_MOBILE,
-      uri: uri
+      type: SET_SCREEN_RES_MOBILE
     };
   }
 
@@ -22,7 +21,7 @@ export function setMobileResolution(uri) {
   export function screenRes(state = initialState, action){
     switch (action.type) {
         case SET_SCREEN_RES_MOBILE:
-          return {...state,mobile: true, desktop: false, uri:action.uri}
+          return {...state,mobile: true, desktop: false}
 
         case SET_SCREEN_RES:
           return {...state,desktop: true, mobile: false}
