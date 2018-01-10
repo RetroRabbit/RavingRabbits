@@ -41,17 +41,16 @@ class StepTwo extends React.Component {
                         {!this.state.hasimg ?
                             <div className="upload-circle">
                                 <div className="plus-logo">
-                                    {/* <div className="plus-horizontal" />
-                                    <div className="plus-vertical" /> */}
                                     <h1 class="addplus"><b>+</b></h1>
-                                </div>
-                                <input
+                                    <input
                                     type="file"
                                     onChange={e => {
                                         this.changeImg(e);
                                     }}
                                     style={inputimg}
                                 />
+                                </div>
+                                
                             </div>
                             :
                             <img
@@ -80,7 +79,6 @@ class StepTwo extends React.Component {
                     }}
                         className="step-one"
                         label="Skip for now"
-                        
                     />
                 )} />
 

@@ -60,9 +60,9 @@ class chatArea extends Component{
                        style = {{
                          paddingLeft:'20px',
                          paddingRight:'20px',
-                            borderRadius: '200px',
-                            backgroundColor: '#EAEAEA',
-                            width:'80%',
+                          borderRadius: '200px',
+                          backgroundColor: '#EAEAEA',
+                          width:'80%',
                          }}/>
                  
          </div>
