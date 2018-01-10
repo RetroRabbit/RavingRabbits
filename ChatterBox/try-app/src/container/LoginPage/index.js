@@ -32,6 +32,7 @@ class LoginPage extends Component {
            <img src={require('../../img/logo.png')} class="logo"/>
         </div>
         <div class="txtbox">
+            <div class="form-group">
             <TextField
             hintText="Email"
             floatingLabelText="Email"
@@ -42,6 +43,8 @@ class LoginPage extends Component {
             onChange={e => this.setState({email: e.target.value})} 
             value={email}
             />
+            </div>
+            <div class="form-group">
             <TextField
             hintText="Password"
             floatingLabelText="Password"
@@ -52,12 +55,15 @@ class LoginPage extends Component {
             onChange={e => this.setState({password: e.target.value})} 
             value={password}
             />
+            </div>
+            <div class="form-group">
             <RaisedButton 
             class="btnLogin" 
             label="Login" 
             labelColor="#FFFFFF"
             type="submit" 
             value="Login" />
+            </div>
         </div>
         <div class="login-2">
         <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>

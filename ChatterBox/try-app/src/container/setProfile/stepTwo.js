@@ -37,13 +37,13 @@ class StepTwo extends React.Component {
             <div class="welcome">
             <img src={require('../../img/step-two.png')} class="logo"/>
             </div>
-                <MuiThemeProvider>
                     <div className="pro-pic-placeholder" >
                         {!this.state.hasimg ?
                             <div className="upload-circle">
                                 <div className="plus-logo">
-                                    <div className="plus-horizontal" />
-                                    <div className="plus-vertical" />
+                                    {/* <div className="plus-horizontal" />
+                                    <div className="plus-vertical" /> */}
+                                    <h1 class="addplus"><b>+</b></h1>
                                 </div>
                                 <input
                                     type="file"
@@ -62,12 +62,11 @@ class StepTwo extends React.Component {
                         }
 
                     </div>
-                </MuiThemeProvider>
                 <div className="nextBox">
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/StepThree')
+                        history.push('/last-step')
                     }}
                         className="next-button-2"
                         label="Next Step" />
@@ -77,10 +76,11 @@ class StepTwo extends React.Component {
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/StepThree')
+                        history.push('/last-step')
                     }}
                         className="step-one"
                         label="Skip for now"
+                        
                     />
                 )} />
 

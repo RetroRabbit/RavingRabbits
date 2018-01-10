@@ -6,13 +6,12 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-
-// const styles = {
-//   floatingLabelFocusStyle: {
-//       color: "#FFFFFF"
+const styles = {
+  floatingLabelFocusStyle: {
+      color: "#FFFFFF"
  
-//   }
-// }
+  }
+}
 
 const RegisterPage = props => (
     <div class="register">
