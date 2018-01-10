@@ -7,22 +7,20 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
-import './profile-settings.css';
 
+import './profile-settings.css';
 const settings = props => (
     <div className="background">
         <header className="Rectangle-3">
             <Header />
         </header>
-        <div className="Settingss">
-            <div className="ovall" />
-            <h1>
-                Addie Hogan <i className="fa fa-pencil" aria-hidden="true" />
-            </h1>
-            <h3>
-                addiehogan@gmail&#46;com{' '}
-                <i className="fa fa-pencil" id="email" aria-hidden="true" />
-            </h3>
+
+        <div class="row">
+            <img src={require('./Oval.png')} class="img-circle center-block"/>
+            <img src={require('./ext.jpg')} class="profile img-circle"/>
+
+            <a class="mylink" href="#"><h1>Addie Hogan <i className="fa fa-pencil" aria-hidden="true" /></h1></a>
+            <a class="mylink" href="#"><h3>addiehogan@gmail&#46;com{' '}<i className="fa fa-pencil" id="email" aria-hidden="true" /></h3></a>
             <form>
                 <div>
                     <br />
@@ -44,10 +42,9 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = dispatch =>
     bindActionCreators(
         {
-            changePage: () => push('/chatFrom')
+            changePage: () => push('/chatareamessages')
         },
         dispatch
     );
 
 export default connect(mapStateToProps, mapDispatchToProps)(settings);
-

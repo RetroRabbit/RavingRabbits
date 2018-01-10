@@ -25,7 +25,7 @@ const App = () => (
       <Route exact path="/" component={Header} />
       <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
-      <Route exact path="/chatAreaMessages" component={chatAreaMessages} />
+      <Route exact path="/chatareamessages" component={chatAreaMessages} />
     </main>
   </div>
   </MuiThemeProvider>
