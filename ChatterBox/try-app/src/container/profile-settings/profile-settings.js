@@ -16,7 +16,8 @@ class settings extends React.Component {
     }
 
     updateNames(email, userName) {
-        this.props.updateName(email, userName);
+        
+        this.props.updateName(userName, email);
     }
 
     render() {
@@ -27,20 +28,20 @@ class settings extends React.Component {
                 </header>
                 <div class="row">
                     <div class="topSection">
-                        <img src={require('./Oval.png')} class="img-circle center-block" />
-                        <img src={require('./mypic.JPG')} class="profile img-circle" />
-                        <div id="example-one" contenteditable="true" class="mylink">
-                            <h1>{this.props.userName}</h1>
-                            <h3>{this.props.email}&nbsp;</h3>
-                        </div>
-                        <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
-                        <h3><i className="fa fa-pencil" id="email" aria-hidden="true" /></h3>
+                        <img src={require('./Oval.png')} className="img-circle center-block" />
+                        <img src={require('./mypic.JPG')} className="profile img-circle" />
+                        
+                        <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
+                        <h3  contentEditable="true" id="email">{this.props.email}&nbsp;</h3>
+                        
+                       <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
+                        <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
                     <form>
                         <div>
                             <br />
                             <RaisedButton
-                                onClick={() => this.updateNames("TempEmail", "TempName")}
+                                onClick={() => this.updateNames( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
                                 label="Done"
                                 className="button"
                                 id="done"

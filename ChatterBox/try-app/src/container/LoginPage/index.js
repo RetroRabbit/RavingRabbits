@@ -58,15 +58,15 @@ class LoginPage extends Component {
             </div>
             <div class="form-group">
             <RaisedButton 
-            class="btnLogin" 
+            className="btnLogin" 
             label="Login" 
             labelColor="#FFFFFF"
             type="submit" 
             value="Login" />
             </div>
         </div>
-        <div class="login-2">
-        <Link class="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
+        <div className="login-2">
+        <Link className="no-account-yet-get" to="/register">No account yet? Get setup now</Link>
         <div className="message">
             { isLoginPending && <div>Please wait...</div> }
             { 
