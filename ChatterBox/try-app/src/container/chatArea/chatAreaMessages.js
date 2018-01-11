@@ -15,12 +15,10 @@ class chatArea extends Component{
   render(){
     return(
         
-      <div>
-        <header><Header/></header>
-        <div><SideMenu/></div>
-        <MuiThemeProvider>
-     
-     
+    <div>
+      <header><Header/></header>
+      <div><SideMenu/></div>
+      <MuiThemeProvider>
       <div class="bg ">
       <div class="chatDiv">
       <div class= "p1">
@@ -50,24 +48,22 @@ class chatArea extends Component{
     
     <FloatingActionButton  disabled={false} className="add">
               <ContentAdd />
-            </FloatingActionButton>
+    </FloatingActionButton>
       </div>
       <div className= "chatbox">
-                  
-                   <TextField
-                      className = "chatfield"
-                       hintText="Enter your text here!"
-                       multiLine={true}
-                       style = {{
-                         paddingLeft:'20px',
-                         paddingRight:'20px',
-                          borderRadius: '200px',
-                          backgroundColor: '#EAEAEA',
-                          width:'80%',
-                         }}/>
-                 
+        <TextField
+            className = "chatfield"
+            hintText="Enter your text here!"
+            multiLine={true}
+            style = {{
+              paddingLeft:'20px',
+              paddingRight:'20px',
+              borderRadius: '200px',
+              backgroundColor: '#EAEAEA',
+              width:'80%',
+              }}/>
          </div>
-         </div>
+        </div>
       </div>
     </div>
     </MuiThemeProvider>
