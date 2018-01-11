@@ -35,9 +35,9 @@ function insertChat(who, text, time = 0){
                             '<div class="message">' +
                               '<p>'+ text +'</p>' + 
                             '</div>' +
-                                '<div>' +
-                             '<p class="time">'+date+'</p>' +
-                                '</div>' +
+                        '<div>' +
+                              '<p class="time">'+date+'</p>' +
+                        '</div>' +
                       '</div>' +
                 '</li>';                    
   }else{
@@ -106,7 +106,9 @@ class chatArea extends Component{
 
   <div class="bg ">
     <div class="chatDiv">
+        <div class= "messageList">
              <ul></ul>
+         </div>
     <div class = "enterText">         
       <form>
           <div className="addMessage">
