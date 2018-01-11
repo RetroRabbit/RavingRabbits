@@ -10,7 +10,9 @@
   color: white;
 }
 
-
+.uploadButtonImg{
+  padding-left:45%;
+}
 .whiteBackground {
    position: relative;
    width: 100%;
