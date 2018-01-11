@@ -5,7 +5,7 @@ import { white } from 'material-ui/styles/colors';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Register_User } from '../../helpers/reducerRegister';
+import { registerUser } from '../../helpers/reducerAccount';
 import history from '../../helpers/store.js';
 
 class myRegister extends Component {
@@ -61,8 +61,8 @@ class myRegister extends Component {
   }
 
   onSubmit() {
-    this.props.Register_User(this.name,this.email, this.password);
-    this.props.redirectToLogin();
+    this.props.registerUser(this.name,this.email, this.password);
+    this.props.redirectToNextStep();
   }
 }
 
@@ -73,8 +73,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  Register_User,
-  redirectToLogin: () => push('/login')
+  registerUser,
+  redirectToNextStep: () => push('/step-two')
 }, dispatch)
 
 export default connect(

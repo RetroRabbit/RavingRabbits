@@ -15,7 +15,7 @@ const initialState = {
                 ...state, 
                 name : action.name,
                 email : action.email,
-                password : action.password,
+                password : action.password
             } 
 
         default:
