@@ -7,13 +7,15 @@ import AppBar from 'material-ui/AppBar';
 import './header.css';
 import { bindActionCreators } from 'redux';
 import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
+import { setProfilePic } from '../../helpers/reducerPfp';
+
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.updateRes = this.updateRes.bind(this);
   }
-
+  
   componentWillMount() {
     window.addEventListener('resize', this.updateRes);
   }
@@ -86,7 +88,7 @@ class Header extends React.Component {
                   <a href="/login">Log Out</a>
                 </div>
               </div>
-              <img class="profile-img" src={require('../../img/pfp.png')} />
+              <img class="profile-img" src={this.props.profilePicture} />
               <img src={require('../../img/Icon.png')} />
             </div>
           </div>
@@ -96,10 +98,11 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = ({ screenRes, loginReducer }) => {
+const mapStateToProps = ({ screenRes, loginReducer, profilePicReducer }) => {
   return {
     mobile: screenRes.mobile,
-    userName: loginReducer.userName
+    userName: loginReducer.userName,
+    profilePicture: profilePicReducer.initialImage
   };
 }
 
@@ -107,5 +110,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setMobileResolution,
   setDesktopResolution
 }, dispatch);
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

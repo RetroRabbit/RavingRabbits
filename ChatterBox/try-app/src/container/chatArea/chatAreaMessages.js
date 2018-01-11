@@ -134,6 +134,7 @@ class chatArea extends Component{
      </div> 
     </div>    
  </div>
+
     </MuiThemeProvider>
       </div>
   );

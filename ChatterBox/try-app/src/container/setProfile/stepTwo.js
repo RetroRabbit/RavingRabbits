@@ -8,23 +8,31 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import history from '../../helpers/store'
+import { setProfilePic } from '../../helpers/reducerPfp';
 import './step.css'
 
+
 class StepTwo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.imageUpload = this.imageUpload.bind(this);
+      }
+    imageUpload(e){
+        var   file = e.target.files[0];
+        var objectURL = window.URL.createObjectURL(file);
+        let reader = new FileReader();
+        reader.onload = event => {
+            this.setState({ profilephoto: event.target.result });
+        };
+        reader.readAsDataURL(e.target.files[0]);
+        this.setState({ hasimg: true });
+        return this.props.setProfilePic(objectURL);
+       
+      }
 
     changeImg = (e) => {
         console.log(e.target);
         console.log(e.target.files[0]);
-
-        if (e.target.files && e.target.files[0]) {
-            let reader = new FileReader();
-            reader.onload = event => {
-                this.setState({ profilephoto: event.target.result });
-            };
-            reader.readAsDataURL(e.target.files[0]);
-
-        }
-        this.setState({ hasimg: true });
     }
     state = {
         profilephoto: '',
@@ -41,17 +49,16 @@ class StepTwo extends React.Component {
                         {!this.state.hasimg ?
                             <div className="upload-circle">
                                 <div className="plus-logo">
-                                    {/* <div className="plus-horizontal" />
-                                    <div className="plus-vertical" /> */}
                                     <h1 class="addplus"><b>+</b></h1>
-                                </div>
-                                <input
+                                    <input
                                     type="file"
-                                    onChange={e => {
-                                        this.changeImg(e);
-                                    }}
+                                     onChange={
+                                        this.imageUpload
+                                    }
                                     style={inputimg}
                                 />
+                                </div>
+                                
                             </div>
                             :
                             <img
@@ -80,7 +87,6 @@ class StepTwo extends React.Component {
                     }}
                         className="step-one"
                         label="Skip for now"
-                        
                     />
                 )} />
 
@@ -97,7 +103,17 @@ const inputimg = {
     right: 0,
     width: '100%'
 };
-export default StepTwo
+const mapStateToProps = ({ profilePicReducer }) => {
+    return {
+      profilePicture: profilePicReducer.initialImage
+    };
+  }
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setProfilePic
+  }, dispatch);
+
+export default connect(mapStateToProps,mapDispatchToProps)(StepTwo);
 
 
 // const step_two = props => (

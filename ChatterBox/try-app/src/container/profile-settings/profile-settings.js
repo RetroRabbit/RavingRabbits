@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { TextField, RaisedButton } from 'material-ui';
 import { colors } from 'material-ui/styles';
@@ -7,57 +6,63 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
-
-
+import { updateName } from '../../helpers/reducerLogin';
 import './profile-settings.css';
-const settings = props => (
-    <div className="whiteBackground">
-        <header className="Rectangle-3">
-            <Header />
-        </header>
 
-        <div class="row">
-            <div class="topSection">
-                <img src={require('./Oval.png')} class="img-circle center-block"/>
-                <img src={require('./mypic.JPG')} class="profile img-circle"/>
-                <div id="example-one" contenteditable="true" class="mylink">
-                    
-                        <h1>Arsalan Ahmed   
-                        </h1>
+let userName = '';
+class settings extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    updateNames(email, userName) {
+        
+        this.props.updateName(userName, email);
+    }
+
+    render() {
+        return (
+            <div className="whiteBackground">
+                <header className="Rectangle-3">
+                    <Header />
+                </header>
+                <div class="row">
+                    <div class="topSection">
+                        <img src={require('./Oval.png')} className="img-circle center-block" />
+                        <img src={require('./mypic.JPG')} className="profile img-circle" />
                         
-                        <h3>ash@gmail&#46;com{' '}
-                        </h3>
+                        <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
+                        <h3  contentEditable="true" id="email">{this.props.email}</h3>
+                       <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
+                        <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
+                    </div>
+                    <form>
+                        <div>
+                            <br />
+                            <RaisedButton
+                                onClick={() => this.updateNames( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
+                                label="Done"
+                                className="button"
+                                id="done"
+                            />
+                        </div>
+                    </form>
                 </div>
-                <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
-                <h3><i className="fa fa-pencil" id="email" aria-hidden="true" /></h3>
             </div>
-            <form>
-                <div>
-                    <br />
-                    <RaisedButton
-                        onClick={() => props.changePage()}
-                        label="Done"
-                        className="button"
-                        id="done"
-                        labelColor="color:#fff;"
-                    />
-                </div>
-            </form>
-          
-        </div>
-    </div>
-);
+        );
+    }
+};
 
-const mapStateToProps = state => ({});
+const mapStateToProps = ({ loginReducer }) => {
+    return {
+        userName: loginReducer.userName,
+        email: loginReducer.email
+    };
+};
 
-const mapDispatchToProps = dispatch =>
-    bindActionCreators(
-        {
-            changePage: () => push('/chatareamessages')
-            
-        },
-        dispatch
-    );
+const mapDispatchToProps = dispatch => bindActionCreators({
+    changePage: () => push('/chatareamessages'),
+    updateName
+}, dispatch);
 
-   
 export default connect(mapStateToProps, mapDispatchToProps)(settings);
