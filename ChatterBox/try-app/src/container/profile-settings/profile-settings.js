@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import Header from '../Header';
 import { updateName } from '../../helpers/reducerLogin';
 import './profile-settings.css';
+import { setProfilePic } from '../../helpers/reducerPfp';
 
 let userName = '';
 class settings extends React.Component {
@@ -19,6 +20,13 @@ class settings extends React.Component {
         
         this.props.updateName(userName, email);
     }
+    imageUpload(e){
+        var   file = e.target.files[0];
+        var objectURL = window.URL.createObjectURL(file);
+        console.log(this.props);
+        return this.props.setProfilePic(objectURL);
+       
+      }
 
     render() {
         return (
@@ -29,7 +37,7 @@ class settings extends React.Component {
                 <div class="row">
                     <div class="topSection">
                         <img src={require('./Oval.png')} className="img-circle center-block" />
-                        <img src={require('./mypic.JPG')} className="profile img-circle" />
+                        <img src={this.props.profilePicture} className="profile img-circle" />
                         
                         <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
                         <h3  contentEditable="true" id="email">{this.props.email}</h3>
@@ -53,16 +61,18 @@ class settings extends React.Component {
     }
 };
 
-const mapStateToProps = ({ loginReducer }) => {
+const mapStateToProps = ({ loginReducer,profilePicReducer }) => {
     return {
         userName: loginReducer.userName,
-        email: loginReducer.email
+        email: loginReducer.email,
+        profilePicture: profilePicReducer.initialImage 
     };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePage: () => push('/chatareamessages'),
-    updateName
+    updateName,
+    setProfilePic
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(settings);

@@ -45,6 +45,7 @@ class chatArea extends Component{
                       <p className= "time-copy"> 17:00</p>
                  </div>
       </div>
+      <div id="chatUtility">
       <div className="addMessage">
     
     <FloatingActionButton  disabled={false} className="add">
@@ -65,6 +66,7 @@ class chatArea extends Component{
                           width:'80%',
                          }}/>
                  
+         </div>
          </div>
       </div>
     </div>
