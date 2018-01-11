@@ -35,7 +35,7 @@ class myRegister extends Component {
           <TextField
             hintText="Email"
             floatingLabelText="Email"
-            type="text"
+            type="email"
             fullWidth="true"
             class="txtbox"
             type="email"
