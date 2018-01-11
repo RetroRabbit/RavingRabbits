@@ -1,0 +1,11 @@
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\bin\Debug\netcoreapp2.0\ChatterBoxWebApi.deps.json
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\bin\Debug\netcoreapp2.0\ChatterBoxWebApi.runtimeconfig.json
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\bin\Debug\netcoreapp2.0\ChatterBoxWebApi.runtimeconfig.dev.json
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\bin\Debug\netcoreapp2.0\ChatterBoxWebApi.dll
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.csprojResolveAssemblyReference.cache
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.AssemblyInfoInputs.cache
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.AssemblyInfo.cs
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\bin\Debug\netcoreapp2.0\ChatterBoxWebApi.pdb
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.dll
+C:\Users\Arsalan\Desktop\ChatterBoxWebApi\ChatterBoxWebApi\ChatterBoxWebApi\obj\Debug\netcoreapp2.0\ChatterBoxWebApi.pdb
