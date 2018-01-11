@@ -82,14 +82,33 @@
     color:#fff !important;
     font-family:helvetica !important;
     font-size: 18px !important;
-   
-
+    float:top;
 }
-.topSection{
-    padding-top: 50px;
-  
+.topSection {
+ position: relative;
+ top:-100px; 
+}
+input[type="file"]{
+  height:200px;
+  width:200px;
+  position: relative;
+  left: 38%;
+  top:130%;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
 }
 
+input[type="file"]::-webkit-file-upload-button{
+  height:200px;
+  width:200px;
+  position: relative;
+  left: 38%;
+  top:130%;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -97,3 +116,4 @@
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }
+
