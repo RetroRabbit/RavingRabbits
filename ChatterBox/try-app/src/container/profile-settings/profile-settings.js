@@ -21,6 +21,7 @@ class settings extends React.Component {
         
         this.props.updateName(userName, email);
     }
+
     imageUpload(e){
         var   file = e.target.files[0];
         var objectURL = window.URL.createObjectURL(file);
@@ -46,10 +47,7 @@ class settings extends React.Component {
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
                     <div class="uploadButtonImg">
-                         <input  
-                                    style={{
-                            
-                                    }}
+                         <input  style={{}}
                                     type="file"
                                      onChange={
                                         this.imageUpload
@@ -58,7 +56,6 @@ class settings extends React.Component {
                     </div>
                     <form>
                         <div>
-
                             <br />
                             <RaisedButton
                                 onClick={() => this.updateNames( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
@@ -74,7 +71,6 @@ class settings extends React.Component {
         );
     }
 };
-
 
 const mapStateToProps = ({ loginReducer,profilePicReducer }) => {
     return {
