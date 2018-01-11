@@ -7,7 +7,7 @@
     background-color:#fff;
  } */
  .rectangle-6-copy {
-	height: 103px;
+	height: 50px;
 	width: 499px;
 	border-radius: 22px;
 	background-color: #01B9BD;
@@ -41,7 +41,8 @@
     height: 100%;
     width: 70%;
     padding-left:150px;
-    padding-bottom:20px;
+	padding-bottom:20px;
+	margin-bottom: 30px;
     
 }
     .person2 {
@@ -179,8 +180,7 @@
     padding-left:10px;
  }
  .macro{
-    margin-top:5px;
-    width:55%;
+	display: inline-block; 
     border-radius:5px;
     padding:5px;
     display:flex;
