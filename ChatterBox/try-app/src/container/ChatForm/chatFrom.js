@@ -1,32 +1,31 @@
 import SideMenu from '../side-menu/sidemenu.js'
 import Header from '../Header'
-import Settings from '../settings/settings.js'
+import Settings from '../profile-settings/profile-settings'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import sidemenu from '../side-menu/sidemenu.js';
+import sidemenu from '../side-menu/sidemenu.js'
+import chatAreaMessages from '../chatArea/chatAreaMessages';
 
 const ChatForm = props => (
     <div>
     <header>
         <Header/>
     </header>
-
     <div class="row">
-        <div class="pull-left">
+        <div>>
             <SideMenu/>
         </div>
-        <div class="pull-right">
-        
+        <div>
+            <chatAreaMessages/>
         </div>
     </div>
     </div>
 )
 
 const mapStateToProps = state => ({
-
 })
   
 const mapDispatchToProps = dispatch => bindActionCreators({

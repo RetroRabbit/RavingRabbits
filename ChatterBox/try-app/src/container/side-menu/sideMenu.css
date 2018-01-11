@@ -1,4 +1,24 @@
-  div#leftBar{
+@media screen 
+and (device-width: 320px) 
+and (device-height: 640px) 
+and (-webkit-device-pixel-ratio: 2) {
+
+}
+ div#mleftBar{
+  width: 100%; 
+  height: 100%;
+  position: absolute;
+  overflow: auto;
+  background-color:white;
+  border: 1px solid gray ;
+  -webkit-box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+-moz-box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
+ }
+ .smallParagraph{
+   font-size: 100px;
+ }
+ div#leftBar{
     position: absolute;
     width: 30%; 
     height: 100%;
@@ -11,7 +31,8 @@
 box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
   }
   div#searchDiv{
-    padding:25px 12px; 
+    margin: 20px 20px;
+    padding: 25px 30px; 
     text-align: center;
     background-color:#FFFFFF; 
   }
@@ -29,7 +50,9 @@ box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
   #list{
     text-align: center;
   }
-
+  .innerDivSmall{
+    padding-left: 12px; 
+  }
   .innerDiv{ 
     padding-left: 34px; 
   }
@@ -40,7 +63,7 @@ box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
     padding-top:7px !important;
     margin: 5 !important;
     width: 80% !important;
-    height: 45px !important;
+    /* height: 45px !important; */
     margin-bottom:10px !important;
   }
   
@@ -141,4 +164,9 @@ box-shadow: 3px 2px 17px -2px rgba(0,0,0,0.74);
     top: 24px;
     left: 7px;
     font-size: 15px;
+  }
+
+  
+  .defaultList{
+    padding-left:0px;
   }
