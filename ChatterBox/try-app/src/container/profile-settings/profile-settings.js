@@ -40,8 +40,9 @@ class settings extends React.Component {
                         <img src={require('./Oval.png')} className="img-circle center-block" />
                         <img src={this.props.profilePicture} className="profile img-circle" />
                         <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
-                        <h3  contentEditable="true" id="email">{this.props.email}</h3>
-                       <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
+                        <h3  contentEditable="true" id="email">{this.props.email} </h3>
+                        
+                        <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
                     <div class="uploadButtonImg">
@@ -64,6 +65,7 @@ class settings extends React.Component {
                                 label="Done"
                                 className="button"
                                 id="done"
+                                labelColor="rgb(255,255,255)"
                             />
                         </div>
                     </form>
