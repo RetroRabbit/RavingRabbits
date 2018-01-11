@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
 import './profile-settings.css';
-import { accountReducer, updateAccountDetails, setProfilePic } from '../../helpers/reducerAccount';
+import { accountReducer, updateAccountDetails, setProfilePic,hidePen } from '../../helpers/reducerAccount';
 
 class settings extends React.Component {
     constructor(props) {
@@ -15,6 +15,10 @@ class settings extends React.Component {
         this.imageUpload = this.imageUpload.bind(this);
     }
 
+    hidePen() {
+        debugger;
+        this.props.hidePen();
+    }
     updateAccountDetails(email, userName) {
         this.props.updateAccountDetails(userName, email);
     }
@@ -33,21 +37,36 @@ class settings extends React.Component {
                 </header>
                 <div class="row">
                     <div class="topSection">
-                        <img src={require('./Oval.png')} className="img-circle center-block" />
-                        <img src={this.props.profilePicture} className="profile img-circle" />
-                        <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
-                        <h3  contentEditable="true" id="email">{this.props.email} </h3>
+                        <input
+                                className="picUpload"
+                                type="file"
+                                onChange={
+                                this.imageUpload
+                                }
+                        /> 
+                        <img 
+                            src={require('./Oval.png')} 
+                            className="img-circle center-block"
+                        />
+                        <img src={this.props.profilePicture}
+                             className="profile img-circle"
+                        />
+                        <h1 contentEditable="true" 
+                            id="username"
+                            onFocus={()=>this.props.hidePen()}
+                        >
+                            {this.props.userName}
+                        </h1>  
+                        <h3 contentEditable="true" 
+                            id="email">
+                            {this.props.email}
+                        </h3>
                         
-                        <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
-                        <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
+                        {this.props.penShow &&<h1><i className="fa fa-pencil" id="uPen" aria-hidden="true" /></h1>}
+                        {this.props.penShow &&<h3><i className="fa fa-pencil" id="ePen" aria-hidden="true"/></h3>}
                     </div>
                     <div class="uploadButtonImg">
-                         <input  style={{}}
-                                    type="file"
-                                     onChange={
-                                        this.imageUpload
-                                    }
-                                /> 
+                         
                     </div>
                     <form>
                         <div>
@@ -73,14 +92,16 @@ const mapStateToProps = ({ accountReducer }) => {
     return {
         userName: accountReducer.userName,
         email: accountReducer.email,
-        profilePicture: accountReducer.profilePicture 
+        profilePicture: accountReducer.profilePicture ,
+        penShow: accountReducer.penShow 
     };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePage: () => push('/chatareamessages'),
     updateAccountDetails,
-    setProfilePic
+    setProfilePic,
+    hidePen
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(settings);

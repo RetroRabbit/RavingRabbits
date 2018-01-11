@@ -7,6 +7,7 @@ const REGISTER_USER = 'REGISTER_USER';
 const UPDATE_ACCOUNT_DETAILS = 'UPDATE_ACCOUNT_DETAILS';
 const UPDATE_EMAIL = 'UPDATE_EMAIL';
 const SET_PROFILEPIC_URL = 'SET_PROFILEPIC_URL';
+const HIDE_PEN = 'HIDE_PEN';
 
 const initialState = {
     userName: 'Raving Rabbits',
@@ -15,7 +16,8 @@ const initialState = {
     isLoginSuccess: false,
     isLoginPending: false,
     loginError: null,
-    profilePicture: pfp
+    profilePicture: pfp,
+    penShow:true
 }
 
 export function login(email, password) {
@@ -82,6 +84,11 @@ export function updateAccountDetails(email, userName) {
         userName
     };
 }
+export function hidePen() {
+    return {
+            type: HIDE_PEN
+    };
+}
 
 export function setProfilePic(imgUrl) {
     return {
@@ -129,6 +136,12 @@ export function accountReducer(state = initialState, action) {
             return {
                 ...state,
                 profilePicture: action.imgUrl
+            }
+
+        case HIDE_PEN:
+            return {
+                ...state,
+                penShow: false
             }
 
         default: return state
