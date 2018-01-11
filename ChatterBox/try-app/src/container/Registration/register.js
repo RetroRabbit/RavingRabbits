@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { registerUser } from '../../helpers/reducerAccount';
 import history from '../../helpers/store.js';
+import "./reg_css.css";
 
 class myRegister extends Component {
   constructor(props) {
@@ -24,29 +25,30 @@ class myRegister extends Component {
         </div>
         <div class="txtbox">
           <TextField
-            hintText="Your Name"
             floatingLabelText="Your Name"
             type="text"
             fullWidth="true"
-            class="txtbox"
             type="name"
+            class="txtreg"
+            floatingLabelStyle={{color: "#FFFFFF" }}
             onChange={e => this.name = e.target.value }
           />
           <TextField
-            hintText="Email"
             floatingLabelText="Email"
             type="email"
             fullWidth="true"
-            class="txtbox"
             type="email"
+            class="txtreg"
+            floatingLabelStyle={{color: "#FFFFFF" }}
             onChange={e => this.email = e.target.value }
           />
           <TextField
             floatingLabelText="Password"
             type="password"
             fullWidth="true"
-            class="txtbox"
             name="password"
+            class="txtreg"
+            floatingLabelStyle={{color: "#FFFFFF" }}
             onChange={e => this.password = e.target.value }
           />
         </div>
