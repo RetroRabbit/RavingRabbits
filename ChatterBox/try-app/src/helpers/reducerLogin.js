@@ -46,10 +46,17 @@ function setLoginSuccess(isLoginSuccess,email) {
   };
 }
 
-export function updateName(email,userName) {
+export function updateName(email,userName,elementOne, elementTwo) {
   return {
     type: UPDATE_NAME,
     email, userName
+    elementOne:style.display = "inline"
+    elementTwo:style.display = "inline"
+  };
+}
+export function hidePen(element) {
+  return {
+    element:style.display = "none"
   };
 }
 

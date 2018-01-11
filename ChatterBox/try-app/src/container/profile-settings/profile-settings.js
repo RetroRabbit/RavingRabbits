@@ -20,6 +20,10 @@ class settings extends React.Component {
         
         this.props.updateName(userName, email);
     }
+    hidePen(element) {
+        
+        this.props.hidePen(element);
+    }
     imageUpload(e){
         var   file = e.target.files[0];
         var objectURL = window.URL.createObjectURL(file);
@@ -39,9 +43,10 @@ class settings extends React.Component {
                         <img src={require('./Oval.png')} className="img-circle center-block" />
                         <img src={this.props.profilePicture} className="profile img-circle" />
                         
-                        <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
-                        <h3  contentEditable="true" id="email">{this.props.email}</h3>
-                       <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
+                        <h1  contentEditable="true" id="username">{this.props.userName}  onChange={()=> this.hidePen(document.getElementById("username"))}</h1>  
+                        <h3  contentEditable="true" id="email">{this.props.email} onChange={()=> this.hidePen( document.getElementById("email"))}</h3>
+                        
+                        <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
                     <form>
