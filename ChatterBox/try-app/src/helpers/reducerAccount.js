@@ -1,4 +1,4 @@
-import pfp from '../img/pfp.png'
+import pfp from '../img/pfp.png';
 
 const SET_LOGIN_PENDING = 'SET_LOGIN_PENDING';
 const SET_LOGIN_SUCCESS = 'SET_LOGIN_SUCCESS';
