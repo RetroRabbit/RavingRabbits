@@ -32,8 +32,7 @@ class settings extends React.Component {
                         <img src={require('./mypic.JPG')} className="profile img-circle" />
                         
                         <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
-                        <h3  contentEditable="true" id="email">{this.props.email}&nbsp;</h3>
-                        
+                        <h3  contentEditable="true" id="email">{this.props.email}</h3>
                        <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
