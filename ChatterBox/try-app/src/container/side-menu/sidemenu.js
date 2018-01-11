@@ -3,8 +3,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
-// import List from 'material-ui/List/List';
-// import ListItem from 'material-ui/List/ListItem';
 import pfp from './pfp.png';
 import Chip from 'material-ui/Chip';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
@@ -14,8 +12,6 @@ import Subheader from 'material-ui/Subheader';
 import SearchBar from 'material-ui-search-bar-enhanced';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import './sideMenu.css';
-
-// redux
 
 const chip = (
   
