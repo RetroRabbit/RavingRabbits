@@ -19,10 +19,10 @@
 }
 
 .chatDiv{
-    padding-top:300px;
+    padding-top:50px;
     right: 0px;
     bottom: 0px;
-    position: relative;
+    position: static;
     float: right;   
     background-color:white;
     height: 100%;

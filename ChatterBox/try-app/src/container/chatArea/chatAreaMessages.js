@@ -36,7 +36,7 @@ function insertChat(who, text, time = 0){
                               '<p>'+ text +'</p>' + 
                             '</div>' +
                                 '<div>' +
-                              '<p class="time">'+date+'</p>' +
+                             '<p class="time">'+date+'</p>' +
                                 '</div>' +
                       '</div>' +
                 '</li>';                    
