@@ -40,7 +40,7 @@ const step_last = props => (
             />
         </div>
         <div class="skiplast">
-            <Link class="skiplast" to="/chat-form">Skip for now</Link>
+            <Link class="skiplast" to="/chatareamessages">Skip for now</Link>
         </div>
     </div>
 )
