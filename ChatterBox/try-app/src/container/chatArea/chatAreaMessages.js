@@ -10,6 +10,8 @@ import Header from '../Header'
 import $ from 'jquery'
 import sidemenu from '../side-menu/sidemenu.js'
 import SideMenu from '../side-menu/sidemenu.js'
+import {new_Message} from '../../helpers/myChat'
+import { bindActionCreators } from '../../../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/redux';
 
 
 
@@ -69,6 +71,7 @@ function insertChat(who, text, time = 0){
   const handleKeyPress = (event) => {
       if(event.key ==='Enter'){
             var text2 = document.getElementById('mytext').value;
+            this.storeMessage;
       if(text2 === "lol"){
             insertChat("you", text2);
             document.getElementById('mytext').value = " ";          
@@ -82,12 +85,16 @@ function insertChat(who, text, time = 0){
 class chatArea extends Component{
   constructor(props) {
     super(props);
+    this.storeMessage =  this.storeMessage.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
   }
-
+  storeMessage(e){
+      var text = document.getElementById("myText").value;
+      return this.props.new_Message(text);
+  }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -107,20 +114,20 @@ class chatArea extends Component{
   <div class="bg ">
     <div class="chatDiv">
         <div class= "messageList">
-             <ul></ul>
-         </div>
+             <ul className="list"></ul>
+       </div>
     <div class = "enterText">         
       <form>
           <div className="addMessage">
                <FloatingActionButton  disabled={false} className="add">
-             
                <ContentAdd />
               </FloatingActionButton>
           </div>
           <div className= "chatbox">
                   
                 <TextField
-                    id='mytext' onKeyPress={handleKeyPress}
+                    id='mytext' 
+                    onKeyPress={handleKeyPress}
                     className = "chatfield"
                     hintText="Enter your text here!"
                     multiLine={true}
@@ -142,7 +149,14 @@ class chatArea extends Component{
   );
   }
 }
-export default chatArea;
+
+const mapStateToProps = ({myMessage}) =>{
+    msg:myMessage.msg
+}
+const mapDispatchToProps = dispatch =>bindActionCreators({
+    new_Message
+},dispatch)
+export default connect(mapStateToProps,mapDispatchToProps) (chatArea);
     
 
 
