@@ -14,6 +14,7 @@ const SET_LOGIN_SUCCESS = 'SET_LOGIN_SUCCESS';
 const SET_LOGIN_ERROR = 'SET_LOGIN_ERROR';
 const UPDATE_NAME = 'UPDATE_NAME';
 
+
 export function login(email, password) {
   return dispatch => {
     dispatch(setLoginPending(true));
@@ -49,16 +50,11 @@ function setLoginSuccess(isLoginSuccess,email) {
 export function updateName(email,userName,elementOne, elementTwo) {
   return {
     type: UPDATE_NAME,
-    email, userName
-    elementOne:style.display = "inline"
-    elementTwo:style.display = "inline"
+    email, userName,
+   
   };
 }
-export function hidePen(element) {
-  return {
-    element:style.display = "none"
-  };
-}
+
 
 function setLoginError(loginError) {
   return {
