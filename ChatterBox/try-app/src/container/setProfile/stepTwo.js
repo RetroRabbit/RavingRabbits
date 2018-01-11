@@ -73,7 +73,6 @@ class StepTwo extends React.Component {
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/chatareamessages')
                         history.push('/last-step')
                     }}
                         className="next-button-2"
@@ -84,7 +83,6 @@ class StepTwo extends React.Component {
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/chatareamessages')
                         history.push('/last-step')
                     }}
                         className="step-one"
