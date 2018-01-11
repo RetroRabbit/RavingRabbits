@@ -5,62 +5,79 @@ import { white } from 'material-ui/styles/colors';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Register_User } from '../../helpers/reducerRegister';
+import history from '../../helpers/store.js';
 
-const styles = {
-  floatingLabelFocusStyle: {
-      color: "#FFFFFF"
- 
+class myRegister extends Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  render() {
+    let {name,email, password} = this.props;
+   
+    return (
+      <div class="register">
+        <div class="welcome">
+          <img src={require('../../img/step-one.png')} class="logo" />
+        </div>
+        <div class="txtbox">
+          <TextField
+            hintText="Your Name"
+            floatingLabelText="Your Name"
+            type="text"
+            fullWidth="true"
+            class="txtbox"
+            type="name"
+            onChange={e => this.name = e.target.value }
+          />
+          <TextField
+            hintText="Email"
+            floatingLabelText="Email"
+            type="text"
+            fullWidth="true"
+            class="txtbox"
+            type="email"
+            onChange={e => this.email = e.target.value }
+          />
+          <TextField
+            floatingLabelText="Password"
+            type="password"
+            fullWidth="true"
+            class="txtbox"
+            name="password"
+            onChange={e => this.password = e.target.value }
+          />
+        </div>
+        <RaisedButton
+          class="btnReg"
+          label="NEXT STEP"
+          labelColor="#FFFFFF"
+          onClick={this.onSubmit}
+        />
+      </div>
+    )
+  }
+
+  onSubmit() {
+    this.props.Register_User(this.name,this.email, this.password);
+    this.props.redirectToLogin();
   }
 }
 
-const RegisterPage = props => (
-    <div class="register">
-    <div class="welcome">
-    <img src={require('../../img/step-one.png')} class="logo"/>
-    </div>
-    <div class="txtbox">
-    <TextField
-    //floatingLabelText="Name"
-    Placeholder="Your Name"
-    type="text"
-    fullWidth="true"
-    class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
-    />
-    <TextField
-    //floatingLabelText="Email"
-    Placeholder="Email"
-    type="text"
-    fullWidth="true"
-    class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
-    />
-    <TextField
-    //floatingLabelText="Password"
-    Placeholder="Password"
-    type="password"
-    fullWidth="true"
-    class="txtwhite"
-    //floatingLabelFocusStyle={styles.floatingLabelFocusStyle} 
-    />
-    </div>
-    <RaisedButton
-    class="btnReg" 
-    label="NEXT STEP" 
-    labelColor="#FFFFFF"
-    onClick={() => props.changePage()}  
-    />
-</div>
-)
+const mapStateToProps = state => {
+  name: state.name
+  email: state.email
+  password: state.password
+}
 
-const mapStateToProps = state => ({
-})
-  
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/login')
+  Register_User,
+  redirectToLogin: () => push('/login')
 }, dispatch)
-  
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RegisterPage)
+)(myRegister)

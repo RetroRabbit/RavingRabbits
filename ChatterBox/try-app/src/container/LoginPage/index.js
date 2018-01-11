@@ -58,7 +58,7 @@ class LoginPage extends Component {
             </div>
             <div class="form-group">
             <RaisedButton 
-            className="btnLogin" 
+            class="btnLogin" 
             label="Login" 
             labelColor="#FFFFFF"
             type="submit" 
