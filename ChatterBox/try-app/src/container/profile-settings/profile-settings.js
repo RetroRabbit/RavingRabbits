@@ -6,27 +6,23 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
-import { updateName } from '../../helpers/reducerLogin';
 import './profile-settings.css';
-import { setProfilePic } from '../../helpers/reducerPfp';
+import { accountReducer, updateAccountDetails, setProfilePic } from '../../helpers/reducerAccount';
 
-let userName = '';
 class settings extends React.Component {
     constructor(props) {
         super(props);
         this.imageUpload = this.imageUpload.bind(this);
     }
 
-    updateNames(email, userName) {
-        
-        this.props.updateName(userName, email);
+    updateAccountDetails(email, userName) {
+        this.props.updateAccountDetails(userName, email);
     }
+
     imageUpload(e){
-        var   file = e.target.files[0];
+        var file = e.target.files[0];
         var objectURL = window.URL.createObjectURL(file);
-        console.log(this.props);
         return this.props.setProfilePic(objectURL);
-       
       }
  
     render() {
@@ -46,10 +42,7 @@ class settings extends React.Component {
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
                     </div>
                     <div class="uploadButtonImg">
-                         <input  
-                                    style={{
-                            
-                                    }}
+                         <input  style={{}}
                                     type="file"
                                      onChange={
                                         this.imageUpload
@@ -61,7 +54,7 @@ class settings extends React.Component {
 
                             <br />
                             <RaisedButton
-                                onClick={() => this.updateNames( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
+                                onClick={() => this.updateAccountDetails( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
                                 label="Done"
                                 className="button"
                                 id="done"
@@ -76,17 +69,17 @@ class settings extends React.Component {
 };
 
 
-const mapStateToProps = ({ loginReducer,profilePicReducer }) => {
+const mapStateToProps = ({ accountReducer }) => {
     return {
-        userName: loginReducer.userName,
-        email: loginReducer.email,
-        profilePicture: profilePicReducer.initialImage 
+        userName: accountReducer.userName,
+        email: accountReducer.email,
+        profilePicture: accountReducer.profilePicture 
     };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePage: () => push('/chatareamessages'),
-    updateName,
+    updateAccountDetails,
     setProfilePic
 }, dispatch);
 
