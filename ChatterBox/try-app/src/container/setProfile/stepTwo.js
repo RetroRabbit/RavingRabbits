@@ -45,21 +45,20 @@ class StepTwo extends React.Component {
             <div class="welcome">
             <img src={require('../../img/step-two.png')} class="logo"/>
             </div>
-                <MuiThemeProvider>
                     <div className="pro-pic-placeholder" >
                         {!this.state.hasimg ?
                             <div className="upload-circle">
                                 <div className="plus-logo">
-                                    <div className="plus-horizontal" />
-                                    <div className="plus-vertical" />
-                                </div>
-                                <input
+                                    <h1 class="addplus"><b>+</b></h1>
+                                    <input
                                     type="file"
                                      onChange={
                                         this.imageUpload
                                     }
                                     style={inputimg}
                                 />
+                                </div>
+                                
                             </div>
                             :
                             <img
@@ -70,12 +69,12 @@ class StepTwo extends React.Component {
                         }
 
                     </div>
-                </MuiThemeProvider>
                 <div className="nextBox">
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
                         history.push('/chatareamessages')
+                        history.push('/last-step')
                     }}
                         className="next-button-2"
                         label="Next Step" />
@@ -86,6 +85,7 @@ class StepTwo extends React.Component {
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
                         history.push('/chatareamessages')
+                        history.push('/last-step')
                     }}
                         className="step-one"
                         label="Skip for now"
