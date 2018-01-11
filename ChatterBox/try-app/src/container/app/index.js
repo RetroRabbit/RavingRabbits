@@ -16,13 +16,13 @@ const App = () => (
   <MuiThemeProvider>
   <div>
     <main>
+      <Route exact path="/" component={LoginPage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/step-two" component={StepTwo} />
       <Route exact path="/last-step" component={StepLast} />
       <Route exact path="/chat-form" component={chatForm} />
       <Route exact path="/sidemenu" component={SideMenu} />
-      <Route exact path="/" component={Header} />
       <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
       <Route exact path="/chatareamessages" component={chatAreaMessages} />
