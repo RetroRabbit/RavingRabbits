@@ -8,23 +8,31 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import history from '../../helpers/store'
+import { setProfilePic } from '../../helpers/reducerPfp';
 import './step.css'
 
+
 class StepTwo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.imageUpload = this.imageUpload.bind(this);
+      }
+    imageUpload(e){
+        var   file = e.target.files[0];
+        var objectURL = window.URL.createObjectURL(file);
+        let reader = new FileReader();
+        reader.onload = event => {
+            this.setState({ profilephoto: event.target.result });
+        };
+        reader.readAsDataURL(e.target.files[0]);
+        this.setState({ hasimg: true });
+        return this.props.setProfilePic(objectURL);
+       
+      }
 
     changeImg = (e) => {
         console.log(e.target);
         console.log(e.target.files[0]);
-
-        if (e.target.files && e.target.files[0]) {
-            let reader = new FileReader();
-            reader.onload = event => {
-                this.setState({ profilephoto: event.target.result });
-            };
-            reader.readAsDataURL(e.target.files[0]);
-
-        }
-        this.setState({ hasimg: true });
     }
     state = {
         profilephoto: '',
@@ -47,9 +55,9 @@ class StepTwo extends React.Component {
                                 </div>
                                 <input
                                     type="file"
-                                    onChange={e => {
-                                        this.changeImg(e);
-                                    }}
+                                     onChange={
+                                        this.imageUpload
+                                    }
                                     style={inputimg}
                                 />
                             </div>
@@ -67,7 +75,7 @@ class StepTwo extends React.Component {
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/StepThree')
+                        history.push('/chatareamessages')
                     }}
                         className="next-button-2"
                         label="Next Step" />
@@ -77,7 +85,7 @@ class StepTwo extends React.Component {
                 <Route render={({ history }) => (
                     <FlatButton {...this.props} onClick={() => {
                         this.setState({ logged: false })
-                        history.push('/StepThree')
+                        history.push('/chatareamessages')
                     }}
                         className="step-one"
                         label="Skip for now"
@@ -97,7 +105,17 @@ const inputimg = {
     right: 0,
     width: '100%'
 };
-export default StepTwo
+const mapStateToProps = ({ profilePicReducer }) => {
+    return {
+      profilePicture: profilePicReducer.initialImage
+    };
+  }
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setProfilePic
+  }, dispatch);
+
+export default connect(mapStateToProps,mapDispatchToProps)(StepTwo);
 
 
 // const step_two = props => (

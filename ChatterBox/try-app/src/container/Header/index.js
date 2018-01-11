@@ -8,14 +8,12 @@ import './header.css';
 import { bindActionCreators } from 'redux';
 import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
 import { setProfilePic } from '../../helpers/reducerPfp';
-import img from '../../img/Icon.png'
 
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.updateRes = this.updateRes.bind(this);
-    this.imageUpload = this.imageUpload.bind(this);
   }
   
   componentWillMount() {
@@ -34,20 +32,6 @@ class Header extends React.Component {
       return this.props.setDesktopResolution();
     }
   }
-  
- imageUpload(e){
-  var preview = document.querySelector('img');
-  var file    = e.target.files[0];
-  var reader  = new FileReader();
-
-  reader.addEventListener("load", function () {
-   preview.src = reader.result;
-  }, false);
- reader.readAsDataURL(file)
-  return this.props.setProfilePic();
- 
-}
-
 
   render() {
     if (this.props.mobile) {
@@ -102,7 +86,6 @@ class Header extends React.Component {
                 <div class="account-dropdown-content">
                   <Link to="/profile-settings">Settings</Link>
                   <a href="/login">Log Out</a>
-                  <input type="file" id="imgFile" name="imgFile" onChange={this.imageUpload}/>
                 </div>
               </div>
               <img class="profile-img" src={this.props.profilePicture} />
@@ -125,8 +108,7 @@ const mapStateToProps = ({ screenRes, loginReducer, profilePicReducer }) => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setMobileResolution,
-  setDesktopResolution,
-  setProfilePic
+  setDesktopResolution
 }, dispatch);
 
 
