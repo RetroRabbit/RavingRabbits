@@ -1,11 +1,7 @@
-
-
-  /* .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color:#fff;
- } */
+.p1 {
+    padding-top: 50px;
+    float: right;
+}
  .rectangle-6-copy {
 	height: 50px;
 	width: 499px;
@@ -171,9 +167,10 @@
  }
  .macro{
 	display: inline-block; 
-    border-radius:5px;
+	border-radius:5px;
     padding:5px;
     display:flex;
+    float: left;
  }
  .msj-rta{
     float:right;
@@ -184,15 +181,18 @@
     float:right;
     background:whitesmoke;
  }
- .msj{
+ .message{
     float:left;
+    display: inline-block;
     background:rgb(1, 185, 189);
-	color: white;
-	
+    color: white;
+    border-radius: 5px;
  }
  .enterText {
 	 padding-top: 300px;
  }
  ul {
+  display: inline-block;
 	list-style-type: none;
+  
   }
