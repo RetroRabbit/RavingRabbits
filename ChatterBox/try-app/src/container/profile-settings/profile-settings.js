@@ -9,6 +9,7 @@ import Header from '../Header';
 import { updateName } from '../../helpers/reducerLogin';
 import './profile-settings.css';
 
+let userName = '';
 class settings extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +40,7 @@ class settings extends React.Component {
                         <div>
                             <br />
                             <RaisedButton
-                                onClick={() => this.updateNames(this.props.email, this.props.userName)}
+                                onClick={() => this.updateNames("TempEmail", "TempName")}
                                 label="Done"
                                 className="button"
                                 id="done"
