@@ -14,12 +14,14 @@ let userName = '';
 class settings extends React.Component {
     constructor(props) {
         super(props);
+        this.imageUpload = this.imageUpload.bind(this);
     }
 
     updateNames(email, userName) {
         
         this.props.updateName(userName, email);
     }
+
     imageUpload(e){
         var   file = e.target.files[0];
         var objectURL = window.URL.createObjectURL(file);
@@ -27,7 +29,7 @@ class settings extends React.Component {
         return this.props.setProfilePic(objectURL);
        
       }
-
+ 
     render() {
         return (
             <div className="whiteBackground">
@@ -38,12 +40,19 @@ class settings extends React.Component {
                     <div class="topSection">
                         <img src={require('./Oval.png')} className="img-circle center-block" />
                         <img src={this.props.profilePicture} className="profile img-circle" />
-                        
                         <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
                         <h3  contentEditable="true" id="email">{this.props.email} </h3>
                         
                         <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
                         <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
+                    </div>
+                    <div class="uploadButtonImg">
+                         <input  style={{}}
+                                    type="file"
+                                     onChange={
+                                        this.imageUpload
+                                    }
+                                /> 
                     </div>
                     <form>
                         <div>
