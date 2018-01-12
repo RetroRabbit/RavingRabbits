@@ -53,6 +53,7 @@ function insertChat(who, text, time = 0){
                     '</div>' +
                       '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:20%;" /></div>' +                                
                 '</li>';
+              
               }
               setTimeout(
                   function(){                        
@@ -68,19 +69,6 @@ function insertChat(who, text, time = 0){
   }
 
         
-  const handleKeyPress = (event) => {
-      if(event.key ==='Enter'){
-            var text2 = document.getElementById('mytext').value;
-            this.storeMessage;
-      if(text2 === "lol"){
-            insertChat("you", text2);
-            document.getElementById('mytext').value = " ";          
-         } else{
-            insertChat("me", text2);
-            document.getElementById('mytext').value = '';
-         }                    
-     }
-  }
      
 class chatArea extends Component{
   constructor(props) {
@@ -91,8 +79,27 @@ class chatArea extends Component{
       isOpen: false
     };
   }
-  storeMessage(e){
-      var text = document.getElementById("myText").value;
+  handleKeyPress = (event) => {
+    if(event.key ==='Enter'){
+          var text2 = document.getElementById('mytext').value;
+          console.log(text2)
+          this.storeMessage(text2);
+    if(text2 === "lol"){
+          insertChat("you", text2);
+          this.storeMessage();
+          document.getElementById('mytext').value = " ";          
+       } else{
+          insertChat("me", text2);
+          var text2 = document.getElementById('mytext').value;
+          console.log(text2)
+          this.storeMessage;
+          document.getElementById('mytext').value = '';
+       }                    
+   }
+}
+
+  storeMessage(text){
+      var text = document.getElementById("mytext").value;
       return this.props.new_Message(text);
   }
   toggle() {
@@ -110,12 +117,12 @@ class chatArea extends Component{
           <SideMenu/>
         </div>
   <MuiThemeProvider>
-
   <div class="bg ">
     <div class="chatDiv">
+    
         <div class= "messageList">
              <ul className="list"></ul>
-       </div>
+     </div>
     <div class = "enterText">         
       <form>
           <div className="addMessage">
@@ -127,7 +134,8 @@ class chatArea extends Component{
                   
                 <TextField
                     id='mytext' 
-                    onKeyPress={handleKeyPress}
+                     onKeyPress={this.handleKeyPress}
+                    //onChange={this.storeMessage}
                     className = "chatfield"
                     hintText="Enter your text here!"
                     multiLine={true}

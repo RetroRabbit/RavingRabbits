@@ -1,12 +1,12 @@
-
- .rectangle-6-copy {
+.rectangle-6-copy {
 	height: 50px;
 	width: 499px;
 	border-radius: 22px;
 	background-color: #01B9BD;
 }
 .chatbox{
-	padding-right:30px;
+    padding-right:30px;
+    position: fixed;
 }
 .chatfield {
     width: 100%;
@@ -19,7 +19,7 @@
     padding-top:300px;
     right: 0px;
     bottom: 0px;
-    position: relative;
+    position: fixed;
     float: right;   
     background-color:white;
     height: 100%;
@@ -33,7 +33,7 @@
         height: 187px;
         width: 499px;
     }
-    .addMessage {
+      .addMessage {
 
         padding-bottom:20px;
     }
@@ -77,10 +77,10 @@
     
 }
 .message{
-    float:left;
     display: inline-block;
     background:rgb(1, 185, 189);
     color: white;
+    width: 15px;
     border-radius: 5px;
     padding-bottom: 15px;
 }
@@ -135,7 +135,7 @@
    margin-right: 100px; 
 }
 .addMessage {
-    padding-right: 200px;
+    padding-right: 100px;
 }
 .mytext{
     border:0;
@@ -202,4 +202,8 @@
   }
   .p1 {
       padding-top: 50px;
+  }
+  .messageList {
+      position : fixed;
+      overflow: auto;
   }

@@ -1,5 +1,6 @@
+const NEW_MESSAGE = 'NEW_MESSAGE';
 const initialState = {
-  newMsg: " "
+  newMsg: []
 };
 
 
@@ -7,12 +8,12 @@ export function myMessage (state = initialState, action){
 
   switch (action.type)
   {
-      case new_Message:
-          return {
+      case NEW_MESSAGE:
+          return [{
               ...state, 
               newMsg : action.newMsg,
               
-          } 
+          }] 
 
       default:
           return state;
@@ -21,8 +22,9 @@ export function myMessage (state = initialState, action){
 
 export function new_Message(newMsg)
 {
+    debugger;
     return{
-            type:new_Message,
+            type:NEW_MESSAGE,
             newMsg : newMsg
     }
 }
