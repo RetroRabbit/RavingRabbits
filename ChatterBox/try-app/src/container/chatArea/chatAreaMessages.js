@@ -55,7 +55,10 @@ function insertChat(who, text, time = 0){
        $("ul").empty();
   }
 
-   
+  window.setInterval(function() {
+    var elem = document.getElementById('chatscroll');
+    elem.scrollTop = elem.scrollHeight;
+  }, 0);
 
         
      
@@ -69,6 +72,7 @@ class chatArea extends Component{
       isOpen: false
     };
   }
+  
 
   handleKeyPress = (event) => {
     if(event.key ==='Enter'){
@@ -114,12 +118,27 @@ class chatArea extends Component{
        
   <div class="bg">
                 <div class="chatDiv">
-                <div class= "messageList">
-                        <ul className="list" id="list"></ul>
-                </div>
-               <div class = "addText">             
+                    <div class="chatscroll" id="chatscroll">
+                      <ul id="list"></ul>
+                    </div>
+                    <div class="chatscrollright" id="chatscrollright">
+                    <ul id="list"></ul>
+                      {/* <ul id="list">
+                      <li> 
+                      <div class="p1">
+                            <div class="message"> 
+                              <p>text</p>
+                            </div>
+                    
+                        <div>
+                              <p class="time">date</p>
+                        </div>
+                      </div>
+                  </li> 
+                      </ul> */}
+                    </div>
+               <div class = "addText">          
                     <div class="addMessage">
-                        
                                 <FloatingActionButton  disabled={false} className = "submitMsg"
                                   backgroundColor="#D8D8D8"                              
                                     >
@@ -138,7 +157,7 @@ class chatArea extends Component{
                                         paddingRight:'20px',
                                           borderRadius: '200px',
                                          backgroundColor: '#EAEAEA',
-                                         width:'80%',
+                                         width:'65%',
                  }}/>
                  </div>
               </div>
