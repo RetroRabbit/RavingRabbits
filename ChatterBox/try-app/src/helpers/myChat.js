@@ -22,7 +22,6 @@ export function myMessage (state = initialState, action){
 
 export function new_Message(newMsg)
 {
-    debugger;
     return{
             type:NEW_MESSAGE,
             newMsg : newMsg

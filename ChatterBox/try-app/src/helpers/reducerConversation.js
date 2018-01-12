@@ -31,6 +31,26 @@ const initialState = {
             text:
                 'I&apos;ll be in your neighborhood doing errands this weekend.',
             selected: false
+        },
+        {
+            conversationID: 4,
+            user1: "Johan Laubscher",
+            user2: "Nonto",
+            avatar:
+                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
+            text:
+                'I&apos;ll be in your neighborhood doing errands this weekend.',
+            selected: false
+        },
+        {
+            conversationID: 5,
+            user1: "Johan Laubscher",
+            user2: "Law",
+            avatar:
+                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
+            text:
+                'I&apos;ll be in your neighborhood doing errands this weekend.',
+            selected: false
         }
     ],
     messages: [
@@ -50,13 +70,25 @@ const initialState = {
             messageID: 3,
             user: "Johan",
             msg: "tasdf",
-            conversationID: 1
+            conversationID: 2
         },
         {
             messageID: 4,
             user: "HD",
             msg: "adsfasdf fasdfa",
-            conversationID: 1
+            conversationID: 2
+        },
+        {
+            messageID: 5,
+            user: "asd",
+            msg: "adsfasdf fasdfa",
+            conversationID: 2
+        },
+        {
+            messageID: 6,
+            user: "asdf",
+            msg: "adsfasdf fasdfa",
+            conversationID: 2
         }
     ]
 }
@@ -71,6 +103,11 @@ export function selectChat(conversationID) {
 export function reducerConversation(state = initialState, action) {
     switch (action.type) {
         case SELECT_CHAT:
+            var filteredMessages = state.messages.filter(function (item) {
+                if (item.conversationID == action.conversationID) {
+                    return item;    
+                }
+            });
             state.conversations.forEach(element => {
                 element.selected = false;
                 if (element.conversationID == action.conversationID) {
@@ -78,11 +115,12 @@ export function reducerConversation(state = initialState, action) {
                 }
             });
             return {
-                ...state
+                ...state,
+                filteredMessages :filteredMessages
             }
 
         default:
             return state;
-
     }
 }
+

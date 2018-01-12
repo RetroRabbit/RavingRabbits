@@ -42,7 +42,8 @@ class Sidemenu extends Component {
     };
 
     selectChat = function (ID) {
-        return this.props.selectChat(ID);
+        this.props.selectChat(ID);
+        this.forceUpdate()
     }
 
     render() {
@@ -69,7 +70,7 @@ class Sidemenu extends Component {
                                                 textAlign: 'left',
                                                 backgroundColor: '#F5F5F5',
                                                 paddingLeft: '20px'
-                                            }} >
+                                            }} onClick={() => this.selectChat(chat.conversationID)}>
                                                 <CardHeader
                                                     title={chat.user2}
                                                     avatar={chat.avatar}
