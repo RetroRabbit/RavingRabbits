@@ -31,7 +31,6 @@ function insertChat(who, text, time = 0){
   var date = formatAMPM(new Date());
  
   if (who === "me"){
-      
       control = '<li>' +
                       '<div class="p1">' +
                             '<div class="message">' +
@@ -42,22 +41,10 @@ function insertChat(who, text, time = 0){
                         '</div>' +
                       '</div>' +
                 '</li>';                    
-  }else{
-      control = '<li style="width:90%;">' +
-                  '<div class="msj-rta macro">' +
-                          '<div class="text text-r">' +
-                              '<p>'+text+'</p>' +
-                                '<div>' +
-                              '<p><small><font color="white">'+date+'</font></small></p>' +
-                          '</div>' +
-                    '</div>' +
-                      '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:20%;" /></div>' +                                
-                '</li>';
-              
-              }
+  }
               setTimeout(
                   function(){                        
-                      $("ul").append(control);
+                      $("#list").append(control);
           
                   }, time);
               
@@ -128,10 +115,8 @@ class chatArea extends Component{
   <div class="bg">
                 <div class="chatDiv">
                 <div class= "messageList">
-                        <ul className="list"></ul>
+                        <ul className="list" id="list"></ul>
                 </div>
-                
-             <form>
                <div class = "addText">             
                     <div class="addMessage">
                         
@@ -157,12 +142,6 @@ class chatArea extends Component{
                  }}/>
                  </div>
               </div>
-
-                    
-                        </form>
-                
-
-
                 </div>
        </div>
 
