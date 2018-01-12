@@ -12,6 +12,7 @@ const HIDE_PENN = 'HIDE_PENN';
 const SHOW_PENN = 'SHOW_PENN';
 const SHOW_PEN = 'SHOW_PEN';
 
+
 const initialState = {
     userName: 'Raving Rabbits',
     email: 'RavingRabbits@gmail.com',
@@ -20,6 +21,7 @@ const initialState = {
     isLoginPending: false,
     loginError: null,
     profilePicture: pfp,
+    penShow:true,
     penShow:true,
     pennShow:true,
     penHide:false,
@@ -95,21 +97,6 @@ export function hidePen() {
             type: HIDE_PEN
     };
 }
-export function hidePenn() {
-    return {
-            type: HIDE_PENN
-    };
-}
-export function showPen() {
-    return {
-            type: SHOW_PEN
-    };
-}
-export function showPenn() {
-    return {
-            type: SHOW_PENN
-    };
-}
 export function setProfilePic(imgUrl) {
     return {
         type: SET_PROFILEPIC_URL,
@@ -182,5 +169,4 @@ export function accountReducer(state = initialState, action) {
         default: return state
     }
 }
-
 
