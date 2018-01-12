@@ -55,10 +55,10 @@ function insertChat(who, text, time = 0){
        $("ul").empty();
   }
 
-  window.setInterval(function() {
-    var elem = document.getElementById('chatscroll');
-    elem.scrollTop = elem.scrollHeight;
-  }, 0);
+  // window.setInterval(function() {
+  //   var elem = document.getElementById('chatscroll');
+  //   elem.scrollTop = elem.scrollHeight;
+  // }, 0);
 
         
      
@@ -73,7 +73,7 @@ class chatArea extends Component{
     };
   }
   
-
+  
   handleKeyPress = (event) => {
     if(event.key ==='Enter'){
           var text2 = document.getElementById('mytext').value;
