@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
 import './profile-settings.css';
-import { accountReducer, updateAccountDetails, setProfilePic,hidePen } from '../../helpers/reducerAccount';
+import { accountReducer, updateAccountDetails, setProfilePic,hidePen, hidePenn, showPenn, showPen } from '../../helpers/reducerAccount';
 
 class settings extends React.Component {
     constructor(props) {
@@ -16,10 +16,13 @@ class settings extends React.Component {
     }
 
     hidePen() {
-        debugger;
         this.props.hidePen();
     }
+    hidePenn() {
+        this.props.hidePenn();
+    }
     updateAccountDetails(email, userName) {
+
         this.props.updateAccountDetails(userName, email);
     }
 
@@ -58,18 +61,19 @@ class settings extends React.Component {
                             {this.props.userName}
                         </h1>  
                         <h3 contentEditable="true" 
-                            id="email">
+                            id="email"
+                            onFocus={()=>this.props.hidePenn()}>
                             {this.props.email}
                         </h3>
                         
                         {this.props.penShow &&<h1><i className="fa fa-pencil" id="uPen" aria-hidden="true" /></h1>}
-                        {this.props.penShow &&<h3><i className="fa fa-pencil" id="ePen" aria-hidden="true"/></h3>}
+                        {this.props.pennShow &&<h3><i className="fa fa-pencil" id="ePen" aria-hidden="true"/></h3>}
                     </div>
                     <div class="uploadButtonImg">
                          
                     </div>
                     <form>
-                        <div>
+                        <div class="tester">
 
                             <br />
                             <RaisedButton
@@ -93,7 +97,10 @@ const mapStateToProps = ({ accountReducer }) => {
         userName: accountReducer.userName,
         email: accountReducer.email,
         profilePicture: accountReducer.profilePicture ,
-        penShow: accountReducer.penShow 
+        penShow: accountReducer.penShow ,
+        pennShow: accountReducer.pennShow,
+        penHide: accountReducer.penHide,
+        pennHide: accountReducer.pennHide
     };
 };
 
@@ -101,7 +108,10 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     changePage: () => push('/chatareamessages'),
     updateAccountDetails,
     setProfilePic,
-    hidePen
+    hidePen,
+    hidePenn,
+    showPen,
+    showPenn
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(settings);
