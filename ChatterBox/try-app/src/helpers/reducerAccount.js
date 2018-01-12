@@ -97,6 +97,21 @@ export function hidePen() {
             type: HIDE_PEN
     };
 }
+export function hidePenn() {
+    return {
+            type: HIDE_PENN
+    };
+}
+export function showPen() {
+    return {
+            type:SHOW_PEN
+    };
+}
+export function showPenn() {
+    return {
+            type: SHOW_PENN
+    };
+}
 export function setProfilePic(imgUrl) {
     return {
         type: SET_PROFILEPIC_URL,

@@ -6,6 +6,7 @@ import { profilePicReducer } from '../helpers/reducerPfp';
 import { myRegister } from '../helpers/reducerRegister';
 import { accountReducer } from '../helpers/reducerAccount';
 import { reducerConversation } from '../helpers/reducerConversation';
+import {myMessage} from '../helpers/myChat';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   routerReducer,
   profilePicReducer,
   accountReducer,
-  reducerConversation
+  reducerConversation,
+  myMessage
 })
 
 export default rootReducer;
