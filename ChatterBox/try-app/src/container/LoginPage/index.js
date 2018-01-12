@@ -4,7 +4,8 @@ import { TextField, RaisedButton } from 'material-ui';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { login } from '../../helpers/reducerLogin';
+import { login } from '../../helpers/reducerAccount';
+import { accountReducer } from '../../helpers/reducerAccount';
 import history from '../../helpers/store.js';
 
 class LoginPage extends Component {
@@ -13,7 +14,6 @@ class LoginPage extends Component {
       super(props);
       this.state = {};
       this.onSubmit = this.onSubmit.bind(this);
-  
     }
 
     componentWillReceiveProps(newProps) {      
@@ -96,16 +96,16 @@ class LoginPage extends Component {
   
   const mapStateToProps = (state) => {
     return {
-      isLoginPending: state.loginReducer.isLoginPending,
-      isLoginSuccess: state.loginReducer.isLoginSuccess,
-      loginError: state.loginReducer.loginError
+      isLoginPending: state.accountReducer.isLoginPending,
+      isLoginSuccess: state.accountReducer.isLoginSuccess,
+      loginError: state.accountReducer.loginError
     };
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
       login: (email, password) => dispatch(login(email, password)),
-      redirect: () => dispatch(push("/step-two"))
+      redirect: () => dispatch(push("/chatareamessages"))
     };
   }
   

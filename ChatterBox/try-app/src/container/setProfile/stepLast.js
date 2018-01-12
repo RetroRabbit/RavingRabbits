@@ -10,14 +10,10 @@ import { connect } from 'react-redux';
 const styles = {
     floatingLabelFocusStyle: {
         color: "#FFFFFF"
-    
     }
-    
   }
-  
 
 const step_last = props => (
-
     <div class="register">
         <div class="welcome">
             <img src={require('../../img/step-last.png')} class="logo"/>
@@ -40,7 +36,7 @@ const step_last = props => (
             />
         </div>
         <div class="skiplast">
-            <Link class="skiplast" to="/chat-form">Skip for now</Link>
+            <Link class="skiplast" to="/chatareamessages">Skip for now</Link>
         </div>
     </div>
 )

@@ -10,9 +10,11 @@
   color: white;
 }
 
-
+.uploadButtonImg{
+  padding-left:45%;
+}
 .whiteBackground {
-   position: relative;
+   position: fixed;
    width: 100%;
    height: 100%;
    background:#fff;
@@ -50,11 +52,15 @@
   }
 }
 
-.fa-pencil {
-    position: relative;
-    top:-110px;
-    left:150px;
-    padding-left: 10px;
+#uPen {
+    position: fixed;
+    top:69%;
+    left:60%;
+}
+#ePen {
+  position: fixed;
+  top:77%;
+  left:62%;
 }
 .center-block{
       box-shadow: 0 2px 12px 3px rgba(0,0,0,0.14);
@@ -67,9 +73,11 @@
     width:245px;
     
 }
+.uploadButtonImg{
+  padding-left: 45%;
+}
 
 #done {
-
   	border-radius: 5px !important;
     background-color: #FB6902 !important;
     height: 54px !important;
@@ -77,14 +85,38 @@
     color:#fff !important;
     font-family:helvetica !important;
     font-size: 18px !important;
-   
-
 }
-.topSection{
-    padding-top: 50px;
-  
+.tester {
+  position: fixed;
+  top:85%;
+  left:47%;
+}
+.topSection {
+ position: fixed;
+ top:0px; 
+ left:42%;
+}
+input[type="file"]{
+  height:200px;
+  width:200px;
+  position: relative;
+  left: 38%;
+  top:130%;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
 }
 
+input[type="file"]::-webkit-file-upload-button{
+  height:200px;
+  width:200px;
+  position: relative;
+  left: 38%;
+  top:130%;
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -92,3 +124,4 @@
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }
+

@@ -9,8 +9,7 @@ import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import history from '../../helpers/store'
 import { setProfilePic } from '../../helpers/reducerPfp';
-import './step.css'
-
+import './step.css';
 
 class StepTwo extends React.Component {
     constructor(props) {
@@ -114,42 +113,3 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   }, dispatch);
 
 export default connect(mapStateToProps,mapDispatchToProps)(StepTwo);
-
-
-// const step_two = props => (
-
-//     <div class="register">
-//         <div class="welcome">
-//             <img src={require('../../img/step-two.png')} class="logo"/>
-//         </div>
-//         <div class="circleDiv">
-//             <button
-//             type="file"
-//             class="btnCircle"
-//             ><h2>+</h2></button>
-//         </div>
-//         <div>
-//             <RaisedButton
-//             class="btnStepTwo" 
-//             label="NEXT STEP" 
-//             labelColor="#FFFFFF"
-//             onClick={() => props.changePage()}
-//             />
-//         </div>
-//         <div class="skip">
-//             <Link class="skip" to="/last-step">Skip for now</Link>
-//         </div>
-//     </div>
-// )
-
-// const mapStateToProps = state => ({
-// })
-  
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   changePage: () => push('/last-step')
-// }, dispatch)
-  
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(step_two)
