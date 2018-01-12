@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TextField, RaisedButton } from 'material-ui'
+import axios from 'axios';
 import { connect } from 'react-redux'
 import Chip from 'material-ui/Chip'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
@@ -11,7 +12,7 @@ import $ from 'jquery'
 import sidemenu from '../side-menu/sidemenu.js'
 import SideMenu from '../side-menu/sidemenu.js'
 import { new_Message, myMessage } from '../../helpers/myChat'
-import { reducerConversation, sendMessage } from '../../helpers/reducerConversation'
+import { reducerConversation, sendMessage,updateMessages } from '../../helpers/reducerConversation'
 import { bindActionCreators } from 'redux';
 
 class chatArea extends Component{
@@ -19,8 +20,10 @@ class chatArea extends Component{
     super(props);
     this.storeMessage = this.storeMessage.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.updateMessages = this.updateMessages.bind(this);
+    this.updateMessages();
   }
-  
+
   
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -29,6 +32,15 @@ class chatArea extends Component{
       document.getElementById('mytext').value = '';
     }
   }
+
+        
+  updateMessages(){
+    axios.get(`http://localhost:60387/api/messages`)
+    .then(res => {
+       this.props.updateMessages(res.data);
+       this.forceUpdate();
+    });
+}
 
   storeMessage(text) {
     this.props.sendMessage(this.props.currentConvoID, document.getElementById("mytext").value);
@@ -49,7 +61,7 @@ class chatArea extends Component{
                 {(this.props.messages.length) ?
                   <ul className="list" id="list">
                     {this.props.messages.map(item => (
-                      <li className="listItem">
+                      <li className="listItem" key={item.MessageId}>
                       {(item.user == "Johan") ?
                         <div class="p2">
                           <div class="message">
@@ -116,6 +128,7 @@ const mapStateToProps = ({ reducerConversation }) => {
   }
 }
 const mapDispatchToProps = dispatch => bindActionCreators({
-  sendMessage
+  sendMessage,
+  updateMessages
 }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(chatArea);

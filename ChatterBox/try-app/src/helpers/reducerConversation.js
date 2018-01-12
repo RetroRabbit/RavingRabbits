@@ -1,5 +1,9 @@
+import axios from 'axios';
 const SELECT_CHAT = 'SELECT_CHAT'
 const SEND_MESSAGE = 'SEND_MESSAGE';
+const UPDATE_CONVERSATIONS = 'UPDATE_CONVERSATIONS';
+const UPDATE_MESSAGES = 'UPDATE_MESSAGES';
+
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -12,10 +16,25 @@ function formatAMPM(date) {
     return strTime;
   }
 
+ 
+
 export function selectChat(conversationID) {
     return {
         type: SELECT_CHAT,
         conversationID: conversationID
+    }
+}
+export function updateConversations(conversations) {
+    return {
+        type: UPDATE_CONVERSATIONS,
+        conversations: conversations
+    }
+}
+
+export function updateMessages(messages) {
+    return {
+        type: UPDATE_MESSAGES,
+        messages: messages
     }
 }
 
@@ -35,12 +54,7 @@ export function reducerConversation(state = initialState, action) {
                     return item;    
                 }
             });
-            state.conversations.forEach(element => {
-                element.selected = false;
-                if (element.conversationID == action.conversationID) {
-                    element.selected = true;
-                }
-            });
+            
             return {
                 ...state,
                 filteredMessages :filteredMessages,
@@ -48,7 +62,11 @@ export function reducerConversation(state = initialState, action) {
             }
 
             case SEND_MESSAGE:
-            state.messages.push({msg: action.msg, conversationID: action.conversationID})
+            axios.post(`http://localhost:60387/api/Messages`,{messageId: state.messages[state.messages.length-1].messageId + 1, msg:action.message,userSent:"Johan", conversationId: action.conversationID, })
+            .then(function(response){
+                console.log('saved successfully')
+              }); 
+            state.messages.push({msg: action.msg, conversationID: action.conversationID, messageId: state.messages[state.messages.length-1].messageId + 1})
             var filteredMessages = state.messages.filter(function (item) {
                 if (item.conversationID == action.conversationID) {
                     return item;    
@@ -56,7 +74,19 @@ export function reducerConversation(state = initialState, action) {
             });
             return {
                 ...state,
-                filteredMessages :filteredMessages,
+                filteredMessages: filteredMessages
+            }
+
+            case UPDATE_CONVERSATIONS:
+            return {
+                ...state,
+                conversations: action.conversations,
+            }
+
+            case UPDATE_MESSAGES:
+            return {
+                ...state,
+                messages: action.messages,
             }
 
         default:
@@ -66,64 +96,10 @@ export function reducerConversation(state = initialState, action) {
 
 const initialState = {
     conversations: [
-        {
-            conversationID: 1,
-            user1: "Johan",
-            user2: "HD",
-            avatar:
-                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
-            text:
-                'I&apos;ll be in your neighborhood doing errands this weekend.',
-            selected: false
-        },
-        {
-            conversationID: 2,
-            user1: "Johan",
-            user2: "Ash",
-            avatar:
-                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
-            text:
-                'I&apos;ll be in your neighborhood doing errands this weekend.',
-            selected: false
-        }
+      
     ],
     messages: [
-        {
-            messageID: 1,
-            user: "Johan",
-            msg: "this is only test messages",
-            conversationID: 1
-        },
-        {
-            messageID: 2,
-            user: "HD",
-            msg: "this is a reply",
-            conversationID: 1
-        },
-        {
-            messageID: 3,
-            user: "Johan",
-            msg: "tasdf",
-            conversationID: 2
-        },
-        {
-            messageID: 4,
-            user: "HD",
-            msg: "adsfasdf fasdfa",
-            conversationID: 2
-        },
-        {
-            messageID: 5,
-            user: "Johan",
-            msg: "adsfasdf fasdfa",
-            conversationID: 2
-        },
-        {
-            messageID: 6,
-            user: "HD",
-            msg: "adsfasdf fasdfa",
-            conversationID: 2
-        }
+        
     ],
     filteredMessages :[],
     currentConvoID: null

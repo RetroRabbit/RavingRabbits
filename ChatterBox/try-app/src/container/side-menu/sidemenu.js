@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Avatar from 'material-ui/Avatar';
 import pfp from './pfp.png';
 import Divider from 'material-ui/Divider';
 import SearchBar from 'material-ui-search-bar-enhanced';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import { reducerConversation, selectChat } from '../../helpers/reducerConversation';
+import { reducerConversation, selectChat,updateConversations } from '../../helpers/reducerConversation';
 import './sideMenu.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -31,6 +32,8 @@ class Sidemenu extends Component {
         this.filterList = this.filterList.bind(this);
         this.selectChat = this.selectChat.bind(this);
         this.conversations = this.props.conversations;
+        this.getConvos = this.getConvos.bind(this);
+        this.getConvos();
     }
 
     filterList = function (text) {
@@ -40,6 +43,15 @@ class Sidemenu extends Component {
         });
         this.setState({ items: updatedList });
     };
+
+    getConvos(){
+        axios.get(`http://localhost:60387/api/conversations`)
+        .then(res => {
+           this.props.updateConversations(res.data);
+           this.conversations = this.props.conversations;
+           this.forceUpdate();
+        });
+    }
 
     selectChat = function (ID) {
         this.props.selectChat(ID);
@@ -72,8 +84,8 @@ class Sidemenu extends Component {
                                                 paddingLeft: '20px'
                                             }} onClick={() => this.selectChat(chat.conversationID)}>
                                                 <CardHeader
-                                                    title={chat.user2}
-                                                    avatar={chat.avatar}
+                                                    title={chat.user_1}
+                                                    avatar={'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png'}
                                                     style={cardHeaderStyle}
                                                     textStyle={cardHeaderTextStyle}
                                                 />
@@ -88,8 +100,8 @@ class Sidemenu extends Component {
                                                     paddingLeft: '20px'
                                                 }} onClick={() => this.selectChat(chat.conversationID)}>
                                                 <CardHeader
-                                                    title={chat.user2}
-                                                    avatar={chat.avatar}
+                                                    title={chat.user_1}
+                                                    avatar={'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png'}
                                                     style={cardHeaderStyle}
                                                     textStyle={cardHeaderTextStyle}
                                                 />
@@ -113,7 +125,8 @@ const mapStateToProps = ({ reducerConversation }) => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    selectChat
+    selectChat,
+    updateConversations
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidemenu);
