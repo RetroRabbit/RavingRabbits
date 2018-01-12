@@ -14,13 +14,14 @@ import { new_Message, myMessage } from '../../helpers/myChat'
 import { reducerConversation, sendMessage } from '../../helpers/reducerConversation'
 import { bindActionCreators } from 'redux';
 
-class chatArea extends Component {
+class chatArea extends Component{
   constructor(props) {
     super(props);
     this.storeMessage = this.storeMessage.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-
+  
+  
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       var text2 = document.getElementById('mytext').value;
@@ -63,9 +64,6 @@ class chatArea extends Component {
                           <div class="message">
                             <p>{item.msg}</p>
                           </div>
-                          <div>
-                            <p class="time"></p>
-                          </div>
                         </div>
                       }
                       </li>
@@ -74,30 +72,35 @@ class chatArea extends Component {
                   <div></div>
                 }
               </div>
+              {(this.props.currentConvoID != null) ?
               <div class="addText">
-                <div class="addMessage">
-                  <FloatingActionButton disabled={false} className="submitMsg"
-                    backgroundColor="#D8D8D8"
-                  >
-                    <ContentAdd />
-                  </FloatingActionButton>
-                </div>
-                <div className="chatbox">
-                  <TextField
-                    id='mytext'
-                    onKeyPress={this.handleKeyPress}
-                    className="chatfield"
-                    hintText="Enter your text here!"
-                    multiLine={true}
-                    style={{
-                      paddingLeft: '20px',
-                      paddingRight: '20px',
-                      borderRadius: '200px',
-                      backgroundColor: '#EAEAEA',
-                      width: '100%',
-                    }} />
-                </div>
+              <div class="addMessage">
+                <FloatingActionButton disabled={false} className="submitMsg"
+                  backgroundColor="#D8D8D8"
+                >
+                  <ContentAdd />
+                </FloatingActionButton>
               </div>
+              <div className="chatbox">
+                <TextField
+                  id='mytext'
+                  onKeyPress={this.handleKeyPress}
+                  className="chatfield"
+                  hintText="Enter your text here!"
+                  multiLine={true}
+                  style={{
+                    paddingLeft: '20px',
+                    paddingRight: '20px',
+                    borderRadius: '200px',
+                    backgroundColor: '#EAEAEA',
+                    width: '100%',
+                  }} />
+              </div>
+            </div>
+            :
+            <div></div>
+            }
+              
             </div>
           </div>
         </MuiThemeProvider>

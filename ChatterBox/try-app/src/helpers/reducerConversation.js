@@ -144,7 +144,7 @@ const initialState = {
         },
         {
             messageID: 5,
-            user: "HD",
+            user: "Johan",
             msg: "adsfasdf fasdfa",
             conversationID: 2
         },
