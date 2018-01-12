@@ -28,6 +28,7 @@ class settings extends React.Component {
     }
 
     imageUpload(e){
+        console.log(this.props)
         var file = e.target.files[0];
         var objectURL = window.URL.createObjectURL(file);
         return this.props.setProfilePic(objectURL);
@@ -98,11 +99,11 @@ const mapStateToProps = ({ accountReducer }) => {
     return {
         userName: accountReducer.userName,
         email: accountReducer.email,
-        profilePicture: accountReducer.profilePicture ,
         penShow: accountReducer.penShow ,
         pennShow: accountReducer.pennShow,
         penHide: accountReducer.penHide,
-        pennHide: accountReducer.pennHide
+        pennHide: accountReducer.pennHide,
+        profilePicture: accountReducer.profilePicture 
     };
 };
 
