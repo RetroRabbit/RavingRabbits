@@ -24,6 +24,7 @@ class settings extends React.Component {
     updateAccountDetails(email, userName) {
 
         this.props.updateAccountDetails(userName, email);
+        this.props.changePage();
     }
 
     imageUpload(e){
@@ -82,6 +83,7 @@ class settings extends React.Component {
                                 className="button"
                                 id="done"
                                 labelColor="rgb(255,255,255)"
+                               
                             />
                         </div>
                     </form>

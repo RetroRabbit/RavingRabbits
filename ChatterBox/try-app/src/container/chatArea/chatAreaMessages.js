@@ -11,7 +11,7 @@ import $ from 'jquery'
 import sidemenu from '../side-menu/sidemenu.js'
 import SideMenu from '../side-menu/sidemenu.js'
 import {new_Message} from '../../helpers/myChat'
-import { bindActionCreators } from '../../../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/redux';
+import { bindActionCreators } from 'redux';
 
 
 
@@ -144,7 +144,7 @@ class chatArea extends Component{
                   <div className= "chatbox">
                             <TextField
                                 id='mytext' 
-                                onKeyPress={thishandleKeyPress}
+                                onKeyPress={this.handleKeyPress}
                                  className = "chatfield"
                                 hintText="Enter your text here!"
                                 multiLine={true}
@@ -175,7 +175,8 @@ class chatArea extends Component{
 }
 
 const mapStateToProps = ({myMessage}) =>{
-    msg:myMessage.msg
+  return
+    myMessage:myMessage.newMsg
 }
 const mapDispatchToProps = dispatch =>bindActionCreators({
     new_Message
