@@ -144,7 +144,7 @@ class chatArea extends Component{
                   <div className= "chatbox">
                             <TextField
                                 id='mytext' 
-                                onKeyPress={thishandleKeyPress}
+                                onKeyPress={this.handleKeyPress}
                                  className = "chatfield"
                                 hintText="Enter your text here!"
                                 multiLine={true}
