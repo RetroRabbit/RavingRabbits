@@ -125,7 +125,17 @@
       padding-top: 10px;
       float: right;
   }
+  .p2 {
+    padding-top: 10px;
+    float: left;
+}
   .addText {
      margin-left: 50px;
   }
  
+  .listItem{
+    display: flow-root;
+}
+.list{
+width: 65%
+}
