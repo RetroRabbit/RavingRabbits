@@ -62,7 +62,7 @@ class Sidemenu extends Component {
                         <Divider inset={false} />
                         <ul className="defaultList">
                             {this.conversations.map(chat => (
-                                <li data-category={chat} key={chat}>
+                                <li data-category={chat} key={chat.conversationID}>
                                     {(chat.selected) ?
                                         <div>
                                             <Card style={{
