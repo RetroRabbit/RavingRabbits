@@ -5,6 +5,7 @@ import {screenRes} from '../helpers/reducerScreen';
 import {profilePicReducer} from '../helpers/reducerPfp';
 import {myRegister} from '../helpers/reducerRegister';
 import {accountReducer} from '../helpers/reducerAccount';
+import {reducerConversation} from '../helpers/reducerConversation';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     myRegister,
   routerReducer,
   profilePicReducer,
-  accountReducer
+  accountReducer,
+  reducerConversation
 })
 
 export default rootReducer;

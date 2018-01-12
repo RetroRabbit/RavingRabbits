@@ -11,8 +11,10 @@ import Header from '../Header';
 import Settings from '../profile-settings/profile-settings';
 import ChatForm from '../ChatForm/chatFrom.js';
 import chatAreaMessages from '../chatArea/chatAreaMessages.js';
+import loginUser from '../LoginUser';
 
 const App = () => (
+  
   <MuiThemeProvider>
   <div>
     <main>
@@ -26,6 +28,7 @@ const App = () => (
       <Route exact path="/profile-settings" component={Settings} />
       <Route exact path="/chatFrom" component={ChatForm} />
       <Route exact path="/chatareamessages" component={chatAreaMessages} />
+      <Route exact path="/loginUser" component={loginUser} />
     </main>
   </div>
   </MuiThemeProvider>
