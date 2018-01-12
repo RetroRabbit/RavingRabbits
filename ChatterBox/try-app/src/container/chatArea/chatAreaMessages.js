@@ -103,49 +103,58 @@ class chatArea extends Component{
   render(){
     
         return(
-        
-    <div>
+
+            <div>
         <header><Header/></header>
         <div>
           <SideMenu/>
         </div>
+  
   <MuiThemeProvider>
 
-  <div class="bg ">
-    <div class="chatDiv">
-        <div class= "messageList">
-             <ul className="list"></ul>
-       </div>
-    <div class = "enterText">         
-      <form>
-          <div className="addMessage">
-               <FloatingActionButton  disabled={false} className="add">
-               <ContentAdd />
-              </FloatingActionButton>
-          </div>
-          <div className= "chatbox">
-                  
-                <TextField
-                    id='mytext' 
-                    onKeyPress={handleKeyPress}
-                    className = "chatfield"
-                    hintText="Enter your text here!"
-                    multiLine={true}
-                    style = {{
-                        paddingLeft:'20px',
-                        paddingRight:'20px',
-                        borderRadius: '200px',
-                        backgroundColor: '#EAEAEA',
-                        width:'80%',
+       <div class="bg">
+                <div class="chatDiv">
+                <div class= "messageList">
+                        <ul className="list"></ul>
+                </div>
+                
+             <form>
+               <div class = "addText">             
+                    <div class="addMessage">
+                        
+                                <FloatingActionButton  disabled={false} className = "submitMsg"
+                                  backgroundColor="#D8D8D8"                              
+                                    >
+                                    <ContentAdd />
+                                </FloatingActionButton>
+                  </div>
+                  <div className= "chatbox">
+                            <TextField
+                                id='mytext' 
+                                onKeyPress={handleKeyPress}
+                                 className = "chatfield"
+                                hintText="Enter your text here!"
+                                multiLine={true}
+                                  style = {{
+                                        paddingLeft:'20px',
+                                        paddingRight:'20px',
+                                          borderRadius: '200px',
+                                         backgroundColor: '#EAEAEA',
+                                         width:'80%',
                  }}/>
-          </div>
-      </form>
-     </div> 
-    </div>    
- </div>
+                 </div>
+              </div>
+
+                    
+                        </form>
+                
+
+
+                </div>
+       </div>
 
     </MuiThemeProvider>
-      </div>
+ </div>
   );
   }
 }
