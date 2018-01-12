@@ -85,36 +85,6 @@ const initialState = {
             text:
                 'I&apos;ll be in your neighborhood doing errands this weekend.',
             selected: false
-        },
-        {
-            conversationID: 3,
-            user1: "Johan",
-            user2: "Lunga",
-            avatar:
-                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
-            text:
-                'I&apos;ll be in your neighborhood doing errands this weekend.',
-            selected: false
-        },
-        {
-            conversationID: 4,
-            user1: "Johan",
-            user2: "Nonto",
-            avatar:
-                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
-            text:
-                'I&apos;ll be in your neighborhood doing errands this weekend.',
-            selected: false
-        },
-        {
-            conversationID: 5,
-            user1: "Johan",
-            user2: "Law",
-            avatar:
-                'https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png',
-            text:
-                'I&apos;ll be in your neighborhood doing errands this weekend.',
-            selected: false
         }
     ],
     messages: [
