@@ -17,19 +17,20 @@
     height: 100% !important;
     width: 70%;
     z-index: -5;
+    overflow: auto;
 }
 .messageList {
     height:70%;
     width: 100%;
     margin:25px; 
     background-color: #fff;
-    overflow:scroll;
+    overflow:auto;
 }
 .chatfield {
     width: 100%;
 }
 .addMessage {
-
+    
         padding-bottom:5px;
     }
   
@@ -113,19 +114,44 @@
 	 padding-top: 300px;
  }
  
- .list {
+ /* .list {
   display: inline-block;
   list-style-type: none;
   margin-top: 100px;
   padding-top: 15px;
   position: fixed;
   
+  } */
+  #list{
+    display: inline-block;
+    list-style-type: none;
+    margin-top: 100px;
+    padding-top: 15px;
+    float:right;
+  }
+  #list{
+            display: inline-block;
+            list-style-type: none;
+            margin-top: 100px;
+            padding-top: 15px;
   }
   .p1 {
       padding-top: 10px;
       float: right;
   }
   .addText {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
      margin-left: 50px;
+     padding-bottom:10px;
   }
- 
+ .chatscroll{
+    position: fixed;
+    top: 10px;
+    /* left: 10px; */
+    bottom: 10px;
+    height: 70%;
+    overflow-y: auto;
+    float: right;
+ }
