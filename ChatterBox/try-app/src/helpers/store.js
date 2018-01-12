@@ -5,8 +5,6 @@ import createHistory from 'history/createBrowserHistory';
 import logger from 'redux-logger';
 import rootReducer from '../modules/index';
 
-
-
 export const history = createHistory()
 const initialState = {}
 const enhancers = []

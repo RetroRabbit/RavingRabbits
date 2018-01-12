@@ -9,6 +9,7 @@ import { accountReducer } from '../../helpers/reducerAccount';
 import history from '../../helpers/store.js';
 
 class LoginPage extends Component {
+
     constructor(props) {
       super(props);
       this.state = {};
