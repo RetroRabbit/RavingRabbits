@@ -8,6 +8,5 @@ export default function(state = INITIAL_STATE,action){
             return {...state,all:_.uniqBy(state.all.concat(action.payload.data),'id'),page:state.page + 1};
             default:
                 return state;
-
     }
 }

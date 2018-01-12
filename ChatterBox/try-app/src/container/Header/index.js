@@ -7,8 +7,6 @@ import AppBar from 'material-ui/AppBar';
 import './header.css';
 import { bindActionCreators } from 'redux';
 import { setMobileResolution, setDesktopResolution } from '../../helpers/reducerScreen';
-import { setProfilePic } from '../../helpers/reducerPfp';
-
 
 class Header extends React.Component {
   constructor(props) {
@@ -98,11 +96,11 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = ({ screenRes, loginReducer, profilePicReducer }) => {
+const mapStateToProps = ({ screenRes, accountReducer }) => {
   return {
     mobile: screenRes.mobile,
-    userName: loginReducer.userName,
-    profilePicture: profilePicReducer.initialImage
+    userName: accountReducer.userName,
+    profilePicture: accountReducer.profilePicture
   };
 }
 
