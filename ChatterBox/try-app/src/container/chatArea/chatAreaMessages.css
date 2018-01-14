@@ -1,56 +1,39 @@
 
-
-  /* .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color:#fff;
- } */
- .rectangle-6-copy {
-	height: 50px;
-	width: 499px;
-	border-radius: 22px;
-	background-color: #01B9BD;
-}
 .chatbox{
 	padding-right:30px;
+}
+
+.bg{
+    background-color: white;
+   
+}
+
+.chatDiv{
+    position: fixed;
+    right:0;
+    top:0;
+    float: right !important;   
+    background-color:white;
+    height: 100% !important;
+    width: 70%;
+    z-index: -5;
+    overflow: auto;
+}
+.messageList {
+    height:70%;
+    width: 100%;
+    margin:25px; 
+    background-color: #fff;
+    overflow:auto;
 }
 .chatfield {
     width: 100%;
 }
-.bg{
-    background-color: white;
-}
-
-.chatDiv{
-    padding-top:300px;
-    right: 0px;
-    bottom: 0px;
-    position: relative;
-    float: right;   
-    background-color:white;
-    height: 100%;
-    width: 70%;
-    padding-left:150px;
-	padding-bottom:20px;
-	margin-bottom: 30px;
+.addMessage {
     
-}
-    .person2 {
-        height: 187px;
-        width: 499px;
-    }
-    .addMessage {
-
-        padding-bottom:20px;
+        padding-bottom:5px;
     }
   
-.rectangle-6 {
-	height: auto;
-	width: 322px;
-	border-radius: 24px;
-	background-color: #01B9BD;
-}
 .text {
 	height: 67px;
 	width: 445px;
@@ -67,25 +50,21 @@
 	font-family: "Avenir Next";
 	font-size: 13px;
     line-height: 18px;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 	text-align: center;
 }
-.rectangle-6-copy-2 {
-	height: 43px;
-	width: 317px;
-	border-radius: 24px;
-	background-color: #007D80;
-}
-.person2 {
-	height: 78px;
-    width: 481px;
-    padding-top: 20px;
-    margin-left: 405px;
-    
-}
-.groups {
-    padding-top: 100px;
-    background-color: #fff;
+
+.message{
+    display: inline-block;
+    background:rgb(1, 185, 189);
+    color: white;
+    border-radius: 5px;
+    padding-bottom: 15px;
+    width: 200px;
+    word-wrap: break-word;
+
+
 }
 .time-copy {
 	height: 18px;
@@ -98,12 +77,6 @@
     padding-top: 10px;
     padding-left: 280px; 
 }
-.rectangle-6-copy-3 {
-	height: 43px;
-	width: 717px;
-	border-radius: 24px;
-	background-color: #EFF2F3;
-}
 .edittext {
 	height: 20px;
 	width: 336px;
@@ -114,27 +87,9 @@
     padding-top:10px;
     padding-left: 10px;
 }
-.oval-2 {
-	height: 54px;
-	width: 54px;
-	background-color: #D8D8D8;
-}
-.line-copy {
-	box-sizing: border-box;
-	height: 2.28px;
-	width: 18px;
-	border: 3px solid #979797;
-	transform: rotate(90deg);
-}
-.plus {
-	height: 19px;
-	width: 18px;
-}
-.add {
-   margin-right: 100px; 
-}
+
 .addMessage {
-    padding-right: 200px;
+    margin-bottom: 15px;
 }
 .mytext{
     border:0;
@@ -154,45 +109,52 @@
     line-height: 13px;
     font-size: 12px;
  }
- .text > p:last-of-type{
-    width:100%;
-    text-align:right;
-    color:silver;
-    margin-bottom:-7px;
-    margin-top:auto;
- }
- .text-l{
-    float:left;
-    padding-right:10px;
- }        
- .text-r{
-    float:right;
-    padding-left:10px;
- }
- .macro{
-	display: inline-block; 
-    border-radius:5px;
-    padding:5px;
-    display:flex;
- }
- .msj-rta{
-    float:right;
-    background:rgb(0,72,83);
-    color: white;
- }
- .msj-rta1{
-    float:right;
-    background:whitesmoke;
- }
- .msj{
-    float:left;
-    background:rgb(1, 185, 189);
-	color: white;
-	
- }
+
  .enterText {
 	 padding-top: 300px;
  }
- ul {
-	list-style-type: none;
+ 
+ /* .list {
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 100px;
+  padding-top: 15px;
+  position: fixed;
+  
+  } */
+  #list{
+    display: inline-block;
+    list-style-type: none;
+    margin-top: 100px;
+    padding-top: 15px;
   }
+  .p1 {
+      padding-top: 10px;
+      float: right;
+  }
+  .p2 {
+    padding-top: 10px;
+    float: left;
+}
+  .addText {
+    position: fixed;
+    bottom: 0;
+    width: 64%;
+     margin-left: 50px;
+     padding-bottom:10px;
+  }
+  .listItem{
+    display: flow-root;
+}
+.list{
+    width: 100%;
+    padding-right: 10%;
+}
+ .chatscroll{
+    position: fixed;
+    top: 10px;
+    bottom: 10px;
+    height: 70%;
+    overflow-y: auto;
+    float: right;
+ }

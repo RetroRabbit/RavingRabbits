@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^9.0.2",
+    "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
     "create-react-class": "^15.6.2",
     "css": "^2.2.1",

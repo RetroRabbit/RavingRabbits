@@ -1,0 +1,30 @@
+﻿@model ChatterBoxWebApi.Models.Conversation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Conversation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User_1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User_2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User_2)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ConversationID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

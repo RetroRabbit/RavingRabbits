@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TextField, RaisedButton } from 'material-ui'
+import axios from 'axios';
 import { connect } from 'react-redux'
 import Chip from 'material-ui/Chip'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
@@ -10,148 +11,124 @@ import Header from '../Header'
 import $ from 'jquery'
 import sidemenu from '../side-menu/sidemenu.js'
 import SideMenu from '../side-menu/sidemenu.js'
+import { new_Message, myMessage } from '../../helpers/myChat'
+import { reducerConversation, sendMessage,updateMessages } from '../../helpers/reducerConversation'
+import { bindActionCreators } from 'redux';
 
-
-
-function formatAMPM(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return strTime;
-} 
-
-function insertChat(who, text, time = 0){
-  var control = "";
-  var date = formatAMPM(new Date());
- 
-  if (who === "me"){
-      
-      control = '<li style="width:50%">' +
-                      '<div class="msj macro">' +
-                      '<div class="avatar"><img className="img-circle" style="width:20%;"  /></div>' +
-                          '<div class="text text-l">' +
-                              '<p>'+ text +'</p>' + 
-                              '<p><small><font color="white">'+date+'</font></small></p>' +
-                          '</div>' +
-                      '</div>' +
-                  '</li>';                    
-  }else{
-      control = '<li style="width:90%;">' +
-                      '<div class="msj-rta macro">' +
-                          '<div class="text text-r">' +
-                              '<p>'+text+'</p>' +
-                                '<div>' +
-                              '<p><small><font color="white">'+date+'</font></small></p>' +
-                                  '</div>' +
-                          '</div>' +
-                      '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:20%;" /></div>' +                                
-                '</li>';
-              }
-              setTimeout(
-                  function(){                        
-                      $("ul").append(control);
-          
-                  }, time);
-              
-  }
-     
-  function resetChat()
-  {
-       $("ul").empty();
-  }
-
-        
-  const handleKeyPress = (event) => {
-      if(event.key ==='Enter'){
-            var text2 = document.getElementById('mytext').value;
-      if(text2 === "lol"){
-            insertChat("you", text2);
-            document.getElementById('mytext').value = " ";          
-         } else{
-            insertChat("me", text2);
-            document.getElementById('mytext').value = '';
-         }                    
-     }
-  }
-     
 class chatArea extends Component{
   constructor(props) {
     super(props);
- 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+    this.storeMessage = this.storeMessage.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.updateMessages = this.updateMessages.bind(this);
+    this.updateMessages();
   }
 
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      var text2 = document.getElementById('mytext').value;
+      this.storeMessage(text2);
+      document.getElementById('mytext').value = '';
+    }
   }
-  render(){
-    
-        return(
+
         
-    <div>
-        <header><Header/></header>
+  updateMessages(){
+    axios.get(`http://localhost:60387/api/messages`)
+    .then(res => {
+       this.props.updateMessages(res.data);
+       this.forceUpdate();
+    });
+}
+
+  storeMessage(text) {
+    this.props.sendMessage(this.props.currentConvoID, document.getElementById("mytext").value);
+    this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <div>
+        <header><Header /></header>
         <div>
-          <SideMenu/>
+          <SideMenu />
         </div>
-  <MuiThemeProvider>
-
-  <div class="bg ">
-    <div class="chatDiv">
-             <ul></ul>
-    <div class = "enterText">         
-      <form>
-          <div className="addMessage">
-               <FloatingActionButton  disabled={false} className="add">
-
-               <ContentAdd />
-              </FloatingActionButton>
-          </div>
-          <div className= "chatbox">
-                  
+        <MuiThemeProvider>
+          <div class="bg">
+            <div class="chatDiv">
+              <div class="messageList">
+                {(this.props.messages.length) ?
+                  <ul className="list" id="list">
+                    {this.props.messages.map(item => (
+                      <li className="listItem" key={item.MessageId}>
+                      {(item.user == "Johan") ?
+                        <div class="p2">
+                          <div class="message">
+                            <p>{item.msg}</p>
+                          </div>
+                          <div>
+                            <p class="time"></p>
+                          </div>
+                        </div>
+                        :
+                        <div class="p1">
+                          <div class="message">
+                            <p>{item.msg}</p>
+                          </div>
+                        </div>
+                      }
+                      </li>
+                    ))}
+                  </ul> : 
+                  <div></div>
+                }
+              </div>
+              {(this.props.currentConvoID != null) ?
+              <div class="addText">
+              <div class="addMessage">
+                <FloatingActionButton disabled={false} className="submitMsg"
+                  backgroundColor="#D8D8D8"
+                >
+                  <ContentAdd />
+                </FloatingActionButton>
+              </div>
+              <div className="chatbox">
                 <TextField
-                    id='mytext' onKeyPress={handleKeyPress}
-                    className = "chatfield"
-                    hintText="Enter your text here!"
-                    multiLine={true}
-                    style = {{
-                        paddingLeft:'20px',
-                        paddingRight:'20px',
-                        borderRadius: '200px',
-                        backgroundColor: '#EAEAEA',
-                        width:'80%',
-                 }}/>
+                  id='mytext'
+                  onKeyPress={this.handleKeyPress}
+                  className="chatfield"
+                  hintText="Enter your text here!"
+                  multiLine={true}
+                  style={{
+                    paddingLeft: '20px',
+                    paddingRight: '20px',
+                    borderRadius: '200px',
+                    backgroundColor: '#EAEAEA',
+                    width: '100%',
+                  }} />
+              </div>
+            </div>
+            :
+            <div></div>
+            }
+              
+            </div>
           </div>
-      </form>
-     </div> 
-    </div>    
- </div>
-
-    </MuiThemeProvider>
+        </MuiThemeProvider>
       </div>
-  );
+    );
   }
 }
-export default chatArea;
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
+const mapStateToProps = ({ reducerConversation }) => {
+  return {
+    messages: reducerConversation.filteredMessages,
+    currentConvoID: reducerConversation.currentConvoID
+  }
+}
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sendMessage,
+  updateMessages
+}, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(chatArea);

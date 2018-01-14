@@ -6,20 +6,34 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Header from '../Header';
-import { updateName } from '../../helpers/reducerLogin';
 import './profile-settings.css';
+import { accountReducer, updateAccountDetails, setProfilePic,hidePen, hidePenn, showPenn, showPen } from '../../helpers/reducerAccount';
 
-let userName = '';
 class settings extends React.Component {
     constructor(props) {
         super(props);
+        this.imageUpload = this.imageUpload.bind(this);
     }
 
-    updateNames(email, userName) {
-        
-        this.props.updateName(userName, email);
+    hidePen() {
+        this.props.hidePen();
+    }
+    hidePenn() {
+        this.props.hidePenn();
+    }
+    updateAccountDetails(email, userName) {
+
+        this.props.updateAccountDetails(userName, email);
+        this.props.changePage();
     }
 
+    imageUpload(e){
+        console.log(this.props)
+        var file = e.target.files[0];
+        var objectURL = window.URL.createObjectURL(file);
+        return this.props.setProfilePic(objectURL);
+      }
+ 
     render() {
         return (
             <div className="whiteBackground">
@@ -28,22 +42,49 @@ class settings extends React.Component {
                 </header>
                 <div class="row">
                     <div class="topSection">
-                        <img src={require('./Oval.png')} className="img-circle center-block" />
-                        <img src={require('./mypic.JPG')} className="profile img-circle" />
+                        <input
+                                className="picUpload"
+                                type="file"
+                                onChange={
+                                this.imageUpload
+                                }
+                        /> 
+                        <img 
+                            src={require('./Oval.png')} 
+                            className="img-circle center-block"
+                        />
+                        <img src={this.props.profilePicture}
+                             className="profile img-circle"
+                        />
+                        <h1 contentEditable="true" 
+                            id="username"
+                            onFocus={()=>this.props.hidePen()}
+                        >
+                            {this.props.userName}
+                        </h1>  
+                        <h3 contentEditable="true" 
+                            id="email"
+                            onFocus={()=>this.props.hidePenn()}>
+                            {this.props.email}
+                        </h3>
                         
-                        <h1  contentEditable="true" id="username">{this.props.userName}</h1>  
-                        <h3  contentEditable="true" id="email">{this.props.email}</h3>
-                       <h1><i className="fa fa-pencil" aria-hidden="true" /></h1>
-                        <h3><i className="fa fa-pencil" id="email" aria-hidden="true"/></h3>
+                        {this.props.penShow &&<h1><i className="fa fa-pencil" id="uPen" aria-hidden="true" /></h1>}
+                        {this.props.pennShow &&<h3><i className="fa fa-pencil" id="ePen" aria-hidden="true"/></h3>}
+                    </div>
+                    <div class="uploadButtonImg">
+                         
                     </div>
                     <form>
-                        <div>
+                        <div class="tester">
+
                             <br />
                             <RaisedButton
-                                onClick={() => this.updateNames( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
+                                onClick={() => this.updateAccountDetails( document.getElementById("username").innerText ,document.getElementById("email").innerText) }
                                 label="Done"
                                 className="button"
                                 id="done"
+                                labelColor="rgb(255,255,255)"
+                               
                             />
                         </div>
                     </form>
@@ -53,16 +94,27 @@ class settings extends React.Component {
     }
 };
 
-const mapStateToProps = ({ loginReducer }) => {
+
+const mapStateToProps = ({ accountReducer }) => {
     return {
-        userName: loginReducer.userName,
-        email: loginReducer.email
+        userName: accountReducer.userName,
+        email: accountReducer.email,
+        penShow: accountReducer.penShow ,
+        pennShow: accountReducer.pennShow,
+        penHide: accountReducer.penHide,
+        pennHide: accountReducer.pennHide,
+        profilePicture: accountReducer.profilePicture 
     };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePage: () => push('/chatareamessages'),
-    updateName
+    updateAccountDetails,
+    setProfilePic,
+    hidePen,
+    hidePenn,
+    showPen,
+    showPenn
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(settings);
